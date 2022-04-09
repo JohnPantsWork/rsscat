@@ -1,0 +1,1242 @@
+{
+  "feed": {
+    "title": "Top stories - Google News",
+    "updated": "Tue, 05 Apr 2022 09:28:18 GMT",
+    "link": "https://news.google.com/?ceid=US:en&hl=en-US&gl=US",
+    "language": "en-US",
+    "subtitle": "Google News",
+    "rights": "2022 Google Inc."
+  },
+  "articles": [
+    {
+      "id": "1370835254",
+      "title": "Russia-Ukraine war news: Live updates - The Washington Post",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiXmh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS93b3JsZC8yMDIyLzA0LzA1L3J1c3NpYS11a3JhaW5lLXdhci1uZXdzLXplbGVuc2t5LWxpdmUtdXBkYXRlcy_SAQA?oc=5",
+      "published": "Tue, 05 Apr 2022 09:11:15 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXmh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS93b3JsZC8yMDIyLzA0LzA1L3J1c3NpYS11a3JhaW5lLXdhci1uZXdzLXplbGVuc2t5LWxpdmUtdXBkYXRlcy_SAQA?oc=5",
+          "title": "Russia-Ukraine war news: Live updates",
+          "publisher": "The Washington Post"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiamh0dHBzOi8vd3d3LmNubi5jb20vZXVyb3BlL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1wdXRpbi1uZXdzLTA0LTA0LTIyL2hfY2M2NGU2NTZjNTYxMTFlNmE2YTZjNjUwZDAxMmEyOWTSAVZodHRwczovL2FtcC5jbm4uY29tL2Nubi9ldXJvcGUvbGl2ZS1uZXdzL3VrcmFpbmUtcnVzc2lhLXB1dGluLW5ld3MtMDQtMDQtMjIvaW5kZXguaHRtbA?oc=5",
+          "title": "April 4, 2022 Russia-Ukraine news",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiR2h0dHBzOi8vd3d3Lmluc2lkZXIuY29tL3plbGVuc2t5eS11a3JhaW5lLXBob3Rvcy1ydXNzaWEtaW52YXNpb24tMjAyMi000gEA?oc=5",
+          "title": "Photos of Zelenskyy show the toll of war on Ukraine's president",
+          "publisher": "Insider"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vd3d3Lm5iY25ld3MuY29tL25ld3Mvd29ybGQvbGl2ZS1ibG9nL3VrcmFpbmUtcnVzc2lhLXdhci1saXZlLXVwZGF0ZXMtcmNuYTIyNzQ40gEA?oc=5",
+          "title": "Russia-Ukraine war: Zelenskyy warns deaths in Bucha, beyond will be 'much more than we know now'",
+          "publisher": "NBC News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQGh0dHBzOi8vd3d3Lm55dGltZXMuY29tL2xpdmUvMjAyMi8wNC8wNS93b3JsZC91a3JhaW5lLXJ1c3NpYS13YXLSAQA?oc=5",
+          "title": "Ukraine-Russia War Live News: Latest Updates",
+          "publisher": "The New York Times"
+        }
+      ],
+      "source": { "href": "https://www.washingtonpost.com", "title": "The Washington Post" }
+    },
+    {
+      "id": "1340337833",
+      "title": "Shanghai's 26 mln people in lockdown after tests uncover COVID infections - Reuters.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMibGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2NoaW5hL3NoYW5naGFpLWxvY2tkb3duLWRlZXBlbnMtYWZ0ZXItbmV3LXN1cmdlLWFzeW1wdG9tYXRpYy1jYXNlcy0yMDIyLTA0LTA1L9IBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 08:29:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMibGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2NoaW5hL3NoYW5naGFpLWxvY2tkb3duLWRlZXBlbnMtYWZ0ZXItbmV3LXN1cmdlLWFzeW1wdG9tYXRpYy1jYXNlcy0yMDIyLTA0LTA1L9IBAA?oc=5",
+          "title": "Shanghai's 26 mln people in lockdown after tests uncover COVID infections",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXWh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNC9jaGluYS9zaGFuZ2hhaS1tYXNzLXRlc3RpbmctY292aWQtbG9ja2Rvd24taW50bC1obmsvaW5kZXguaHRtbNIBAA?oc=5",
+          "title": "China drafts in the military as Shanghai ordered to test 25 million residents for Covid",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vYXBuZXdzLmNvbS9hcnRpY2xlL2NvdmlkLWJ1c2luZXNzLWhlYWx0aC1jaGluYS1zaGFuZ2hhaS1iMTQ3MDRhMjA1OTA1MzU5NjlhNTY4N2IyNmY5ZTIwMNIBAA?oc=5",
+          "title": "10000 health workers sent to help control Shanghai outbreak",
+          "publisher": "The Associated Press"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vbmV3cy55YWhvby5jb20vc2hhbmdoYWktbG9ja2Rvd24tZGVlcGVucy1zdXJnZS1hc3ltcHRvbWF0aWMtMDMxOTA3Mjg2Lmh0bWzSAVpodHRwczovL25ld3MueWFob28uY29tL2FtcGh0bWwvc2hhbmdoYWktbG9ja2Rvd24tZGVlcGVucy1zdXJnZS1hc3ltcHRvbWF0aWMtMDMxOTA3Mjg2Lmh0bWw?oc=5",
+          "title": "Shanghai lockdown deepens after new surge in asymptomatic COVID cases",
+          "publisher": "Yahoo News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYWh0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS93b3JsZC8yMDIyL2Fwci8wNS90aGlzLWlzLWluaHVtYW5lLXRoZS1jb3N0LW9mLXplcm8tY292aWQtaW4tc2hhbmdoYWnSAQA?oc=5",
+          "title": "'This is inhumane': the cost of zero Covid in Shanghai",
+          "publisher": "The Guardian"
+        }
+      ],
+      "source": { "href": "https://www.reuters.com", "title": "Reuters.com" }
+    },
+    {
+      "id": "1368936741",
+      "title": "Suspect arrested in Sacramento shooting that left 6 dead, 12 wounded - NBC News",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMibGh0dHBzOi8vd3d3Lm5iY25ld3MuY29tL25ld3MvdXMtbmV3cy9zdXNwZWN0LWFycmVzdGVkLXNhY3JhbWVudG8tc2hvb3RpbmctbGVmdC1zaXgtZGVhZC0xMi13b3VuZGVkLXJjbmEyMjkwMtIBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 08:48:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMibGh0dHBzOi8vd3d3Lm5iY25ld3MuY29tL25ld3MvdXMtbmV3cy9zdXNwZWN0LWFycmVzdGVkLXNhY3JhbWVudG8tc2hvb3RpbmctbGVmdC1zaXgtZGVhZC0xMi13b3VuZGVkLXJjbmEyMjkwMtIBAA?oc=5",
+          "title": "Suspect arrested in Sacramento shooting that left 6 dead, 12 wounded",
+          "publisher": "NBC News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9VWFtdzVnSjFFYlHSAQA?oc=5",
+          "title": "Sacramento Mass Shooting: First person arrested in connection with the shooting",
+          "publisher": "ABC10"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vd3d3LmxhdGltZXMuY29tL29waW5pb24vc3RvcnkvMjAyMi0wNC0wNC9lZGl0b3JpYWwtZ3VuLXZpb2xlbmNlLXNhY3JhbWVudG8tbWFzcy1zaG9vdGluZ9IBAA?oc=5",
+          "title": "Editorial: Gun violence is America's way of life — and death",
+          "publisher": "Los Angeles Times"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMihAFodHRwczovL3d3dy55b3VyY2VudHJhbHZhbGxleS5jb20vY2JzNDctbmV3cy9mcmVzbm8tbGVhZGVycy1jYWxsLWZvci1zdGF0ZS1jcmltaW5hbC1qdXN0aWNlLXJlZm9ybS1hZnRlci1zYWNyYW1lbnRvLW1hc3Mtc2hvb3RpbmctMi_SAYgBaHR0cHM6Ly93d3cueW91cmNlbnRyYWx2YWxsZXkuY29tL2NiczQ3LW5ld3MvZnJlc25vLWxlYWRlcnMtY2FsbC1mb3Itc3RhdGUtY3JpbWluYWwtanVzdGljZS1yZWZvcm0tYWZ0ZXItc2FjcmFtZW50by1tYXNzLXNob290aW5nLTIvYW1wLw?oc=5",
+          "title": "Fresno leaders call for state criminal justice reform after Sacramento mass shooting",
+          "publisher": "YourCentralValley.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9amZfQ3FzUXFyRUHSAQA?oc=5",
+          "title": "'My baby was just starting life': Family of Johntaya Alexander mourns daughter after Sacramento m...",
+          "publisher": "KCRA News"
+        }
+      ],
+      "source": { "href": "https://www.nbcnews.com", "title": "NBC News" }
+    },
+    {
+      "id": "1337190837",
+      "title": "Russian oligarch's luxury yacht seized in Spain at US' request - CNN",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNC9wb2xpdGljcy9ydXNzaWFuLXlhY2h0LXNlaXplZC1mYmktdGFzay1mb3JjZS9pbmRleC5odG1s0gEA?oc=5",
+      "published": "Mon, 04 Apr 2022 23:01:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNC9wb2xpdGljcy9ydXNzaWFuLXlhY2h0LXNlaXplZC1mYmktdGFzay1mb3JjZS9pbmRleC5odG1s0gEA?oc=5",
+          "title": "Russian oligarch's luxury yacht seized in Spain at US' request",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUWh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9kYy1tZC12YS8yMDIyLzA0LzA0L3lhY2h0LXNlaXplZC1ydXNzaWEtc2FuY3Rpb25zL9IBAA?oc=5",
+          "title": "US seizes billionaire Veskelberg's yacht in Russia sanctions push",
+          "publisher": "The Washington Post"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZGh0dHBzOi8vYXBuZXdzLmNvbS9hcnRpY2xlL3J1c3NpYS11a3JhaW5lLXdhci1vbGlnYXJjaC15YWNodC1zZWl6ZWQtZTg0MTU5NzIzOTI4MzlmODE4YzU1MDVhYTkzZmM4YTXSAQA?oc=5",
+          "title": "US seizes yacht owned by oligarch with close ties to Putin",
+          "publisher": "The Associated Press"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYWh0dHBzOi8vd3d3Lm5iY25ld3MuY29tL25ld3Mvd29ybGQvdXMtc2VpemVzLW1lZ2EteWFjaHQtb3duZWQtb2xpZ2FyY2gtY2xvc2UtdGllcy1wdXRpbi1yY25hMjI4MTTSASpodHRwczovL3d3dy5uYmNuZXdzLmNvbS9uZXdzL2FtcC9yY25hMjI4MTQ?oc=5",
+          "title": "U.S. seizes mega yacht owned by oligarch with close ties to Putin",
+          "publisher": "NBC News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMigQFodHRwczovL3d3dy5jbmJjLmNvbS8yMDIyLzA0LzA0L3J1c3NpYW4tb2xpZ2FyY2gtdmlrdG9yLXZla3NlbGJlcmctYWNjdXNlZC1vZi1iYW5rLWZyYXVkLW1vbmV5LWxhdW5kZXJpbmctYXMteWFjaHQtaXMtc2VpemVkLmh0bWzSAQA?oc=5",
+          "title": "U.S. authorities accuse Russian oligarch Viktor Vekselberg of bank fraud, money laundering as his yacht is seized",
+          "publisher": "CNBC"
+        }
+      ],
+      "source": { "href": "https://www.cnn.com", "title": "CNN" }
+    },
+    {
+      "id": "1368429278",
+      "title": "Ukraine massacre has U.S. and allies seeking new ways to punish Putin - POLITICO",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiWmh0dHBzOi8vd3d3LnBvbGl0aWNvLmNvbS9uZXdzLzIwMjIvMDQvMDQvdWtyYWluZS1tYXNzYWNyZS11LXMtYWxsaWVzLXB1bmlzaC1wdXRpbi0wMDAyMjgyNNIBAA?oc=5",
+      "published": "Mon, 04 Apr 2022 20:50:08 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiWmh0dHBzOi8vd3d3LnBvbGl0aWNvLmNvbS9uZXdzLzIwMjIvMDQvMDQvdWtyYWluZS1tYXNzYWNyZS11LXMtYWxsaWVzLXB1bmlzaC1wdXRpbi0wMDAyMjgyNNIBAA?oc=5",
+          "title": "Ukraine massacre has U.S. and allies seeking new ways to punish Putin",
+          "publisher": "POLITICO"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9bm81ZENZTTFSQnfSAQA?oc=5",
+          "title": "Zelenskyy Says At Least 300 'Killed And Tortured' In Bucha",
+          "publisher": "NBC News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiSGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1saXZlLXVwZGF0ZXMtMDQtMDQtMjAyMtIBTGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1saXZlLXVwZGF0ZXMtMDQtMDQtMjAyMi5hbXA?oc=5",
+          "title": "Global outcry against Russia escalates as horrifying stories emerge of Ukraine atrocities",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXGh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9vcGluaW9ucy8yMDIyLzA0LzA0L3VrcmFpbmUtYnVjaGEtbWFzc2FjcmUtZm9yY2VmdWwtcmVzcG9uc2Uv0gEA?oc=5",
+          "title": "Opinion | Bucha, Ukraine, massacre marks turning point in Russia's war",
+          "publisher": "The Washington Post"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYmh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2hvdy1jb3VsZC1ydXNzaWFzLXB1dGluLWJlLXByb3NlY3V0ZWQtd2FyLWNyaW1lcy11a3JhaW5lLTIwMjItMDQtMDQv0gEA?oc=5",
+          "title": "Explainer: How could Russia's Putin be prosecuted for war crimes in Ukraine?",
+          "publisher": "Reuters.com"
+        }
+      ],
+      "source": { "href": "https://www.politico.com", "title": "POLITICO" }
+    },
+    {
+      "id": "1370000245",
+      "title": "Secret Service renting mansion for over $30,000 to protect Hunter Biden - The Guardian",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiX2h0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS91cy1uZXdzLzIwMjIvYXByLzA0L2h1bnRlci1iaWRlbi1zZWNyZXQtc2VydmljZS1tYWxpYnUtbWFuc2lvbi1yZW500gEA?oc=5",
+      "published": "Mon, 04 Apr 2022 17:31:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiX2h0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS91cy1uZXdzLzIwMjIvYXByLzA0L2h1bnRlci1iaWRlbi1zZWNyZXQtc2VydmljZS1tYWxpYnUtbWFuc2lvbi1yZW500gEA?oc=5",
+          "title": "Secret Service renting mansion for over $30,000 to protect Hunter Biden",
+          "publisher": "The Guardian"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXWh0dHBzOi8vd3d3LmZveG5ld3MuY29tL3BvbGl0aWNzL2h1bnRlci1iaWRlbi1zZWNyZXQtc2VydmljZS1kZXRhaWxzLTMway1tb250aGx5LXJlbnQtbWFuc2lvbtIBAA?oc=5",
+          "title": "GOP lawmakers blast Hunter Biden Secret Service detail's $30k monthly rent for mansion",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQWh0dHBzOi8vbmV3cy55YWhvby5jb20vc2VjcmV0LXJlbnRpbmctMzAtMDAwLW1vbnRoLTEwNTAwOTgyMy5odG1s0gFJaHR0cHM6Ly9uZXdzLnlhaG9vLmNvbS9hbXBodG1sL3NlY3JldC1yZW50aW5nLTMwLTAwMC1tb250aC0xMDUwMDk4MjMuaHRtbA?oc=5",
+          "title": "Secret Service is renting $30,000-a-month Malibu mansion to protect Hunter Biden, ABC News reports",
+          "publisher": "Yahoo News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMifGh0dHBzOi8va3RsYS5jb20vbmV3cy9uYXRpb253b3JsZC9zZWNyZXQtc2VydmljZS1yZW50aW5nLTMwMDAwLWEtbW9udGgtbWFsaWJ1LW1hbnNpb24tYXMtcGFydC1vZi1odW50ZXItYmlkZW4tZGV0YWlsLXJlcG9ydC_SAYABaHR0cHM6Ly9rdGxhLmNvbS9uZXdzL25hdGlvbndvcmxkL3NlY3JldC1zZXJ2aWNlLXJlbnRpbmctMzAwMDAtYS1tb250aC1tYWxpYnUtbWFuc2lvbi1hcy1wYXJ0LW9mLWh1bnRlci1iaWRlbi1kZXRhaWwtcmVwb3J0L2FtcC8?oc=5",
+          "title": "Secret Service renting $30,000-a-month Malibu mansion as part of Hunter Biden detail: report",
+          "publisher": "KTLA Los Angeles"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiWmh0dHBzOi8vbnlwb3N0LmNvbS8yMDIyLzA0LzA0L3NlY3JldC1zZXJ2aWNlLXJlbnRzLTMway1tYWxpYnUtcGFkLXRvLXByb3RlY3QtaHVudGVyLWJpZGVuL9IBAA?oc=5",
+          "title": "Secret Service renting $30K Malibu pad to protect Hunter Biden: report",
+          "publisher": "New York Post "
+        }
+      ],
+      "source": { "href": "https://www.theguardian.com", "title": "The Guardian" }
+    },
+    {
+      "id": "1364575961",
+      "title": "Senators reach $10 billion Covid funding deal for therapeutics, vaccines and testing - CNBC",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMid2h0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDQvc2VuYXRvcnMtcmVhY2gtMTAtYmlsbGlvbi1jb3ZpZC1mdW5kaW5nLWRlYWwtZm9yLXRoZXJhcGV1dGljcy12YWNjaW5lcy1hbmQtdGVzdGluZy5odG1s0gEA?oc=5",
+      "published": "Mon, 04 Apr 2022 21:28:52 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMid2h0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDQvc2VuYXRvcnMtcmVhY2gtMTAtYmlsbGlvbi1jb3ZpZC1mdW5kaW5nLWRlYWwtZm9yLXRoZXJhcGV1dGljcy12YWNjaW5lcy1hbmQtdGVzdGluZy5odG1s0gEA?oc=5",
+          "title": "Senators reach $10 billion Covid funding deal for therapeutics, vaccines and testing",
+          "publisher": "CNBC"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZWh0dHBzOi8vd3d3LmZveG5ld3MuY29tL3BvbGl0aWNzL3NlbmF0ZS1yZWFjaGVzLTEwYi1jb3ZpZC1hZ3JlZW1lbnQtbGVzcy10aGFuLXdoYXQtYmlkZW4tYWRtaW4td2FudGVk0gEA?oc=5",
+          "title": "Senate reaches $10B COVID agreement, less than what Biden admin wanted",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiTWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL2xpdmUvMjAyMi8wNC8wNC93b3JsZC9jb3ZpZC0xOS1tYW5kYXRlcy1jYXNlcy12YWNjaW5l0gEA?oc=5",
+          "title": "Senators Announce Smaller Aid Proposal Without Global Vaccine Funds",
+          "publisher": "The New York Times"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiV2h0dHBzOi8vd3d3Lm5wci5vcmcvMjAyMi8wNC8wNC8xMDg5NjY2NTY3L3NlbmF0b3JzLXJlYWNoLTEwLWJpbGxpb24tZGVhbC1vbi1jb3ZpZC1mdW5kc9IBAA?oc=5",
+          "title": "Senators reach agreement on COVID-19 spending",
+          "publisher": "NPR"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiamh0dHBzOi8vd3d3LnVzYXRvZGF5LmNvbS9zdG9yeS9uZXdzL3BvbGl0aWNzLzIwMjIvMDQvMDQvY29uZ3Jlc3MtcmVhY2hlcy1kZWFsLWNvdmlkLTE5LWZ1bmRpbmcvNzI3MTYxMTAwMS_SAQA?oc=5",
+          "title": "Congress reaches $10 billion deal in additional COVID-19 funding",
+          "publisher": "USA TODAY"
+        }
+      ],
+      "source": { "href": "https://www.cnbc.com", "title": "CNBC" }
+    },
+    {
+      "id": "1369489568",
+      "title": "Obama to visit White House as Biden seeks a reset - The Washington Post",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9wb2xpdGljcy8yMDIyLzA0LzA0L2JpZGVuLW9iYW1hLXJldHVybi13aGl0ZS1ob3VzZS_SAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 23:49:14 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9wb2xpdGljcy8yMDIyLzA0LzA0L2JpZGVuLW9iYW1hLXJldHVybi13aGl0ZS1ob3VzZS_SAQA?oc=5",
+          "title": "Obama to visit White House as Biden seeks a reset",
+          "publisher": "The Washington Post"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMigwFodHRwczovL3d3dy5yZXV0ZXJzLmNvbS9hcnRpY2xlL3VzLXVzYS1iaWRlbi1vYmFtYWNhcmUvb2JhbWEtcmV0dXJucy10by13aGl0ZS1ob3VzZS10by10b3V0LWhlYWx0aGNhcmUtbGF3LXdpdGgtYmlkZW4taWRVU0tDTjJMWDBPOdIBNGh0dHBzOi8vbW9iaWxlLnJldXRlcnMuY29tL2FydGljbGUvYW1wL2lkVVNLQ04yTFgwTzk?oc=5",
+          "title": "Obama returns to White House to tout healthcare law with Biden",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiamh0dHBzOi8vYXBuZXdzLmNvbS9hcnRpY2xlL2JpZGVuLWhlYWx0aC1idXNpbmVzcy1kb25hbGQtdHJ1bXAtam9obi1tY2NhaW4tMmNiYjYzNTMzMjlmY2I1NDFiNGM4Mzk5YTU5ODFjZjXSAQA?oc=5",
+          "title": "Biden-Obama: White House reunion to celebrate health law",
+          "publisher": "The Associated Press - en Español"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiT2h0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNS9wb2xpdGljcy9vYmFtYWNhcmUtc3Vic2lkaWVzLWZhbWlsaWVzL2luZGV4Lmh0bWzSAQA?oc=5",
+          "title": "Biden looking to open up Obamacare subsidies to more families",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiTGh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9oZWFsdGgvMjAyMi8wNC8wNC9hY2EtaW5zdXJhbmNlLWZvci1mYW1pbGllcy_SAQA?oc=5",
+          "title": "With Obama looking on, White House to open ACA plans to more families",
+          "publisher": "The Washington Post"
+        }
+      ],
+      "source": { "href": "https://www.washingtonpost.com", "title": "The Washington Post" }
+    },
+    {
+      "id": "1363229676",
+      "title": "Jury Selection for Parkland Shooter's Sentencing Trial Begins - The New York Times",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiVGh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjIvMDQvMDQvdXMvcGFya2xhbmQtZ3VubWFuLWp1cnktc2VsZWN0aW9uLXNlbnRlbmNpbmcuaHRtbNIBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 00:55:48 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVGh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjIvMDQvMDQvdXMvcGFya2xhbmQtZ3VubWFuLWp1cnktc2VsZWN0aW9uLXNlbnRlbmNpbmcuaHRtbNIBAA?oc=5",
+          "title": "Jury Selection for Parkland Shooter's Sentencing Trial Begins",
+          "publisher": "The New York Times"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9dS04Q1FoZW9jSVXSAQA?oc=5",
+          "title": "Parkland school shooter goes on trial, could face death | USA TODAY",
+          "publisher": "USA TODAY"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNC91cy9uaWtvbGFzLWNydXotc2VudGVuY2luZy1wYXJrbGFuZC1zaG9vdGluZy9pbmRleC5odG1s0gEA?oc=5",
+          "title": "Jury selection starts today for panel that'll help decide if Parkland school shooter gets the death penalty",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMilAFodHRwczovL2NiczEyLmNvbS9uZXdzL2xvY2FsL2p1cnktc2VsZWN0aW9uLWRlY2lkZS1uaWtvbGFzLWNydXotcGVuYWx0eS1waGFzZS10cmlhbC1wYXJrbGFuZC1zY2hvb2wtc2hvb3Rlci1kZWF0aC1saWZlLW1hcmpvcnktc3RvbmVtYW4tZG91Z2xhcy1oaWdo0gGYAWh0dHBzOi8vY2JzMTIuY29tL2FtcC9uZXdzL2xvY2FsL2p1cnktc2VsZWN0aW9uLWRlY2lkZS1uaWtvbGFzLWNydXotcGVuYWx0eS1waGFzZS10cmlhbC1wYXJrbGFuZC1zY2hvb2wtc2hvb3Rlci1kZWF0aC1saWZlLW1hcmpvcnktc3RvbmVtYW4tZG91Z2xhcy1oaWdo?oc=5",
+          "title": "On first day of killer's jury selection, judge announces Parkland jurors will visit school",
+          "publisher": "WPEC"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQmh0dHBzOi8vd3d3Lm1pYW1paGVyYWxkLmNvbS9uZXdzL2xvY2FsL2NyaW1lL2FydGljbGUyNjAwODg2MDAuaHRtbNIBAA?oc=5",
+          "title": "Day one of Cruz case underlines why finding a willing jury will take time",
+          "publisher": "Miami Herald"
+        }
+      ],
+      "source": { "href": "https://www.nytimes.com", "title": "The New York Times" }
+    },
+    {
+      "id": "1354201961",
+      "title": "With divisive Supreme Court rulings coming, Barrett says: 'Read the opinion' - POLITICO",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vd3d3LnBvbGl0aWNvLmNvbS9uZXdzLzIwMjIvMDQvMDUvYW15LWNvbmV5LWJhcnJldHQtc3BlZWNoLWp1c3RpY2UtMDAwMjI5NjTSAQA?oc=5",
+      "published": "Tue, 05 Apr 2022 04:20:34 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vd3d3LnBvbGl0aWNvLmNvbS9uZXdzLzIwMjIvMDQvMDUvYW15LWNvbmV5LWJhcnJldHQtc3BlZWNoLWp1c3RpY2UtMDAwMjI5NjTSAQA?oc=5",
+          "title": "With divisive Supreme Court rulings coming, Barrett says: 'Read the opinion'",
+          "publisher": "POLITICO"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiU2h0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNS9wb2xpdGljcy9zY290dXMtanVzdGljZS1hbXktY29uZXktYmFycmV0dC9pbmRleC5odG1s0gEA?oc=5",
+          "title": "Justice Barrett on balancing family and court duties, grappling with sudden fame and being 'just Amy'",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiamh0dHBzOi8vd3d3LnVzYXRvZGF5LmNvbS9zdG9yeS9uZXdzL3BvbGl0aWNzLzIwMjIvMDQvMDQvYW15LWNvbmV5LWJhcnJldHQtc2NvdHVzLWp1c3RpY2UtZmFjdHMvNjk3NjA2MzAwMS_SAQA?oc=5",
+          "title": "Who is Amy Coney Barrett? What to know about the Supreme Court justice",
+          "publisher": "USA TODAY"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXGh0dHBzOi8vd3d3LndqaGwuY29tL25ld3MvcG9saXRpY3Mvd2l0aC1kaXZpc2l2ZS1jYXNlcy1jb21pbmctYmFycmV0dC1zYXlzLXJlYWQtdGhlLW9waW5pb24v0gFgaHR0cHM6Ly93d3cud2pobC5jb20vbmV3cy9wb2xpdGljcy93aXRoLWRpdmlzaXZlLWNhc2VzLWNvbWluZy1iYXJyZXR0LXNheXMtcmVhZC10aGUtb3Bpbmlvbi9hbXAv?oc=5",
+          "title": "With divisive cases coming, Barrett says ‘Read the opinion’",
+          "publisher": "WJHL-TV News Channel 11"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidGh0dHBzOi8vd3d3LmxhdGltZXMuY29tL3dvcmxkLW5hdGlvbi9zdG9yeS8yMDIyLTA0LTA1L2p1c3RpY2UtYmFycmV0dC1zdXByZW1lLWNvdXJ0LWRlY2lzaW9ucy1ub3QtcG9saXRpY2FsbHktZHJpdmVu0gF-aHR0cHM6Ly93d3cubGF0aW1lcy5jb20vd29ybGQtbmF0aW9uL3N0b3J5LzIwMjItMDQtMDUvanVzdGljZS1iYXJyZXR0LXN1cHJlbWUtY291cnQtZGVjaXNpb25zLW5vdC1wb2xpdGljYWxseS1kcml2ZW4_X2FtcD10cnVl?oc=5",
+          "title": "Justice Barrett says Supreme Court decisions not political",
+          "publisher": "Los Angeles Times"
+        }
+      ],
+      "source": { "href": "https://www.politico.com", "title": "POLITICO" }
+    },
+    {
+      "id": "1366787374",
+      "title": "Sri Lanka MPs leave Gotabaya Rajapaksa-led coalition - BBC.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiLGh0dHBzOi8vd3d3LmJiYy5jb20vbmV3cy93b3JsZC1hc2lhLTYwOTc4Nzk10gEwaHR0cHM6Ly93d3cuYmJjLmNvbS9uZXdzL3dvcmxkLWFzaWEtNjA5Nzg3OTUuYW1w?oc=5",
+      "published": "Tue, 05 Apr 2022 07:35:18 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiLGh0dHBzOi8vd3d3LmJiYy5jb20vbmV3cy93b3JsZC1hc2lhLTYwOTc4Nzk10gEwaHR0cHM6Ly93d3cuYmJjLmNvbS9uZXdzL3dvcmxkLWFzaWEtNjA5Nzg3OTUuYW1w?oc=5",
+          "title": "Sri Lanka MPs leave Gotabaya Rajapaksa-led coalition",
+          "publisher": "BBC.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9Vl8zaUFGZXdXZlXSAQA?oc=5",
+          "title": "Sri Lanka opposition rejects offer to join unity government",
+          "publisher": "Al Jazeera English"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidmh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA0LTA1L3NyaS1sYW5rYS1maW5hbmNlLW1pbmlzdGVyLXJlc2lnbnMtYS1kYXktYWZ0ZXItdGFraW5nLW92ZXItbDFsdTRscTDSAQA?oc=5",
+          "title": "Sri Lanka News: Finance Minister Ali Sabry Resigns a Day After Taking Over",
+          "publisher": "Bloomberg"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVWh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS93b3JsZC8yMDIyLzA0LzA0L3NyaS1sYW5rYS1wb2xpdGljYWwtY3Jpc2lzLXJhamFwYWtzYS_SAQA?oc=5",
+          "title": "Sri Lanka street protests challenge ruling party of Rajapaksa family",
+          "publisher": "The Washington Post"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9a2VXaGhZVmlNTjTSAQA?oc=5",
+          "title": "Sri Lanka president seeks unity gov't as economic crisis worsens I Al Jazeera Newsfeed",
+          "publisher": "Al Jazeera English"
+        }
+      ],
+      "source": { "href": "https://www.bbc.com", "title": "BBC.com" }
+    },
+    {
+      "id": "1307918859",
+      "title": "Zelenskyy to address UN, Germany and France expel Russian diplomats in Bucha fallout: LIVE UPDATES - Fox News",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiSGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1saXZlLXVwZGF0ZXMtMDQtMDUtMjAyMtIBTGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1saXZlLXVwZGF0ZXMtMDQtMDUtMjAyMi5hbXA?oc=5",
+      "published": "Tue, 05 Apr 2022 08:56:47 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiSGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1saXZlLXVwZGF0ZXMtMDQtMDUtMjAyMtIBTGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL2xpdmUtbmV3cy91a3JhaW5lLXJ1c3NpYS1saXZlLXVwZGF0ZXMtMDQtMDUtMjAyMi5hbXA?oc=5",
+          "title": "Zelenskyy to address UN, Germany and France expel Russian diplomats in Bucha fallout: LIVE UPDATES",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiT2h0dHBzOi8vbmV3cy55YWhvby5jb20vbW9zY293LXdhcm5zLXN5bW1ldHJpY2FsLXJlc3BvbnNlLXdlc3Rlcm4tMDA1NzM3OTYxLmh0bWzSAVdodHRwczovL25ld3MueWFob28uY29tL2FtcGh0bWwvbW9zY293LXdhcm5zLXN5bW1ldHJpY2FsLXJlc3BvbnNlLXdlc3Rlcm4tMDA1NzM3OTYxLmh0bWw?oc=5",
+          "title": "Moscow warns of' symmetrical' response to Western countries' expulsion of Russian diplomats",
+          "publisher": "Yahoo News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZmh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2V1cm9wZS9pdGFseS1leHBlbHMtMzAtcnVzc2lhbi1kaXBsb21hdHMtb3Zlci1zZWN1cml0eS1mZWFycy0yMDIyLTA0LTA1L9IBAA?oc=5",
+          "title": "Italy expels 30 Russian diplomats over security fears",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiNGh0dHBzOi8vd3d3LnRpbWVzb2Zpc3JhZWwuY29tL2xpdmVibG9nLWFwcmlsLTQtMjAyMi_SAQA?oc=5",
+          "title": "Hamas said to have prevented Islamic Jihad rocket fire after West Bank shootout",
+          "publisher": "The Times of Israel"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vd3d3LmFsamF6ZWVyYS5jb20vbmV3cy8yMDIyLzQvNC9nZXJtYW55LWV4cGVsbGluZy1zdWJzdGFudGlhbC1ydXNzaWFuLWRpcGxvbWF0cy1taW5pc3RlctIBAA?oc=5",
+          "title": "Germany, France to expel dozens of Russian diplomats",
+          "publisher": "Al Jazeera English"
+        }
+      ],
+      "source": { "href": "https://www.foxnews.com", "title": "Fox News" }
+    },
+    {
+      "id": "1340365159",
+      "title": "U.N. report outlines possible solutions for climate change and its societal impact - NBC News",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiZGh0dHBzOi8vd3d3Lm5iY25ld3MuY29tL3NjaWVuY2UvZW52aXJvbm1lbnQvdW4taXBjYy1jbGltYXRlLWNoYW5nZS1yZXBvcnQtc29sdXRpb25zLWltcGFjdC1yY25hMjIwMTHSASpodHRwczovL3d3dy5uYmNuZXdzLmNvbS9uZXdzL2FtcC9yY25hMjIwMTE?oc=5",
+      "published": "Mon, 04 Apr 2022 19:30:05 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZGh0dHBzOi8vd3d3Lm5iY25ld3MuY29tL3NjaWVuY2UvZW52aXJvbm1lbnQvdW4taXBjYy1jbGltYXRlLWNoYW5nZS1yZXBvcnQtc29sdXRpb25zLWltcGFjdC1yY25hMjIwMTHSASpodHRwczovL3d3dy5uYmNuZXdzLmNvbS9uZXdzL2FtcC9yY25hMjIwMTE?oc=5",
+          "title": "U.N. report outlines possible solutions for climate change and its societal impact",
+          "publisher": "NBC News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiaWh0dHBzOi8vbmV3cy55YWhvby5jb20vaXBjYy13aW5kb3ctdG8tYXZlcnQtY2F0YXN0cm9waGljLWNsaW1hdGUtY2hhbmdlLWlzLXF1aWNrbHktY2xvc2luZy0xNjE5MjY4MTEuaHRtbNIBAA?oc=5",
+          "title": "IPCC: Window to avert catastrophic climate change is quickly closing",
+          "publisher": "Yahoo News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9b0JKY0VzdzR3VlnSAQA?oc=5",
+          "title": "U.N. Climate Change Report Urges Swift Action Before It's Too Late",
+          "publisher": "NBC News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiggFodHRwczovL3d3dy50aGVndWFyZGlhbi5jb20vY29tbWVudGlzZnJlZS8yMDIyL2Fwci8wNC90aGUtZ3VhcmRpYW4tdmlldy1vbi10aGUtbGF0ZXN0LWlwY2MtcmVwb3J0LWEtZmFzdC10cmFjay10by1jbGltYXRlLWRpc2FzdGVy0gEA?oc=5",
+          "title": "The Guardian view on the latest IPCC report: a fast track to climate disaster",
+          "publisher": "The Guardian"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiY2h0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9vcGluaW9ucy8yMDIyLzA0LzA0L25ldy1pcGNjLWNsaW1hdGUtcmVwb3J0LW9uLWF2ZXJ0aW5nLWNhdGFzdHJvcGhlL9IBAA?oc=5",
+          "title": "Opinion | Amid backsliding on climate, the renewables effort now must be tripled",
+          "publisher": "The Washington Post"
+        }
+      ],
+      "source": { "href": "https://www.nbcnews.com", "title": "NBC News" }
+    },
+    {
+      "id": "1369118632",
+      "title": "U.S., Europe plan Russia sanctions as Ukraine warns of more civilian deaths - Reuters.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMic2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2V1cm9wZS91cy1ldXJvcGUtcGxhbi1ydXNzaWEtc2FuY3Rpb25zLXVrcmFpbmUtd2FybnMtbW9yZS1jaXZpbGlhbi1kZWF0aHMtMjAyMi0wNC0wNS_SAQA?oc=5",
+      "published": "Tue, 05 Apr 2022 04:48:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMic2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2V1cm9wZS91cy1ldXJvcGUtcGxhbi1ydXNzaWEtc2FuY3Rpb25zLXVrcmFpbmUtd2FybnMtbW9yZS1jaXZpbGlhbi1kZWF0aHMtMjAyMi0wNC0wNS_SAQA?oc=5",
+          "title": "U.S., Europe plan Russia sanctions as Ukraine warns of more civilian deaths",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiRGh0dHBzOi8vbmV3cy55YWhvby5jb20vbW9yZS13ZWFwb25zLXNhbmN0aW9ucy11cy1sYXlzLTIxNTcxNTgwNi5odG1s0gFMaHR0cHM6Ly9uZXdzLnlhaG9vLmNvbS9hbXBodG1sL21vcmUtd2VhcG9ucy1zYW5jdGlvbnMtdXMtbGF5cy0yMTU3MTU4MDYuaHRtbA?oc=5",
+          "title": "More weapons, sanctions: US lays out next phase of response against Russia",
+          "publisher": "Yahoo News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMibGh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy92aWRlb3MvMjAyMi0wNC0wNC91LXMtdG8tYW5ub3VuY2UtbmV3LXNhbmN0aW9ucy1hZ2FpbnN0LXJ1c3NpYS1zdWxsaXZhbi12aWRlb9IBAA?oc=5",
+          "title": "U.S. to Announce New Sanctions Against Russia: National Security Adviser",
+          "publisher": "Bloomberg"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiV2h0dHBzOi8vd3d3LmF4aW9zLmNvbS9uZXctdXMtcnVzc2lhLXNhbmN0aW9ucy1hYTBlMGM3Yy0wYzZjLTRkMmItOGY4NC03ZmViN2NkMzQ0NjAuaHRtbNIBAA?oc=5",
+          "title": "State Department spox: U.S. will impose new measures on Russia \"very soon\"",
+          "publisher": "Axios"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vbmV3cy55YWhvby5jb20vemVsZW5za3ktbmVnb3RpYXRlLXNhbmN0aW9ucy1yZWxpZWYtZXhjaGFuZ2UtMTc0ODQyMzA2Lmh0bWzSAVpodHRwczovL25ld3MueWFob28uY29tL2FtcGh0bWwvemVsZW5za3ktbmVnb3RpYXRlLXNhbmN0aW9ucy1yZWxpZWYtZXhjaGFuZ2UtMTc0ODQyMzA2Lmh0bWw?oc=5",
+          "title": "Sec. Blinken hints at what it might take for Russia to get sanctions relief",
+          "publisher": "Yahoo News"
+        }
+      ],
+      "source": { "href": "https://www.reuters.com", "title": "Reuters.com" }
+    },
+    {
+      "id": "1354640173",
+      "title": "Trump supporters want Elon Musk to unban ex-president on Twitter - Business Insider",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiXWh0dHBzOi8vd3d3LmJ1c2luZXNzaW5zaWRlci5jb20vdHJ1bXAtc3VwcG9ydGVycy1hc2stZWxvbi1tdXNrLXRvLXVuYmFuLWhpbS1vbi10d2l0dGVyLTIwMjItNNIBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 07:12:36 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXWh0dHBzOi8vd3d3LmJ1c2luZXNzaW5zaWRlci5jb20vdHJ1bXAtc3VwcG9ydGVycy1hc2stZWxvbi1tdXNrLXRvLXVuYmFuLWhpbS1vbi10d2l0dGVyLTIwMjItNNIBAA?oc=5",
+          "title": "Trump supporters want Elon Musk to unban ex-president on Twitter",
+          "publisher": "Business Insider"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiWWh0dHBzOi8vd3d3LmZveGJ1c2luZXNzLmNvbS9idXNpbmVzcy1sZWFkZXJzL2Vsb24tbXVzay10d2VldC10d2l0dGVyLXB1cmNoYXNlLXNoYXJlaG9sZGVy0gEA?oc=5",
+          "title": "Elon Musk tweets first words since becoming Twitter's largest shareholder",
+          "publisher": "Fox Business"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQWh0dHBzOi8vd3d3LmZveG5ld3MuY29tL21lZGlhL2Vsb24tbXVzay10d2l0dGVyLWNubi1icmFpbi1zdGVsdGVy0gEA?oc=5",
+          "title": "CNN's Brian Stelter says there's a 'fear' about Elon Musk becoming Twitter's biggest shareholder",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiU2h0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9vcGluaW9ucy8yMDIyLzA0LzA0L2Vsb24tbXVzay13aHktaGUtYm91Z2h0LXR3aXR0ZXIv0gEA?oc=5",
+          "title": "Opinion | What is Elon Musk thinking now?",
+          "publisher": "The Washington Post"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiU2h0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vb3Bpbmlvbi9hcnRpY2xlcy8yMDIyLTA0LTA0L2Vsb24tbXVzay1ib3VnaHQtc29tZS10d2l0dGVy0gEA?oc=5",
+          "title": "Elon Musk Bought Some Twitter",
+          "publisher": "Bloomberg"
+        }
+      ],
+      "source": { "href": "https://www.businessinsider.com", "title": "Business Insider" }
+    },
+    {
+      "id": "1355430961",
+      "title": "Manhattan residential real estate sales hit a record $7.3 billion in the first quarter - CNBC",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMieGh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDUvbWFuaGF0dGFuLXJlc2lkZW50aWFsLXJlYWwtZXN0YXRlLXNhbGVzLWhpdC1yZWNvcmQtN3BvaW50My1iaWxsaW9uLWluLWZpcnN0LXF1YXJ0ZXIuaHRtbNIBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 04:01:01 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMieGh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDUvbWFuaGF0dGFuLXJlc2lkZW50aWFsLXJlYWwtZXN0YXRlLXNhbGVzLWhpdC1yZWNvcmQtN3BvaW50My1iaWxsaW9uLWluLWZpcnN0LXF1YXJ0ZXIuaHRtbNIBAA?oc=5",
+          "title": "Manhattan residential real estate sales hit a record $7.3 billion in the first quarter",
+          "publisher": "CNBC"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidGh0dHBzOi8vd3d3Lm1hbnNpb25nbG9iYWwuY29tL2FydGljbGVzL2Etc3Ryb25nLXN0YXJ0LXRvLXNwcmluZy1mb3ItbWFuaGF0dGFucy1sdXh1cnktcmVhbC1lc3RhdGUtbWFya2V0LTAxNjQ5MDkxMjEz0gEA?oc=5",
+          "title": "A Strong Start to Spring for Manhattan’s Luxury Real Estate Market",
+          "publisher": "Mansion Global"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiiwFodHRwczovL25ld3lvcmt5aW1ieS5jb20vMjAyMi8wNC95aW1ieXMtMjAyMi1jb25zdHJ1Y3Rpb24tcmVwb3J0LXJldmVhbHMtNDUwMTktbmV3LXJlc2lkZW50aWFsLWFuZC1ob3RlbC11bml0LWZpbGluZ3MtaW4tbmV3LXlvcmstY2l0eS5odG1s0gEA?oc=5",
+          "title": "YIMBY's 2022 Construction Report Reveals 45019 New Residential and Hotel Unit Filings in New York City",
+          "publisher": "New York YIMBY"
+        }
+      ],
+      "source": { "href": "https://www.cnbc.com", "title": "CNBC" }
+    },
+    {
+      "id": "1370051211",
+      "title": "JPMorgan's Dimon warns of possible $1 billion Russia loss - Reuters.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMib2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL2J1c2luZXNzL2ZpbmFuY2UvanBtb3JnYW5zLWRpbW9uLXdhcm5zLXBvdGVudGlhbC0xLWJsbi1sb3NzLXJ1c3NpYS1leHBvc3VyZS0yMDIyLTA0LTA0L9IBAA?oc=5",
+      "published": "Mon, 04 Apr 2022 20:51:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMib2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL2J1c2luZXNzL2ZpbmFuY2UvanBtb3JnYW5zLWRpbW9uLXdhcm5zLXBvdGVudGlhbC0xLWJsbi1sb3NzLXJ1c3NpYS1leHBvc3VyZS0yMDIyLTA0LTA0L9IBAA?oc=5",
+          "title": "JPMorgan's Dimon warns of possible $1 billion Russia loss",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiaWh0dHBzOi8vd3d3Lndzai5jb20vYXJ0aWNsZXMvanBtb3JnYW4tY2VvLWphbWllLWRpbW9uLXNheXMtYmlnLXJpc2tzLWxvb20tZm9yLXRoZS11LXMtZWNvbm9teS0xMTY0OTA0NTMyMtIBAA?oc=5",
+          "title": "JPMorgan CEO Jamie Dimon Says Big Risks Loom for the U.S. Economy",
+          "publisher": "The Wall Street Journal"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidWh0dHBzOi8vZmluYW5jZS55YWhvby5jb20vbmV3cy9qcC1tb3JnYW5zLWphbWllLWRpbW9uLWZlZC10by1oaWtlLXJhdGVzLWhpZ2hlci10aGFuLXRoZS1tYXJrZXRzLWV4cGVjdC0xMzExNTM2NTkuaHRtbNIBAA?oc=5",
+          "title": "JPMorgan's Jamie Dimon: Fed to hike rates 'higher than the markets expect'",
+          "publisher": "Yahoo Finance"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMib2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL2J1c2luZXNzL2ZpbmFuY2UvZml2ZS1rZXktdGFrZWF3YXlzLWphbWllLWRpbW9ucy1sZXR0ZXItanBtb3JnYW5zLWludmVzdG9ycy0yMDIyLTA0LTA0L9IBAA?oc=5",
+          "title": "Five key takeaways from Jamie Dimon's letter to JPMorgan's investors",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMicmh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDQvamFtaWUtZGltb24tc2F5cy1pbmZsYXRpb24tdWtyYWluZS13YXItbWF5LWRyYW1hdGljYWxseS1pbmNyZWFzZS1yaXNrcy1mb3ItdXMuaHRtbNIBAA?oc=5",
+          "title": "Dimon says confluence of inflation, Ukraine war may 'dramatically increase risks ahead' for U.S.",
+          "publisher": "CNBC"
+        }
+      ],
+      "source": { "href": "https://www.reuters.com", "title": "Reuters.com" }
+    },
+    {
+      "id": "1328712371",
+      "title": "Wind energy needs dramatic increase to hit net-zero goals, new report says - CNBC",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiaGh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDUvd2luZC1lbmVyZ3ktaW5zdGFsbGF0aW9ucy1tdXN0LXF1YWRydXBsZS10by1oaXQtbmV0LXplcm8tZ29hbHMtZ3dlYy5odG1s0gEA?oc=5",
+      "published": "Tue, 05 Apr 2022 05:16:28 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiaGh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDQvMDUvd2luZC1lbmVyZ3ktaW5zdGFsbGF0aW9ucy1tdXN0LXF1YWRydXBsZS10by1oaXQtbmV0LXplcm8tZ29hbHMtZ3dlYy5odG1s0gEA?oc=5",
+          "title": "Wind energy needs dramatic increase to hit net-zero goals, new report says",
+          "publisher": "CNBC"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9N0U2SDlSejlmNDDSAQA?oc=5",
+          "title": "Where Connecticut ranks in wind, solar energy production",
+          "publisher": "FOX 61"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMifmh0dHBzOi8vd3d3LndpbmRwb3dlcm1vbnRobHkuY29tL2FydGljbGUvMTc1MTY1NS9nbG9iYWwtd2luZC1lbmVyZ3ktY291bmNpbC1yZXBvcnQtcmV0aGluay1wZXJ2ZXJzZS1tYXJrZXQtcmlzay1uZXQtemVyby1nb2Fsc9IBAA?oc=5",
+          "title": "Global Wind Energy Council report: rethink 'perverse' market or risk net zero goals",
+          "publisher": "Windpower Monthly"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMifGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL2J1c2luZXNzL2Vudmlyb25tZW50L2dsb2JhbC13aW5kLXBvd2VyLW11c3QtZ2F0aGVyLXNwZWVkLW1lZXQtY2xpbWF0ZS1nb2Fscy1yZXBvcnQtZmluZHMtMjAyMi0wNC0wNC_SAQA?oc=5",
+          "title": "Global wind power must gather speed to meet climate goals, report finds",
+          "publisher": "Reuters.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiemh0dHBzOi8vd3d3LnJlY2hhcmdlbmV3cy5jb20vd2luZC93aW5kLWFkZGl0aW9ucy1tdXN0LXF1YWRydXBsZS10by1tZWV0LW5ldC16ZXJvLWRlc3BpdGUtbmVhci1yZWNvcmQtMjAyMS1nd2VjLzItMS0xMTk1MDg20gEA?oc=5",
+          "title": "Wind additions 'must quadruple' to meet net-zero despite near record 2021: GWEC | Recharge",
+          "publisher": "Recharge"
+        }
+      ],
+      "source": { "href": "https://www.cnbc.com", "title": "CNBC" }
+    },
+    {
+      "id": "1339735756",
+      "title": "Amazon is running an... unusual OnePlus 10 Pro 5G pre-order deal - PhoneArena",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiYWh0dHBzOi8vd3d3LnBob25lYXJlbmEuY29tL25ld3MvYW1hem9uLW9uZXBsdXMtMTAtcHJvLTVnLXByZS1vcmRlci1kZWFsLWZyZWUtZWNoby1zaG93LThfaWQxMzk0MTLSAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 09:37:26 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYWh0dHBzOi8vd3d3LnBob25lYXJlbmEuY29tL25ld3MvYW1hem9uLW9uZXBsdXMtMTAtcHJvLTVnLXByZS1vcmRlci1kZWFsLWZyZWUtZWNoby1zaG93LThfaWQxMzk0MTLSAQA?oc=5",
+          "title": "Amazon is running an... unusual OnePlus 10 Pro 5G pre-order deal",
+          "publisher": "PhoneArena"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vd3d3LmRyb2lkLWxpZmUuY29tLzIwMjIvMDQvMDQvb25lcGx1cy0xMC1wcm8tcmV2aWV3LWEtcGxlYXN1cmUtdG8tdXNlLWJ1dC1zb21lLWNvbmNlcm5zL9IBAA?oc=5",
+          "title": "OnePlus 10 Pro Review: Are These Concerns the Story?",
+          "publisher": "Droid Life"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiSWh0dHBzOi8vd3d3LmFuZHJvaWRhdXRob3JpdHkuY29tL29uZXBsdXMtMTAtcHJvLXByaWNlLXRyYWRlLW9mZnMtMzE0NzkxNC_SAQA?oc=5",
+          "title": "Is the cheaper OnePlus 10 Pro price tag worth the trade-offs?",
+          "publisher": "Android Authority"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vd3d3LnRlY2hyYWRhci5jb20vbmV3cy9vbmVwbHVzLTEwLXByby1nb2VzLW9uLXNhbGUtdG9kYXktYnV0LXlvdWQtYmV0dGVyLWh1cnJ50gEA?oc=5",
+          "title": "OnePlus 10 Pro goes on sale today - but you'd better hurry",
+          "publisher": "TechRadar"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiTmh0dHBzOi8vd3d3LmFuZHJvaWRjZW50cmFsLmNvbS9waG9uZXMvd2hhdC1jb2xvci1vbmVwbHVzLTEwLXByby1zaG91bGQteW91LWJ1edIBAA?oc=5",
+          "title": "What color OnePlus 10 Pro should you buy?",
+          "publisher": "Android Central"
+        }
+      ],
+      "source": { "href": "https://www.phonearena.com", "title": "PhoneArena" }
+    },
+    {
+      "id": "1335657305",
+      "title": "Apple's AirPods are currently matching their lowest prices ever at Amazon and Walmart - The Verge",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiigFodHRwczovL3d3dy50aGV2ZXJnZS5jb20vZ29vZC1kZWFscy8yMDIyLzQvNC8yMzAwOTc2NS9hcHBsZS1haXJwb2RzLXByby1sZy1jMS1vbGVkLXR2LW1hY2Jvb2stYWlyLWxhcHRvcC1zb255LXdmLTEwMDB4bTMtZWFyYnVkcy1kZWFsLXNhbGXSAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 19:06:54 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiigFodHRwczovL3d3dy50aGV2ZXJnZS5jb20vZ29vZC1kZWFscy8yMDIyLzQvNC8yMzAwOTc2NS9hcHBsZS1haXJwb2RzLXByby1sZy1jMS1vbGVkLXR2LW1hY2Jvb2stYWlyLWxhcHRvcC1zb255LXdmLTEwMDB4bTMtZWFyYnVkcy1kZWFsLXNhbGXSAQA?oc=5",
+          "title": "Apple's AirPods are currently matching their lowest prices ever at Amazon and Walmart",
+          "publisher": "The Verge"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZWh0dHBzOi8vd3d3LmxhcHRvcG1hZy5jb20vdWsvbmV3cy9haXJwb2RzLXByby1kZWFsLWtub2Nrcy1kb2xsYXI3NS1vZmYtb3VyLXRvcC1yYXRlZC13aXJlbGVzcy1lYXJidWRz0gEA?oc=5",
+          "title": "AirPods Pro deal knocks $75 off our top-rated wireless earbuds",
+          "publisher": "Laptop Mag"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiW2h0dHBzOi8vd3d3LnRvbXNndWlkZS5jb20vZGVhbHMva2lsbGVyLWFpcnBvZHMtZGVhbC1zbGFzaGVzLXByaWNlLXRvLWRvbGxhcjk5LWF0LWFtYXpvbi1ub3fSAQA?oc=5",
+          "title": "Killer AirPods deal slashes price to $99 at Amazon now",
+          "publisher": "Tom's Guide"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMia2h0dHBzOi8vd3d3LnRlY2hyYWRhci5jb20vZGVhbHMvcXVpY2stdGhlLWFwcGxlLWFpcnBvZHMtMi1kcm9wLXRvLWp1c3QtZG9sbGFyOTktaW4tZmFudGFzdGljLWRlYWwtYXQtYW1hem9u0gEA?oc=5",
+          "title": "Huge Amazon sale drops the Apple AirPods to just $99 - the lowest price of 2022",
+          "publisher": "TechRadar"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiS2h0dHBzOi8vd3d3LmVuZ2FkZ2V0LmNvbS9iZWF0cy1maXQtcHJvLWFtYXpvbi1naWZ0LWNhcmQtc2FsZS0xMzM4MDY2MTUuaHRtbNIBAA?oc=5",
+          "title": "Get a $25 Amazon gift card when you buy the Beats Fit Pro",
+          "publisher": "Engadget"
+        }
+      ],
+      "source": { "href": "https://www.theverge.com", "title": "The Verge" }
+    },
+    {
+      "id": "1359937887",
+      "title": "Soapbox: The Video Game Camaraderie On r/place Is A Lesson About Community - Nintendo Life",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMibmh0dHBzOi8vd3d3Lm5pbnRlbmRvbGlmZS5jb20vZmVhdHVyZXMvc29hcGJveC10aGUtdmlkZW8tZ2FtZS1jYW1hcmFkZXJpZS1vbi1ycGxhY2UtaXMtYS1sZXNzb24tYWJvdXQtY29tbXVuaXR50gEA?oc=5",
+      "published": "Mon, 04 Apr 2022 19:32:01 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMibmh0dHBzOi8vd3d3Lm5pbnRlbmRvbGlmZS5jb20vZmVhdHVyZXMvc29hcGJveC10aGUtdmlkZW8tZ2FtZS1jYW1hcmFkZXJpZS1vbi1ycGxhY2UtaXMtYS1sZXNzb24tYWJvdXQtY29tbXVuaXR50gEA?oc=5",
+          "title": "Soapbox: The Video Game Camaraderie On r/place Is A Lesson About Community",
+          "publisher": "Nintendo Life"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVWh0dHBzOi8va290YWt1LmNvbS9ycGxhY2UtcmVkZGl0LWFwcmlsLWZvb2xzLWVsZGVuLXJpbmctaG9sbG93LWtuaWdodC13b3JkLTE4NDg3NDc5NDjSAQA?oc=5",
+          "title": "Reddit Is Hosting What May Be The Internet's Most Wholesome Fan War",
+          "publisher": "Kotaku"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMilgFodHRwczovL3RoZWNvbnZlcnNhdGlvbi5jb20vaG93LXItcGxhY2UtYS1tYXNzaXZlLWFuZC1jaGFvdGljLWNvbGxhYm9yYXRpdmUtYXJ0LXByb2plY3Qtb24tcmVkZGl0LXNob3djYXNlZC10aGUtYmVzdC1hbmQtd29yc3Qtb2Ytb25saW5lLXNwYWNlcy0xODA2NjLSAZoBaHR0cHM6Ly90aGVjb252ZXJzYXRpb24uY29tL2FtcC9ob3ctci1wbGFjZS1hLW1hc3NpdmUtYW5kLWNoYW90aWMtY29sbGFib3JhdGl2ZS1hcnQtcHJvamVjdC1vbi1yZWRkaXQtc2hvd2Nhc2VkLXRoZS1iZXN0LWFuZC13b3JzdC1vZi1vbmxpbmUtc3BhY2VzLTE4MDY2Mg?oc=5",
+          "title": "How r/place – a massive and chaotic collaborative art project on Reddit – showcased the best and worst of online spaces",
+          "publisher": "The Conversation"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiSWh0dHBzOi8vbWFzaGFibGUuY29tL2FydGljbGUvcmVkZGl0LXJwbGFjZS1kaWdpdGFsLXN5bWJvbC1zdXBwb3J0LXVrcmFpbmXSAQA?oc=5",
+          "title": "How Reddit's r/place became a way to show support for Ukraine",
+          "publisher": "Mashable"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMicWh0dHBzOi8vd3d3Lm5tZS5jb20vbmV3cy9nYW1pbmctbmV3cy94cWMtcmVwb3J0cy1nZXR0aW5nLW51bWVyb3VzLWRlYXRoLXRocmVhdHMtb3Zlci1yZWRkaXRzLXBsYWNlLWNhbnZhcy0zMTk3NjE20gEA?oc=5",
+          "title": "xQc reports getting numerous death threats over Reddit's 'Place' canvas",
+          "publisher": "NME"
+        }
+      ],
+      "source": { "href": "https://www.nintendolife.com", "title": "Nintendo Life" }
+    },
+    {
+      "id": "1352914106",
+      "title": "Budget Phone Comparison: Apple's iPhone SE vs. Samsung's Galaxy A53 5G - MacRumors",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiQGh0dHBzOi8vd3d3Lm1hY3J1bW9ycy5jb20vMjAyMi8wNC8wNC9pcGhvbmUtc2UtdnMtZ2FsYXh5LWE1My01Zy_SAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 19:36:13 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQGh0dHBzOi8vd3d3Lm1hY3J1bW9ycy5jb20vMjAyMi8wNC8wNC9pcGhvbmUtc2UtdnMtZ2FsYXh5LWE1My01Zy_SAQA?oc=5",
+          "title": "Budget Phone Comparison: Apple's iPhone SE vs. Samsung's Galaxy A53 5G",
+          "publisher": "MacRumors"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMihQFodHRwczovL3d3dy5ub3RlYm9va2NoZWNrLm5ldC9UaGUtU2Ftc3VuZy1HYWxheHktQTczLXMtcHJpY2luZy1sZWFrcy1haGVhZC1vZi1pdHMtb2ZmaWNpYWwtcmVsZWFzZS10by10aGUtSW5kaWFuLW1hcmtldC42MTE5NjkuMC5odG1s0gEA?oc=5",
+          "title": "The Samsung Galaxy A73's pricing leaks ahead of its official release to the Indian market",
+          "publisher": "Notebookcheck.net"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vd3d3LnNhbW1vYmlsZS5jb20vbmV3cy9zYW1zdW5nLWF3ZXNvbWUtbmV3LWdhbGF4eS1hNTMtNWctaXMtb24tc2FsZS1pbi1jYW5hZGEv0gEA?oc=5",
+          "title": "Samsung’s ‘awesome’ new Galaxy A53 5G is on sale in Canada",
+          "publisher": "SamMobile"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9OWtBZDRYb3VwOUXSAQA?oc=5",
+          "title": "2022 iPhone SE vs Samsung Galaxy A53 5G | Battle of the Budget Phones",
+          "publisher": "MacRumors"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiemh0dHBzOi8vbmV3cy5zYW1zdW5nLmNvbS9pbi9zYW1zdW5nLWxhdW5jaGVzLWdhbGF4eS1tMzMtNWctaW4taW5kaWEtYW4tYWxsLXJvdW5kZXItZGV2aWNlLXRoYXQtaXMtdXAtZm9yLW16LXBhc3Npb24tcG9pbnRz0gEA?oc=5",
+          "title": "Samsung Launches Galaxy M33 5G in India; An All-rounder Device that is up for MZ Passion Points",
+          "publisher": "Samsung Newsroom India"
+        }
+      ],
+      "source": { "href": "https://www.macrumors.com", "title": "MacRumors" }
+    },
+    {
+      "id": "1359225040",
+      "title": "Chris Rock’s Brother Says He Does Not Accept Will Smith’s Apology: “I Don’t Think It Was Genuine” - Hollywood Reporter",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiaWh0dHBzOi8vd3d3LmhvbGx5d29vZHJlcG9ydGVyLmNvbS9uZXdzL2dlbmVyYWwtbmV3cy93aWxsLXNtaXRoLWNocmlzLXJvY2stYnJvdGhlci1vc2NhcnMtc2xhcC0xMjM1MTI1MjExL9IBbWh0dHBzOi8vd3d3LmhvbGx5d29vZHJlcG9ydGVyLmNvbS9uZXdzL2dlbmVyYWwtbmV3cy93aWxsLXNtaXRoLWNocmlzLXJvY2stYnJvdGhlci1vc2NhcnMtc2xhcC0xMjM1MTI1MjExL2FtcC8?oc=5",
+      "published": "Tue, 05 Apr 2022 01:05:39 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiaWh0dHBzOi8vd3d3LmhvbGx5d29vZHJlcG9ydGVyLmNvbS9uZXdzL2dlbmVyYWwtbmV3cy93aWxsLXNtaXRoLWNocmlzLXJvY2stYnJvdGhlci1vc2NhcnMtc2xhcC0xMjM1MTI1MjExL9IBbWh0dHBzOi8vd3d3LmhvbGx5d29vZHJlcG9ydGVyLmNvbS9uZXdzL2dlbmVyYWwtbmV3cy93aWxsLXNtaXRoLWNocmlzLXJvY2stYnJvdGhlci1vc2NhcnMtc2xhcC0xMjM1MTI1MjExL2FtcC8?oc=5",
+          "title": "Chris Rock’s Brother Says He Does Not Accept Will Smith’s Apology: “I Don’t Think It Was Genuine”",
+          "publisher": "Hollywood Reporter"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUmh0dHBzOi8vd3d3LnlhaG9vLmNvbS9saWZlc3R5bGUvc2xhcC1vZmZpY2lhbGx5LWh1cnRpbmctc21pdGhzLWJhbmstMTQxNDAwODQxLmh0bWzSAVpodHRwczovL3d3dy55YWhvby5jb20vYW1waHRtbC9saWZlc3R5bGUvc2xhcC1vZmZpY2lhbGx5LWh1cnRpbmctc21pdGhzLWJhbmstMTQxNDAwODQxLmh0bWw?oc=5",
+          "title": "The Slap Is Officially Hurting Will Smith's Bank Account",
+          "publisher": "Yahoo Life"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiY2h0dHBzOi8vd3d3LmluZGVwZW5kZW50LmNvLnVrL2xpZmUtc3R5bGUvZmFzaGlvbi9uZXdzL3dpbGwtc21pdGgtc2xhcC13aG9vcGktZ29sZGJlcmctYjIwNTA5ODYuaHRtbNIBAA?oc=5",
+          "title": "Whoopi Goldberg dismisses speculation Will Smith’s career could be over: ‘He’ll be back’",
+          "publisher": "The Independent"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMicGh0dHBzOi8vd3d3LndjdHYudHYvMjAyMi8wNC8wNC9pLXdhcy1zdGF0ZS1zaG9jay1pLWdldC1pdC10YWxsYWhhc3NlZS1yZXNpZGVudC13aXRoLWFsb3BlY2lhLXJlYWN0cy1zbGFwLW9zY2Fycy_SAQA?oc=5",
+          "title": "'I was in a state of shock, but I get it': Tallahassee Resident with Alopecia Reacts to 'The Slap' at the Oscars",
+          "publisher": "WCTV"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiWWh0dHBzOi8vamFtYWljYS1nbGVhbmVyLmNvbS9hcnRpY2xlL2NvbW1lbnRhcnkvMjAyMjA0MDUvbWljaGFlbC1hYnJhaGFtcy1jbG9zZXItbG9vay1zbGFw0gEA?oc=5",
+          "title": "Michael Abrahams | Closer look at 'the slap' | Commentary",
+          "publisher": "Jamaica Gleaner"
+        }
+      ],
+      "source": { "href": "https://www.hollywoodreporter.com", "title": "Hollywood Reporter" }
+    },
+    {
+      "id": "1366851729",
+      "title": "Kanye West Pulls Out Of Coachella Music Festival - Deadline",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vZGVhZGxpbmUuY29tLzIwMjIvMDQva2FueWUtd2VzdC1wdWxscy1vdXQtY29hY2hlbGxhLW11c2ljLWZlc3RpdmFsLWhlYWRsaW5lci0xMjM0OTk0MjUwL9IBAA?oc=5",
+      "published": "Mon, 04 Apr 2022 18:31:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vZGVhZGxpbmUuY29tLzIwMjIvMDQva2FueWUtd2VzdC1wdWxscy1vdXQtY29hY2hlbGxhLW11c2ljLWZlc3RpdmFsLWhlYWRsaW5lci0xMjM0OTk0MjUwL9IBAA?oc=5",
+          "title": "Kanye West Pulls Out Of Coachella Music Festival",
+          "publisher": "Deadline"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiU2h0dHBzOi8vd3d3LnlhaG9vLmNvbS9lbnRlcnRhaW5tZW50L2thbnllLXdlc3QtY29hY2hlbGxhLXBlcmZvcm1hbmNlLTE3MDUwMjIwMy5odG1s0gEA?oc=5",
+          "title": "Kanye West drops out of Coachella less than 2 weeks before the festival: Reports",
+          "publisher": "Yahoo Entertainment"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9eC1EdE9JVEZFSXfSAQA?oc=5",
+          "title": "Kanye West DROPS OUT of Coachella 2022 Lineup",
+          "publisher": "E! News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUWh0dHBzOi8vd3d3LnRtei5jb20vMjAyMi8wNC8wNC9rYW55ZS13ZXN0LWRyb3Atb3V0LWNhbmNlbC1jb2FjaGVsbGEtdHJhdmlzLXNjb3R0L9IBAA?oc=5",
+          "title": "Kanye West Drops Out of Coachella, No Travis Scott Performance",
+          "publisher": "TMZ"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9OFVuUGRGcHZhREnSAQA?oc=5",
+          "title": "Kanye West pulls out of Coachella performances",
+          "publisher": "KTLA 5"
+        }
+      ],
+      "source": { "href": "https://deadline.com", "title": "Deadline" }
+    },
+    {
+      "id": "1344894985",
+      "title": "'Take Me Out' Returns to Bring Baseball, Masculinity, and Nudity Center Stage on Broadway - The Daily Beast",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMic2h0dHBzOi8vd3d3LnRoZWRhaWx5YmVhc3QuY29tL3Rha2UtbWUtb3V0LXJldHVybnMtdG8tYnJpbmctYmFzZWJhbGwtbWFzY3VsaW5pdHktYW5kLW51ZGl0eS1jZW50ZXItc3RhZ2Utb24tYnJvYWR3YXnSAQA?oc=5",
+      "published": "Tue, 05 Apr 2022 02:01:17 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMic2h0dHBzOi8vd3d3LnRoZWRhaWx5YmVhc3QuY29tL3Rha2UtbWUtb3V0LXJldHVybnMtdG8tYnJpbmctYmFzZWJhbGwtbWFzY3VsaW5pdHktYW5kLW51ZGl0eS1jZW50ZXItc3RhZ2Utb24tYnJvYWR3YXnSAQA?oc=5",
+          "title": "'Take Me Out' Returns to Bring Baseball, Masculinity, and Nudity Center Stage on Broadway",
+          "publisher": "The Daily Beast"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQmh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjIvMDQvMDQvdGhlYXRlci90YWtlLW1lLW91dC1yZXZpZXcuaHRtbNIBAA?oc=5",
+          "title": "Review: In ‘Take Me Out,’ Whose Team Are You On?",
+          "publisher": "The New York Times"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiWGh0dHBzOi8vd3d3LmhvbGx5d29vZHJlcG9ydGVyLmNvbS9saWZlc3R5bGUvYXJ0cy90YWtlLW1lLW91dC1icm9hZHdheS1yZXZpZXctMTIzNTEyNDQ0Mi_SAVxodHRwczovL3d3dy5ob2xseXdvb2RyZXBvcnRlci5jb20vbGlmZXN0eWxlL2FydHMvdGFrZS1tZS1vdXQtYnJvYWR3YXktcmV2aWV3LTEyMzUxMjQ0NDIvYW1wLw?oc=5",
+          "title": "Jesse Williams and Jesse Tyler Ferguson in ‘Take Me Out’: Theater Review",
+          "publisher": "Hollywood Reporter"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMieGh0dHBzOi8vZGVhZGxpbmUuY29tLzIwMjIvMDQvdGFrZS1tZS1vdXQtYnJvYWR3YXktcmV2aWV3LWplc3NlLXR5bGVyLWZlcmdvc29uLWplc3NlLXdpbGxpYW1zLXBhdHJpY2stai1hZGFtcy0xMjM0OTkzNTQxL9IBAA?oc=5",
+          "title": "‘Take Me Out’ Broadway Review: Jesse Williams, Jesse Tyler Ferguson & Patrick J. Adams Pitch A Perfect Game",
+          "publisher": "Deadline"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9TWRJUy1mVk8wZVHSAQA?oc=5",
+          "title": "\"Take Me Out\" opens with Jesse Williams, Jesse Tyler Ferguson",
+          "publisher": "CBS New York"
+        }
+      ],
+      "source": { "href": "https://www.thedailybeast.com", "title": "The Daily Beast" }
+    },
+    {
+      "id": "1366834337",
+      "title": "Kim Kardashian met Pete Davidson’s grandparents in recent Staten Island trip: report - Fox News",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiW2h0dHBzOi8vd3d3LmZveG5ld3MuY29tL2VudGVydGFpbm1lbnQva2ltLWthcmRhc2hpYW4tbWV0LXBldGUtZGF2aWRzb25zLWdyYW5kcGFyZW50cy1yZXBvcnTSAQA?oc=5",
+      "published": "Tue, 05 Apr 2022 00:59:04 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiW2h0dHBzOi8vd3d3LmZveG5ld3MuY29tL2VudGVydGFpbm1lbnQva2ltLWthcmRhc2hpYW4tbWV0LXBldGUtZGF2aWRzb25zLWdyYW5kcGFyZW50cy1yZXBvcnTSAQA?oc=5",
+          "title": "Kim Kardashian met Pete Davidson’s grandparents in recent Staten Island trip: report",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9amFSR1ZpNjhpbU3SAQA?oc=5",
+          "title": "Kim Kardashian Meets Pete Davidson's Inner Circle",
+          "publisher": "E! News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiTWh0dHBzOi8vd3d3LnlhaG9vLmNvbS9saWZlc3R5bGUva2ltLWp1c3QtbWV0LXBldGUtZ3JhbmRwYXJlbnRzLTIxMzU0OTc2My5odG1s0gFVaHR0cHM6Ly93d3cueWFob28uY29tL2FtcGh0bWwvbGlmZXN0eWxlL2tpbS1qdXN0LW1ldC1wZXRlLWdyYW5kcGFyZW50cy0yMTM1NDk3NjMuaHRtbA?oc=5",
+          "title": "Kim Just Met Pete’s Grandparents Amid Reports They’re Taking Things to the ‘Next Level’",
+          "publisher": "Yahoo Life"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMicGh0dHBzOi8vd3d3LnVzbWFnYXppbmUuY29tL2NlbGVicml0eS1uZXdzL25ld3MvaW5zaWRlLWtpbS1rYXJkYXNoaWFucy12aXNpdC10by1tZWV0LXBldGUtZGF2aWRzb25zLWdyYW5kcGFyZW50cy_SAQA?oc=5",
+          "title": "Pete Davidson ‘Couldn’t Wait’ to Introduce Kim Kardashian to His Grandparents During NYC Trip: ‘Next Step in Their Relationship’",
+          "publisher": "Us Weekly"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiW2h0dHBzOi8vcGFnZXNpeC5jb20vMjAyMi8wNC8wNC9raW0ta2FyZGFzaGlhbi1yZXBvcnRlZGx5LW1lZXRzLXBldGUtZGF2aWRzb25zLWdyYW5kcGFyZW50cy_SAQA?oc=5",
+          "title": "Kim Kardashian reportedly meets Pete Davidson's grandparents",
+          "publisher": "Page Six"
+        }
+      ],
+      "source": { "href": "https://www.foxnews.com", "title": "Fox News" }
+    },
+    {
+      "id": "1313708713",
+      "title": "Kansas survives North Carolina in wild NCAA Tournament title game, wins national championship - USA TODAY",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiiAFodHRwczovL3d3dy51c2F0b2RheS5jb20vc3Rvcnkvc3BvcnRzL25jYWFiLzIwMjIvMDQvMDQva2Fuc2FzLXN1cnZpdmVzLW5vcnRoLWNhcm9saW5hLW5jYWEtdG91cm5hbWVudC1jaGFtcGlvbnNoaXAtYmlsbC1zZWxmLzk0NjQzNzQwMDIv0gEA?oc=5",
+      "published": "Tue, 05 Apr 2022 07:33:36 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiiAFodHRwczovL3d3dy51c2F0b2RheS5jb20vc3Rvcnkvc3BvcnRzL25jYWFiLzIwMjIvMDQvMDQva2Fuc2FzLXN1cnZpdmVzLW5vcnRoLWNhcm9saW5hLW5jYWEtdG91cm5hbWVudC1jaGFtcGlvbnNoaXAtYmlsbC1zZWxmLzk0NjQzNzQwMDIv0gEA?oc=5",
+          "title": "Kansas survives North Carolina in wild NCAA Tournament title game, wins national championship",
+          "publisher": "USA TODAY"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMirQFodHRwczovL3d3dy5lc3BuLmNvbS9tZW5zLWNvbGxlZ2UtYmFza2V0YmFsbC9zdG9yeS9fL2lkLzMzNjcwMzI0L2ZpbmFsLWZvdXItMjAyMi1iZXN0LXBsYXlzLW1vbWVudHMtYnJlYWtkb3duLW5vcnRoLWNhcm9saW5hLXRhci1oZWVscy12cy1rYW5zYXMtamF5aGF3a3MtbmF0aW9uYWwtdGl0bGUtZ2FtZdIBugFodHRwczovL3d3dy5lc3BuLmNvbS9tZW5zLWNvbGxlZ2UtYmFza2V0YmFsbC9zdG9yeS9fL2lkLzMzNjcwMzI0L2ZpbmFsLWZvdXItMjAyMi1iZXN0LXBsYXlzLW1vbWVudHMtYnJlYWtkb3duLW5vcnRoLWNhcm9saW5hLXRhci1oZWVscy12cy1rYW5zYXMtamF5aGF3a3MtbmF0aW9uYWwtdGl0bGUtZ2FtZT9wbGF0Zm9ybT1hbXA?oc=5",
+          "title": "Men's NCAA basketball championship: Best moments and breakdown of North Carolina Tar Heels vs. Kansas Jayhawks",
+          "publisher": "ESPN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMimQFodHRwczovL3d3dy5tc24uY29tL2VuLXVzL3Nwb3J0cy9uY2FhYmsvYmlsbC1zZWxmLWthbnNhcy1nby1mcm9tLWNlcnRhaW4tY2hva2Utam9iLXRvLXN0dW5uaW5nLXJlY292ZXJ5LWluLWJsaW5rLW9mLWFuLWV5ZS1vcGluaW9uL2FyLUFBVlJ6b2U_bGk9QkIxNW1zNXHSAQA?oc=5",
+          "title": "Bill Self, Kansas go from certain choke job to stunning recovery in blink of an eye | Opinion",
+          "publisher": "msnNOW"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMilQFodHRwczovL3d3dy5mYXlvYnNlcnZlci5jb20vc3Rvcnkvc3BvcnRzL2NvbGxlZ2UvMjAyMi8wNC8wNS9rYW5zYXMtdW5jLWJhc2tldGJhbGwtb2ZmaWNpYWxzLXJlZmVyZWVzLTIwMjItbmNhYS1tYXJjaC1tYWRuZXNzLWNoYW1waW9uc2hpcC83MjU5NjE0MDAxL9IBKmh0dHBzOi8vYW1wLmZheW9ic2VydmVyLmNvbS9hbXAvNzI1OTYxNDAwMQ?oc=5",
+          "title": "Who are the Kansas vs. North Carolina basketball officials in March Madness championship",
+          "publisher": "The Fayetteville Observer"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiSGh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9zcG9ydHMvMjAyMi8wNC8wNS9rYW5zYXMtdmV0ZXJhbnMtY2hhbXBzL9IBAA?oc=5",
+          "title": "These Jayhawks weren't top recruits, but they evolved into champions",
+          "publisher": "The Washington Post"
+        }
+      ],
+      "source": { "href": "https://www.usatoday.com", "title": "USA TODAY" }
+    },
+    {
+      "id": "1349789462",
+      "title": "Masters 2022 Odds & Picks for Brooks Koepka, Patrick Cantlay, Will Zalatoris, More - The Action Network",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiamh0dHBzOi8vd3d3LmFjdGlvbm5ldHdvcmsuY29tL2dvbGYvMjAyMi1tYXN0ZXJzLW9kZHMtcGlja3MtcHJlZGljdGlvbnMtYnJvb2tzLWtvZXBrYS1wYXRyaWNrLWNhbnRsYXktc29iZWzSAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 22:01:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiamh0dHBzOi8vd3d3LmFjdGlvbm5ldHdvcmsuY29tL2dvbGYvMjAyMi1tYXN0ZXJzLW9kZHMtcGlja3MtcHJlZGljdGlvbnMtYnJvb2tzLWtvZXBrYS1wYXRyaWNrLWNhbnRsYXktc29iZWzSAQA?oc=5",
+          "title": "Masters 2022 Odds & Picks for Brooks Koepka, Patrick Cantlay, Will Zalatoris, More",
+          "publisher": "The Action Network"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMibWh0dHBzOi8vd3d3LmVzcG4uY29tL2dvbGYvc3RvcnkvXy9pZC8zMzYyOTU3My9tYXN0ZXJzLTIwMjItYWJzb2x1dGVseS1jYW5ub3Qtd2luLW9uZ29pbmctdGlnZXItd29vZHMtcXVlc3Rpb27SAXpodHRwczovL3d3dy5lc3BuLmNvbS9nb2xmL3N0b3J5L18vaWQvMzM2Mjk1NzMvbWFzdGVycy0yMDIyLWFic29sdXRlbHktY2Fubm90LXdpbi1vbmdvaW5nLXRpZ2VyLXdvb2RzLXF1ZXN0aW9uP3BsYXRmb3JtPWFtcA?oc=5",
+          "title": "Masters 2022 - Who can and absolutely cannot win, and the ongoing Tiger Woods question",
+          "publisher": "ESPN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9QUtrdG96ZjBUTVXSAQA?oc=5",
+          "title": "The Masters 2022 | Expert Selections | Predictions from the experts ahead of golf's biggest major!",
+          "publisher": "Sporting Life"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidWh0dHBzOi8vd3d3LmFqYy5jb20vc3BvcnRzL2dvbGYvZWFybHktbG9vay1hdC10aGUtbWFzdGVycy1yYWluLWNvdWxkLWltcGFjdC1vcGVuaW5nLXJvdW5kL0lMT01JRzRUNUJIVDNLTURMMkRDVFpaWUNVL9IBAA?oc=5",
+          "title": "Early look at the Masters: Rain could impact opening round",
+          "publisher": " The Atlanta Journal Constitution"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMigwFodHRwczovL3d3dy5wZ2F0b3VyLmNvbS9wb3dlci1yYW5raW5ncy8yMDIyLzA0LzA0L2ZhbnRhc3ktZ29sZi1hZHZpY2UtdGlwcy1waWNrcy1tYXN0ZXJzLXRvdXJuYW1lbnQtYXVndXN0YS1uYXRpb25hbC1nb2xmLWNsdWIuaHRtbNIBAA?oc=5",
+          "title": "Power Rankings: Masters Tournament",
+          "publisher": "PGA TOUR"
+        }
+      ],
+      "source": { "href": "https://www.actionnetwork.com", "title": "The Action Network" }
+    },
+    {
+      "id": "1331666956",
+      "title": "Fred Couples believes Tiger Woods can win Masters if he plays: 'Too good' - New York Post",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiVGh0dHBzOi8vbnlwb3N0LmNvbS8yMDIyLzA0LzA0L2ZyZWQtY291cGxlcy1pcy1jb25maWRlbnQtdGlnZXItd29vZHMtY2FuLXdpbi1tYXN0ZXJzL9IBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 01:16:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVGh0dHBzOi8vbnlwb3N0LmNvbS8yMDIyLzA0LzA0L2ZyZWQtY291cGxlcy1pcy1jb25maWRlbnQtdGlnZXItd29vZHMtY2FuLXdpbi1tYXN0ZXJzL9IBAA?oc=5",
+          "title": "Fred Couples believes Tiger Woods can win Masters if he plays: 'Too good'",
+          "publisher": "New York Post "
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiUWh0dHBzOi8vd3d3LmZveG5ld3MuY29tL3Nwb3J0cy90aWdlci13b29kcy1tYXN0ZXJzLXNwZWN1bGF0aW9uZi1ldmVyLXBpdGNoLWh1cmRsZdIBAA?oc=5",
+          "title": "As Tiger Woods' Masters speculation comes to fever pitch, he's revealed what hurdle he has to overcome",
+          "publisher": "Fox News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMicGh0dHBzOi8vZm9vdHdlYXJuZXdzLmNvbS8yMDIyL2J1c2luZXNzL2F0aGxldGljLW91dGRvb3IvdGlnZXItd29vZHMtZm9vdGpveS1nb2xmLXNob2VzLW5pa2UtY29udHJhY3QtMTIwMzI3MDAzMy_SAQA?oc=5",
+          "title": "Nike Responds After Tiger Woods Wearing FootJoy Golf Shoes Goes Viral",
+          "publisher": "Footwear News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiiAFodHRwczovL3d3dy5hamMuY29tL3Nwb3J0cy9nb2xmL3RpZ2VyLXdhdGNoLWhhcy1yZXR1cm5lZC1qdXN0LWFzLWZhbnMtb25jZS1hZ2Fpbi1kZXNjZW5kLW9uLWF1Z3VzdGEtbmF0aW9uYWwvNkVTTFBXMkhDWkNITERWRUs1R1RXU1RSWjQv0gEA?oc=5",
+          "title": "Steve Hummer: Tiger Watch has returned at Augusta National",
+          "publisher": " The Atlanta Journal Constitution"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVGh0dHBzOi8vd3d3Lm1pYW1paGVyYWxkLmNvbS9zcG9ydHMvc3B0LWNvbHVtbnMtYmxvZ3MvZ3JlZy1jb3RlL2FydGljbGUyNjAwODk0NDAuaHRtbNIBAA?oc=5",
+          "title": "Could have died. Nearly lost a leg. If Tiger Woods plays the Masters, he has already won | Opinion",
+          "publisher": "Miami Herald"
+        }
+      ],
+      "source": { "href": "https://nypost.com", "title": "New York Post" }
+    },
+    {
+      "id": "1356786188",
+      "title": "Hubert Davis describes the 'electric' atmosphere during North Carolina vs. Duke - March Madness",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9eURBeGlZbHctdknSAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 21:21:02 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9eURBeGlZbHctdknSAQA?oc=5",
+          "title": "Hubert Davis describes the 'electric' atmosphere during North Carolina vs. Duke",
+          "publisher": "March Madness"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9SzBHX0laRW9TaG_SAQA?oc=5",
+          "title": "Coach K got outcoached by Hubert Davis in Duke's Final Four loss vs. UNC - Jay Williams | KJM",
+          "publisher": "ESPN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYWh0dHBzOi8vdGhlYXRobGV0aWMuY29tLzMyMTE1NTUvMjAyMi8wNC8wNC9jYXJvbGluYS1odXJyaWNhbmVzLXVuYy1kdWtlLWFudHRpLXJhYW50YS1sb29zZS1wdWNrcy_SAWVodHRwczovL3RoZWF0aGxldGljLmNvbS8zMjExNTU1LzIwMjIvMDQvMDQvY2Fyb2xpbmEtaHVycmljYW5lcy11bmMtZHVrZS1hbnR0aS1yYWFudGEtbG9vc2UtcHVja3MvP2FtcA?oc=5",
+          "title": "Loose pucks: The Hurricanes weigh in on UNC-Duke, an Antti Raanta hot take, what to watch down the stretch, more",
+          "publisher": "The Athletic"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiPmh0dHBzOi8vY2hhcGVsYm9yby5jb20vc3BvcnRzL2NoYW5za3lzLW5vdGVib29rLWJpZy1lYXN5LWFnYWlu0gEA?oc=5",
+          "title": "Chansky's Notebook: Big Easy Again?",
+          "publisher": "Chapelboro.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVWh0dHBzOi8vd3d3LnNpLmNvbS9jb2xsZWdlLzIwMjIvMDQvMDUvdW5jLWNoYW1waW9uc2hpcC1sb3NzLWthbnNhcy1iYWNvdC1tYW5lay1pbmp1cnnSAVpodHRwczovL3d3dy5zaS5jb20vLmFtcC9jb2xsZWdlLzIwMjIvMDQvMDUvdW5jLWNoYW1waW9uc2hpcC1sb3NzLWthbnNhcy1iYWNvdC1tYW5lay1pbmp1cnk?oc=5",
+          "title": "North Carolina’s Resolve Pushed to Ultimate Limit in Bruising Championship Loss",
+          "publisher": "Sports Illustrated"
+        }
+      ],
+      "source": { "href": "https://www.youtube.com", "title": "March Madness" }
+    },
+    {
+      "id": "1370549603",
+      "title": "Hubble Finds a Massive Planet – 9 Times the Size of Jupiter – Forming Through a Violent Process - SciTechDaily",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMidWh0dHBzOi8vc2NpdGVjaGRhaWx5LmNvbS9odWJibGUtZmluZHMtYS1tYXNzaXZlLXBsYW5ldC05LXRpbWVzLXRoZS1zaXplLW9mLWp1cGl0ZXItZm9ybWluZy10aHJvdWdoLWEtdmlvbGVudC1wcm9jZXNzL9IBAA?oc=5",
+      "published": "Tue, 05 Apr 2022 08:30:20 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidWh0dHBzOi8vc2NpdGVjaGRhaWx5LmNvbS9odWJibGUtZmluZHMtYS1tYXNzaXZlLXBsYW5ldC05LXRpbWVzLXRoZS1zaXplLW9mLWp1cGl0ZXItZm9ybWluZy10aHJvdWdoLWEtdmlvbGVudC1wcm9jZXNzL9IBAA?oc=5",
+          "title": "Hubble Finds a Massive Planet – 9 Times the Size of Jupiter – Forming Through a Violent Process",
+          "publisher": "SciTechDaily"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMigQFodHRwczovL3d3dy50aGVndWFyZGlhbi5jb20vc2NpZW5jZS8yMDIyL2Fwci8wNS9yYXJlLWdsaW1wc2Utb2YtZ2lhbnQtcGxhbmV0LXN0aWxsLWluLXRoZS13b21iLXlldC1uaW5lLXRpbWVzLXRoZS1tYXNzLW9mLWp1cGl0ZXLSAQA?oc=5",
+          "title": "Rare glimpse of giant planet still ‘in the womb’ yet nine times the mass of Jupiter",
+          "publisher": "The Guardian"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiTGh0dHBzOi8vbmV3cy55YWhvby5jb20vZ2lnYW50aWMtanVwaXRlci1hbGllbi1wbGFuZXQtb2JzZXJ2ZWQtMTg1NzQ1MDI4Lmh0bWzSAVRodHRwczovL25ld3MueWFob28uY29tL2FtcGh0bWwvZ2lnYW50aWMtanVwaXRlci1hbGllbi1wbGFuZXQtb2JzZXJ2ZWQtMTg1NzQ1MDI4Lmh0bWw?oc=5",
+          "title": "Gigantic Jupiter-like alien planet observed still 'in the womb'",
+          "publisher": "Yahoo News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiRGh0dHBzOi8vd3d3LnNhbG9uLmNvbS8yMDIyLzA0LzA0L2h1YmJsZS1qdXBpdGVyLXBsYW5ldGFyeS1mb3JtYXRpb24v0gEA?oc=5",
+          "title": "Hubble discovers a Jupiter-like planet forming in a very strange way",
+          "publisher": "Salon"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYGh0dHBzOi8vd3d3Lm5hc2EuZ292L2ZlYXR1cmUvZ29kZGFyZC8yMDIyL2h1YmJsZS1maW5kcy1hLXBsYW5ldC1mb3JtaW5nLWluLWFuLXVuY29udmVudGlvbmFsLXdhedIBAA?oc=5",
+          "title": "Hubble Finds a Planet Forming in an Unconventional Way",
+          "publisher": "NASA"
+        }
+      ],
+      "source": { "href": "https://scitechdaily.com", "title": "SciTechDaily" }
+    },
+    {
+      "id": "1308534003",
+      "title": "Stuck valve stalls NASA's 2nd attempt to fuel giant Artemis 1 moon rocket - Space.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiQWh0dHBzOi8vd3d3LnNwYWNlLmNvbS9uYXNhLWFydGVtaXMtMS1tb29uLXJvY2tldC10ZXN0LXN0dWNrLXZhbHZl0gEA?oc=5",
+      "published": "Mon, 04 Apr 2022 22:29:34 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiQWh0dHBzOi8vd3d3LnNwYWNlLmNvbS9uYXNhLWFydGVtaXMtMS1tb29uLXJvY2tldC10ZXN0LXN0dWNrLXZhbHZl0gEA?oc=5",
+          "title": "Stuck valve stalls NASA's 2nd attempt to fuel giant Artemis 1 moon rocket",
+          "publisher": "Space.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYmh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNC8wNC93b3JsZC9uYXNhLWFydGVtaXMtcmVoZWFyc2FsLXNlY29uZC1hdHRlbXB0LXNjcnViYmVkLXNjbi9pbmRleC5odG1s0gEA?oc=5",
+          "title": "NASA's Artemis I mega moon rocket test stopped for second time",
+          "publisher": "CNN"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiSGh0dHBzOi8vd3d3LnlhaG9vLmNvbS9uZXdzL21vcmUtcHJvYmxlbXMtZGVyYWlsLW5hc2EtbW9vbi0yMjIxMTcyMzEuaHRtbNIBUWh0dHBzOi8vbmV3cy55YWhvby5jb20vYW1waHRtbC9uZXdzL21vcmUtcHJvYmxlbXMtZGVyYWlsLW5hc2EtbW9vbi0yMjIxMTcyMzEuaHRtbA?oc=5",
+          "title": "More problems derail NASA moon rocket test",
+          "publisher": "Yahoo! Voices"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9eHpWbkdjUE5JQ3fSAQA?oc=5",
+          "title": "NASA calls off Artemis I wet dress rehearsal for technical issue",
+          "publisher": "WKMG News 6 ClickOrlando"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiVmh0dHBzOi8vZ2l6bW9kby5jb20vY3JpdGljYWwtdGVzdC1vZi1uYXNhLXMtbWVnYXJvY2tldC1yZXN1bWVzLWFmdGVyLWxpZ2h0bi0xODQ4NzQ1Mzcx0gEA?oc=5",
+          "title": "Critical Test of NASA’s Megarocket Resumes After Lightning Strikes and Technical Glitches [Updated]",
+          "publisher": "Gizmodo"
+        }
+      ],
+      "source": { "href": "https://www.space.com", "title": "Space.com" }
+    },
+    {
+      "id": "1365204289",
+      "title": "Scientists Have Finally Sequenced the Complete Human Genome – And Revealed New Genetic Secrets - SciTechDaily",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMidmh0dHBzOi8vc2NpdGVjaGRhaWx5LmNvbS9zY2llbnRpc3RzLWhhdmUtZmluYWxseS1zZXF1ZW5jZWQtdGhlLWNvbXBsZXRlLWh1bWFuLWdlbm9tZS1hbmQtcmV2ZWFsZWQtbmV3LWdlbmV0aWMtc2VjcmV0cy_SAQA?oc=5",
+      "published": "Mon, 04 Apr 2022 00:49:47 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidmh0dHBzOi8vc2NpdGVjaGRhaWx5LmNvbS9zY2llbnRpc3RzLWhhdmUtZmluYWxseS1zZXF1ZW5jZWQtdGhlLWNvbXBsZXRlLWh1bWFuLWdlbm9tZS1hbmQtcmV2ZWFsZWQtbmV3LWdlbmV0aWMtc2VjcmV0cy_SAQA?oc=5",
+          "title": "Scientists Have Finally Sequenced the Complete Human Genome – And Revealed New Genetic Secrets",
+          "publisher": "SciTechDaily"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiMmh0dHBzOi8vd3d3Lm5hdHVyZS5jb20vYXJ0aWNsZXMvZDQxNTg2LTAyMi0wMDg0OC0z0gEA?oc=5",
+          "title": "Audio long-read: A more-inclusive genome project aims to capture all of human diversity",
+          "publisher": "Nature.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiYmh0dHBzOi8vd3d3LmRhaWx5Y2FsLm9yZy8yMDIyLzA0LzAzL3VjLWJlcmtlbGV5LXNjaWVudGlzdHMtaGVscC1jb21wbGV0ZS10aGUtaHVtYW4tZ2Vub21lLXByb2plY3Qv0gEA?oc=5",
+          "title": "UC Berkeley scientists help complete the human genome project",
+          "publisher": "Daily Californian"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9SHVraEw4NWh0eUnSAQA?oc=5",
+          "title": "Science Buzz | Scientists sequence the complete human genome for the first time",
+          "publisher": "11Alive"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMieWh0dHBzOi8vd3d3LnNwZWN0cnVtbmV3cy5vcmcvbmV3cy9jb21tdW5pdHktbmV3c2xldHRlci1jb21wbGV0ZWQtaHVtYW4tZ2Vub21lLWNocm9tb3NvbWUtMTYtY29udmVyZ2VuY2UtYXZvaWRpbmctYWJsZWlzbS_SAQA?oc=5",
+          "title": "Community Newsletter: Completed human genome, chromosome 16 convergence, avoiding ableism",
+          "publisher": "Spectrum"
+        }
+      ],
+      "source": { "href": "https://scitechdaily.com", "title": "SciTechDaily" }
+    },
+    {
+      "id": "1357690464",
+      "title": "See Venus, Saturn and Mars shine close before sunrise this week - Space.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiM2h0dHBzOi8vd3d3LnNwYWNlLmNvbS92ZW51cy1zYXR1cm4tbWFycy1zaGluZS1jbG9zZdIBAA?oc=5",
+      "published": "Sun, 03 Apr 2022 11:57:16 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiM2h0dHBzOi8vd3d3LnNwYWNlLmNvbS92ZW51cy1zYXR1cm4tbWFycy1zaGluZS1jbG9zZdIBAA?oc=5",
+          "title": "See Venus, Saturn and Mars shine close before sunrise this week",
+          "publisher": "Space.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZGh0dHBzOi8vd3d3LndoaW8uY29tL3dlYXRoZXIvZm91ci1wbGFuZXRzLXZpc2libGUtdGhpcy1tb250aC1tb3JuaW5nLXNreS9HNEdZSUJXRlFCQVdGTlVOTFRFV1JVUEo3TS_SAXNodHRwczovL3d3dy53aGlvLmNvbS93ZWF0aGVyL2ZvdXItcGxhbmV0cy12aXNpYmxlLXRoaXMtbW9udGgtbW9ybmluZy1za3kvRzRHWUlCV0ZRQkFXRk5VTkxURVdSVVBKN00vP291dHB1dFR5cGU9YW1w?oc=5",
+          "title": "Four planets visible this month in morning sky",
+          "publisher": "WHIO"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMie2h0dHBzOi8vc2NpdGVjaGRhaWx5LmNvbS9uYXNhLXNreXdhdGNoaW5nLXRpcHMtZm9yLWFwcmlsLTIwMjItY29uanVuY3Rpb24tanVuY3Rpb24tYW5kLWEtaGlkZGVuLXN1cnByaXNlLWluLXRoZS1iaWctZGlwcGVyL9IBAA?oc=5",
+          "title": "NASA Skywatching Tips for April 2022: Conjunction Junction and a Hidden Surprise in the Big Dipper",
+          "publisher": "SciTechDaily"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiZWh0dHBzOi8vd3d3LnRoZWd1YXJkaWFuLmNvbS9zY2llbmNlLzIwMjIvYXByLzA0L3N0YXJ3YXRjaC1zYXR1cm4tYW5kLW1hcnMtYXJlLXNrdWxraW5nLWxvdy1pbi10aGUtc2t50gFlaHR0cHM6Ly9hbXAudGhlZ3VhcmRpYW4uY29tL3NjaWVuY2UvMjAyMi9hcHIvMDQvc3RhcndhdGNoLXNhdHVybi1hbmQtbWFycy1hcmUtc2t1bGtpbmctbG93LWluLXRoZS1za3k?oc=5",
+          "title": "Starwatch: Saturn and Mars are skulking low in the sky",
+          "publisher": "The Guardian"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiV2h0dHBzOi8vd3d3LmluZGVwZW5kZW50LmNvLnVrL3NwYWNlL3NhdHVybi1tYXJzLXZlbnVzLWNvbmp1bmN0aW9uLXR1ZXNkYXktYjIwNTA5MTcuaHRtbNIBW2h0dHBzOi8vd3d3LmluZGVwZW5kZW50LmNvLnVrL3NwYWNlL3NhdHVybi1tYXJzLXZlbnVzLWNvbmp1bmN0aW9uLXR1ZXNkYXktYjIwNTA5MTcuaHRtbD9hbXA?oc=5",
+          "title": "Saturn, Mars and Venus to dazzle in a predawn conjunction on Tuesday morning",
+          "publisher": "The Independent"
+        }
+      ],
+      "source": { "href": "https://www.space.com", "title": "Space.com" }
+    },
+    {
+      "id": "1329384744",
+      "title": "COVID symptoms: 9 new symptoms added to this official list - Deseret News",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiXmh0dHBzOi8vd3d3LmRlc2VyZXQuY29tL3Utcy13b3JsZC8yMDIyLzQvNC8yMzAxMDA4Mi9uZXctY292aWQtMTktc3ltcHRvbXMtb2ZmaWNpYWwtbGlzdC11ay1oc2HSAQA?oc=5",
+      "published": "Tue, 05 Apr 2022 02:30:00 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXmh0dHBzOi8vd3d3LmRlc2VyZXQuY29tL3Utcy13b3JsZC8yMDIyLzQvNC8yMzAxMDA4Mi9uZXctY292aWQtMTktc3ltcHRvbXMtb2ZmaWNpYWwtbGlzdC11ay1oc2HSAQA?oc=5",
+          "title": "COVID symptoms: 9 new symptoms added to this official list",
+          "publisher": "Deseret News"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiKGh0dHBzOi8vd3d3LmJiYy5jb20vbmV3cy9oZWFsdGgtNjA5ODIwNzDSASxodHRwczovL3d3dy5iYmMuY29tL25ld3MvaGVhbHRoLTYwOTgyMDcwLmFtcA?oc=5",
+          "title": "Covid: Nine new symptoms added to official list",
+          "publisher": "BBC.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMid2h0dHBzOi8vd3d3LnNpbGl2ZS5jb20vY29yb25hdmlydXMvMjAyMi8wNC93ZS10b2xkLXlvdS1zby11bml0ZWQta2luZ2RvbS1hZGRzLTktc3ltcHRvbXMtdG8tb2ZmaWNpYWwtY292aWQtMTktbGlzdC5odG1s0gEA?oc=5",
+          "title": "We told you so: United Kingdom adds 9 symptoms to official COVID-19 list",
+          "publisher": "SILive.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiOWh0dHBzOi8vd3d3Lndzd3Mub3JnL2VuL2FydGljbGVzLzIwMjIvMDQvMDUvaXZoZi1hMDUuaHRtbNIBAA?oc=5",
+          "title": "UK COVID infections rise massively after end of mitigation measures",
+          "publisher": "WSWS"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMihgFodHRwczovL3d3dy5tYXJrZXR3YXRjaC5jb20vc3RvcnkvdWstYWRkcy1uaW5lLW1vcmUtY292aWQtc3ltcHRvbXMtdG8tb2ZmaWNpYWwtbGlzdC1hdC1pdHMtc3RydWdnbGVzLXdpdGgtcmVjb3JkLWNhc2UtbG9hZC0xMTY0OTA4MjY2NtIBAA?oc=5",
+          "title": "UK adds nine more COVID symptoms to official list as its struggles with record case load",
+          "publisher": "MarketWatch"
+        }
+      ],
+      "source": { "href": "https://www.deseret.com", "title": "Deseret News" }
+    },
+    {
+      "id": "CBMiYmh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL3VzL3VzLWNvbnNpZGVycy12YWNjaW5lcy1wcm90ZWN0LXBvdWx0cnktZGVhZGx5LWJpcmQtZmx1LTIwMjItMDQtMDQv0gEA",
+      "title": "U.S. considers vaccines to protect poultry from deadly bird flu - Reuters.com",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMiYmh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL3VzL3VzLWNvbnNpZGVycy12YWNjaW5lcy1wcm90ZWN0LXBvdWx0cnktZGVhZGx5LWJpcmQtZmx1LTIwMjItMDQtMDQv0gEA?oc=5",
+      "published": "Tue, 05 Apr 2022 00:41:00 GMT",
+      "sub_articles": [],
+      "source": { "href": "https://www.reuters.com", "title": "Reuters.com" }
+    },
+    {
+      "id": "1349865919",
+      "title": "Greater Cincinnati lags in COVID-19 vaccines. So, should you get a second booster? - The Cincinnati Enquirer",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMie2h0dHBzOi8vd3d3LmNpbmNpbm5hdGkuY29tL3N0b3J5L25ld3MvMjAyMi8wNC8wNC9yZWdpb24tbGFncy1ib29zdGVycy1jb3ZpZC0xOS12YWNjaW5lcy1jZGMtcmVjb21tZW5kcy01MC1vbGRlci83MjE4MDIzMDAxL9IBAA?oc=5",
+      "published": "Mon, 04 Apr 2022 02:05:34 GMT",
+      "sub_articles": [
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMie2h0dHBzOi8vd3d3LmNpbmNpbm5hdGkuY29tL3N0b3J5L25ld3MvMjAyMi8wNC8wNC9yZWdpb24tbGFncy1ib29zdGVycy1jb3ZpZC0xOS12YWNjaW5lcy1jZGMtcmVjb21tZW5kcy01MC1vbGRlci83MjE4MDIzMDAxL9IBAA?oc=5",
+          "title": "Greater Cincinnati lags in COVID-19 vaccines. So, should you get a second booster?",
+          "publisher": "The Cincinnati Enquirer"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9RUdJaEVjR1phUWfSAQA?oc=5",
+          "title": "Just A Minute with Dr. Peter Marks - Is it still necessary to get vaccinated or get a booster shot?",
+          "publisher": "U.S. Food and Drug Administration"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMidGh0dHBzOi8vd3d3Lm5qLmNvbS9jb3JvbmF2aXJ1cy8yMDIyLzA0L2EtM3JkLWNvdmlkLWJvb3N0ZXItY2RjLWRpcmVjdG9yLXNheXMtaXQtY291bGQtYmUtaW4tdGhlLWNhcmRzLXRoaXMtZmFsbC5odG1s0gEA?oc=5",
+          "title": "A 3rd COVID booster? CDC director says it could be in the cards this fall.",
+          "publisher": "NJ.com"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiXmh0dHBzOi8vd3d3Lm5ld3NkYXkuY29tL25ld3MvaGVhbHRoL2Nvcm9uYXZpcnVzL2Nvcm9uYXZpcnVzLXNlY29uZC1ib29zdGVyLXJlc2lzdGFuY2UtbDN0am5pcXDSAWJodHRwczovL3d3dy5uZXdzZGF5LmNvbS9hbXAvbmV3cy9oZWFsdGgvY29yb25hdmlydXMvY29yb25hdmlydXMtc2Vjb25kLWJvb3N0ZXItcmVzaXN0YW5jZS1sM3RqbmlxcA?oc=5",
+          "title": "Pandemic-weary public may resist second booster, experts say",
+          "publisher": "Newsday"
+        },
+        {
+          "url": "https://news.google.com/__i/rss/rd/articles/CBMiOWh0dHBzOi8vd3d3Lm5ld2hhdmVuaW5kZXBlbmRlbnQub3JnL2FydGljbGUveW5oaF91cGRhdGVfNNIBAA?oc=5",
+          "title": "YNHH Top Doc Boosts 2nd Boosters",
+          "publisher": "New Haven Independent"
+        }
+      ],
+      "source": { "href": "https://www.cincinnati.com", "title": "The Cincinnati Enquirer" }
+    },
+    {
+      "id": "CBMia2h0dHBzOi8vd3d3LmJvc3RvbmhlcmFsZC5jb20vMjAyMi8wNC8wMy9ib3N0b24tYXJlYS1jb3JvbmF2aXJ1cy13YXN0ZXdhdGVyLWp1bXAtc2hvd3MtYS1uZXctd2F2ZS1oYXMtYmVndW4v0gFvaHR0cHM6Ly93d3cuYm9zdG9uaGVyYWxkLmNvbS8yMDIyLzA0LzAzL2Jvc3Rvbi1hcmVhLWNvcm9uYXZpcnVzLXdhc3Rld2F0ZXItanVtcC1zaG93cy1hLW5ldy13YXZlLWhhcy1iZWd1bi9hbXAv",
+      "title": "Boston-area coronavirus wastewater jump shows ‘a new wave has begun’ - Boston Herald",
+      "link": "https://news.google.com/__i/rss/rd/articles/CBMia2h0dHBzOi8vd3d3LmJvc3RvbmhlcmFsZC5jb20vMjAyMi8wNC8wMy9ib3N0b24tYXJlYS1jb3JvbmF2aXJ1cy13YXN0ZXdhdGVyLWp1bXAtc2hvd3MtYS1uZXctd2F2ZS1oYXMtYmVndW4v0gFvaHR0cHM6Ly93d3cuYm9zdG9uaGVyYWxkLmNvbS8yMDIyLzA0LzAzL2Jvc3Rvbi1hcmVhLWNvcm9uYXZpcnVzLXdhc3Rld2F0ZXItanVtcC1zaG93cy1hLW5ldy13YXZlLWhhcy1iZWd1bi9hbXAv?oc=5",
+      "published": "Sun, 03 Apr 2022 21:51:41 GMT",
+      "sub_articles": [],
+      "source": { "href": "https://www.bostonherald.com", "title": "Boston Herald" }
+    }
+  ]
+}
