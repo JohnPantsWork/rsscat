@@ -130,10 +130,10 @@ dist
 .pnp.*
 
 # mac
-.DS_Store
+*.DS_Store
 
 # crt
-.crt
+*.crt
 
 # key
-.key
+*.key
