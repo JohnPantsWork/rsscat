@@ -1,23 +1,23 @@
 require('dotenv').config();
-const { checkAndSave } = require('../model/shortRand_model');
+const { CKIP_ENDPOINT } = process.env;
+const axios = require('axios');
 
 const { SHORT_RAND_ENDPOINT } = process.env;
 
-const postData = async (req, res) => {
-  return res.status(200).json({ data: 'post success' });
-};
+const cutWords = async (req, res) => {
+  const { raw_words } = req.body;
+  console.log(`#--------------------[]#\n`);
+  const cutWordsResult = await axios({
+    method: 'POST',
+    url: CKIP_ENDPOINT,
+    data: {
+      raw_words: raw_words,
+    },
+  });
 
-const getData = async (req, res) => {
-  const fakeData = { a: 1 };
-  return res.status(200).json({ data: fakeData });
-};
-
-const deleteData = async (req, res) => {
-  return res.status(200).json({ data: 'delete uccess' });
+  return res.status(200).json({ data: cutWordsResult });
 };
 
 module.exports = {
-  postData,
-  getData,
-  deleteData,
+  cutWords,
 };

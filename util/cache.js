@@ -9,7 +9,7 @@ const redisClient = redis.createClient({
   },
 });
 
-// 藉由此項目判斷，來判斷在redis掛掉的情況下，可以使用其他替代方案。
+// use to check if redis is alive or not.
 redisClient.ready = false;
 
 redisClient.on('ready', () => {
