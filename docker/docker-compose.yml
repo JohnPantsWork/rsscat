@@ -69,7 +69,7 @@ services:
     networks:
       - rsscat
     env_file:
-      - rsscat.env
+      - ../.env
     #environment:
 networks:
   rsscat:
