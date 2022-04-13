@@ -1,5 +1,8 @@
 # Base image
-FROM node:alpine
+FROM node:latest
+
+RUN apt update
+RUN apt install build-essential
 
 # Create app directory
 RUN mkdir -p /usr/src/app
