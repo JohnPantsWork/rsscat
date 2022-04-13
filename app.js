@@ -1,24 +1,22 @@
 require('dotenv').config();
 const express = require('express');
-const { PORT_TEST, PORT, NODE_ENV, API_VERSION } = process.env;
-const port = NODE_ENV == 'test' ? PORT_TEST : PORT;
-const logger = require('./util/logger/ec2Logger');
-const morganBody = require('morgan-body');
-const { rateLimiterRoute } = require('./util/ratelimiter');
-const Cache = require('./util/cache');
-
-// Express Initialization
 const cors = require('cors');
+const Cache = require('./util/cache');
+// const logger = require('./log/logger');
+// const morganBody = require('morgan-body');
+// const { rateLimiterRoute } = require('./util/ratelimiter');
+
 const app = express();
+const { APP_PORT, API_VERSION } = process.env;
+app.set('trust proxy', true);
+app.set('json spaces', 2);
+app.use(cors());
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(document));
 
-// RESTFUL api document
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(document));
-
-//socket.io
-const http = require('http');
-const server = http.createServer(app);
-require('./server/socket/socket').campaign(server);
-// morgan message to aws cloudwatch
+// send morgan message to aws cloudwatch
 // const loggerStream = {
 //     write: (message) => {
 //         if (message !== '') {
@@ -31,19 +29,8 @@ require('./server/socket/socket').campaign(server);
 // });
 // morganBody(app);
 
-app.set('trust proxy', true);
-// app.set('trust proxy', 'loopback');
-app.set('json spaces', 2);
-
-app.use(express.static('public'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// CORS allow all
-app.use(cors());
-
 // API routes
-app.use('/api/' + API_VERSION, rateLimiterRoute, [require('./server/routes/main_route')]);
+app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/main_route')]);
 
 // 404
 app.get('*', (req, res, next) => {
@@ -59,11 +46,6 @@ app.use((err, req, res, next) => {
   res.json({ error: err.message });
 });
 
-if (NODE_ENV != 'production') {
-  server.listen(port, async () => {
-    Cache.connect().catch(() => {
-      console.log('redis connect fail');
-    });
-    console.log(`Listening on port: ${port}`);
-  });
-}
+app.listen(APP_PORT, async () => {
+  console.log(`Listening on port: ${APP_PORT}`);
+});
