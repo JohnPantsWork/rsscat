@@ -60,7 +60,7 @@ services:
     networks:
       - rsscat
     volumes:
-      - /home/ec2-user/rsscat_docker_volumes/rsscat_ckip:/rsscat_ckip
+      - /home/ec2-user/rsscat_docker_volumes/ckiptagger_rsscat:/ckiptagger_rsscat
   rsscat:
     image: rsscat:latest
     restart: always
@@ -68,9 +68,12 @@ services:
       - '3000:3000'
     networks:
       - rsscat
+    environment:
+      - CKIP_ENDPOINT=rsscat_ckiptagger_rsscat_1
+      - CACHE_HOST=rsscat_redis_1
+      - RDB_HOST=rsscat_mysql_1
     env_file:
       - .env
-    #environment:
 networks:
   rsscat:
     driver: bridge
