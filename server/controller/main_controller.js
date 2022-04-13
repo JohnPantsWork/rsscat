@@ -15,7 +15,7 @@ const cutWords = async (req, res) => {
     },
   });
 
-  return res.status(200).json({ data: cutWordsResult });
+  return res.status(200).json({ data: cutWordsResult.data });
 };
 
 module.exports = {
