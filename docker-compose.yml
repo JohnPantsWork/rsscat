@@ -31,8 +31,8 @@ services:
       - '6379:6379'
     networks:
       - rsscat
-    volumes:
-      - /home/ec2-user/rsscat_docker_volumes/redis:/
+    # volumes:
+    #   - /home/ec2-user/rsscat_docker_volumes/redis:/config
     # elasticsearch:
     #   image: docker.elastic.co/elasticsearch/elasticsearch:8.1.2
     #   restart: always
