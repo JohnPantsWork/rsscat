@@ -2,8 +2,6 @@ require('dotenv').config();
 const { CKIP_ENDPOINT } = process.env;
 const axios = require('axios');
 
-const { SHORT_RAND_ENDPOINT } = process.env;
-
 const cutWords = async (req, res) => {
   const { raw_words } = req.body;
   console.log(`#--------------------[]#\n`);
