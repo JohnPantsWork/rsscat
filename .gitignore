@@ -137,3 +137,6 @@ dist
 
 # key
 *.key
+
+# docker
+docker-compose.yml
