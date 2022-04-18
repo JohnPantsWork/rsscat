@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { pool } = require('../../util/rdb_mysql');
+const { pool } = require('../../util/rdb');
 
 async function inerter() {
   let dataArray = [];

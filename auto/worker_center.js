@@ -1,21 +1,20 @@
 require('dotenv').config();
 const { MISSION_LIST, MISSION_AMOUNT, MISSION_FREQUENCE_SEC } = process.env;
 const cache = require('../util/cache');
-const { pool } = require('../util/rdb_mysql');
+const { pool } = require('../util/rdb');
 
 const intervalTime = MISSION_FREQUENCE_SEC * 1000;
 setInterval(center, intervalTime);
 center(); // use corntab to invoke the mission
 
 const missionList = [
-  { mission: 'm_checkRssUpdate', level: 0 },
-  { mission: 'm_checkRssUpdate', level: 1 },
-  { mission: 'm_checkRssUpdate', level: 2 },
-  { mission: 'm_checkNewsApiUpdate' },
   { mission: 'm_checkRssUpdate', level: 3 },
-  { mission: 'm_checkRssUpdate', level: 4 },
-  { mission: 'm_checkRssUpdate', level: 5 },
-  { mission: 'm_checkNewsApiUpdate' },
+  { mission: 'm_checkRssUpdate', level: 3 },
+  { mission: 'm_checkRssUpdate', level: 3 },
+  { mission: 'm_checkRssUpdate', level: 3 },
+  { mission: 'm_checkRssUpdate', level: 3 },
+  { mission: 'm_checkRssUpdate', level: 3 },
+  // { mission: 'm_checkNewsApiUpdate' },
 ];
 
 async function center() {

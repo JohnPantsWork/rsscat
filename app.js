@@ -30,7 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 // morganBody(app);
 
 // API routes
-app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/main_route')]);
+app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/word_route')]);
+app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/user_route')]);
+app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/rss_route')]);
+app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/news_route')]);
+app.use('/api/' + API_VERSION, /*rateLimiterRoute,*/ [require('./server/routes/tag_route')]);
 
 // 404
 app.get('*', (req, res, next) => {
