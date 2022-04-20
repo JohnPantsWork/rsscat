@@ -8,7 +8,7 @@ services:
       - '80:80'
       - '443:443'
     networks:
-      - testnet
+      - rsscat
     volumes:
       - /home/ec2-user/rsscat_docker_volumes/nginx:/etc/nginx
     depends_on: # start container after depends are opened.
@@ -16,21 +16,21 @@ services:
   mysql:
     image: mysql:8
     restart: always
-    ports:
-      - '3306:3306'
+    #ports:
+    #  - '3306:3306'
     networks:
-      - testnet
+      - rsscat
     volumes:
       - /home/ec2-user/rsscat_docker_volumes/mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD="rsscat_password_super666cool"
+      - MYSQL_ROOT_PASSWORD=rsscat_password_super666cool
   redis:
     image: redis:6.2.6-alpine
     restart: always
-    ports:
-      - '6379:6379'
+    #ports:
+    #  - '6379:6379'
     networks:
-      - testnet
+      - rsscat
     # volumes:
     #   - /home/ec2-user/rsscat_docker_volumes/redis:/config
     # elasticsearch:
@@ -55,25 +55,26 @@ services:
   ckiptagger_rsscat:
     image: ckiptagger_rsscat:latest
     restart: always
-    ports:
-      - '5000:5000'
+    #ports:
+    #  - '5000:5000'
     networks:
-      - testnet
+      - rsscat
     volumes:
       - /home/ec2-user/rsscat_docker_volumes/ckiptagger_rsscat:/ckiptagger_rsscat
   rsscat:
     image: rsscat:latest
     restart: always
-    ports:
-      - '3000:3000'
+    #ports:
+    #  - '3000:3000'
     networks:
-      - testnet
+      - rsscat
     environment:
-      - CKIP_ENDPOINT=rsscat_ckiptagger_rsscat_1
-      - CACHE_HOST=rsscat_redis_1
-      - RDB_HOST=rsscat_mysql_1
+      - CKIP_ENDPOINT=http://rsscat_ckiptagger_rsscat_1:5000/cutWords
+      - CACHE_HOST=http://rsscat_redis_1:6379
+      - RDB_HOST=http://rsscat_mysql_1:3306
+      - RDB_PASSWORD=rsscat_password_super666cool
     env_file:
       - .env
 networks:
-  testnet:
+  rsscat:
     driver: bridge
