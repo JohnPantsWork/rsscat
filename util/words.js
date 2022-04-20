@@ -22,7 +22,7 @@ async function td(words_tags) {
   const singleData = {};
   const totalLength = words_tags.length;
   for (let i = 0; i < totalLength; i += 1) {
-    if (skipWords.includes(words_tags[i])) {
+    if (words_tags[i].length < 2 || skipWords.includes(words_tags[i])) {
       continue;
     }
     if (singleData[words_tags[i]]) {
@@ -67,7 +67,7 @@ async function td_idf(dataObj, amount) {
   let idfDict = {};
   idfs.map((obj) => {
     console.log(`#--------------------[obj]#\n`, obj);
-    if (dataObj[obj.tag_name].highlights === undefined) {
+    if (!dataObj[obj.tag_name] || !dataObj[obj.tag_name].highlights) {
       return;
     }
     const percent = 10000 * (1 / obj.appear_times) * dataObj[obj.tag_name].highlights;
