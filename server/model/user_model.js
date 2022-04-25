@@ -1,30 +1,42 @@
-// 這邊的示範是一個model，包含transaction結構、鎖表結構、鎖列結構。
-// 其中conn可以來自外面呼叫model的獨立線路，也可以來自預設。
+const { pool } = require('../../util/rdb');
 
-const pool = require('../../util/rdb');
-
-async function checkDataExist(id, conn) {
+async function checkEmailExist(email) {
   try {
-    if (!conn) {
-      conn = await pool.getConnection();
-    }
-    await conn.query('START TRANSACTION;');
-    await conn.query('LOCK TABLES url WRITE;');
-
-    const [result] = await conn.query('SELECT id FROM database WHERE id = ? FOR UPDATE;', [id]);
+    const [result] = await pool.query('SELECT email FROM user WHERE email = ?', [email]);
     if (result.length > 0) {
-      return result;
-    } // 若有值則回傳值。
-
-    return false; // 若有無值則回傳false。
+      return true;
+    }
+    return false;
   } catch (err) {
     console.error(err);
-    await conn.query('ROLLBACK'); // 產生錯誤則回滾。
-    return false;
-  } finally {
-    await conn.query('UNLOCK TABLES'); // 解鎖表格。
-    await conn.release(); // 釋放連線，是個可選項目。
+    return true;
   }
 }
 
-module.exports = { checkDataExist };
+async function selectHashedPassword(provider, email) {
+  try {
+    const [result] = await pool.query('SELECT password,username,id FROM user WHERE provider = ? AND email = ?', [provider, email]);
+    if (result.length > 0) {
+      return result[0];
+    }
+    return false;
+  } catch (err) {
+    console.error(err);
+    return true;
+  }
+}
+
+async function insertNewUser(email, hashedPassword, username) {
+  try {
+    await pool.query('START TRANSACTION;');
+    const [result] = await pool.query('INSERT INTO user(provider, email, password, username) VALUES (?,?,?,?)', [0, email, hashedPassword, username]);
+    await pool.query('COMMIT');
+    return result.insertId;
+  } catch (err) {
+    console.error(err);
+    await pool.query('ROLLBACK');
+    return false;
+  }
+}
+
+module.exports = { checkEmailExist, insertNewUser, selectHashedPassword };
