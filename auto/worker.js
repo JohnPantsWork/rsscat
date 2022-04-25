@@ -12,7 +12,8 @@ const { MISSION_LIST, NEWS_API_KEY } = process.env;
 const CONNECT_TIMEOUT = parseInt(process.env.CONNECT_TIMEOUT);
 const ARTICLES_LIMIT = parseInt(process.env.ARTICLES_LIMIT);
 const newsapi = new NewsAPI(NEWS_API_KEY);
-const DES_INDEX = 4;
+const RSS_DES_INDEX = 4;
+const NEWS_DES_INDEX = 5;
 const URL_INDEX = 6;
 
 checkMission();
@@ -62,7 +63,7 @@ async function checkRssUpdate(latest_id, amount, level) {
   }
   // update to center.
   const new_latest_id = rssDatas[rssDatas.length - 1].id;
-  updateCenterCheckedArray(level, new_latest_id);
+  updateCenterCheckedArray(level, new_latest_id); //////////////////////////
   // check urls and insert only new articles.
   for (let i = 0; i < rssDatas.length; i += 1) {
     const { id, url, latest_article } = rssDatas[i];
@@ -78,8 +79,8 @@ async function checkRssUpdate(latest_id, amount, level) {
         console.log(`#format data failure#`);
         continue;
       }
-      const formatedDataWithTagging = await articleTagging(formatedData);
-      await insertArticles(id, formatedDataWithTagging);
+      const formatedDataWithTagging = await articleTagging(formatedData, 'rss');
+      await insertArticles(id, formatedDataWithTagging); //////////////////////////
     } catch (error) {
       console.error(error);
     }
@@ -243,7 +244,14 @@ async function checkNewsApiUpdate() {
   try {
     const rawNews = await checkNewNews();
     const formatedNews = await formatNews(id, rawNews);
-    await insertNews(id, formatedNews);
+
+    console.log(`#--------------------[formatedNews]#\n`, formatedNews);
+    if (formatedNews === undefined) {
+      console.log(`#format data failure#`);
+    }
+    const formatedDataWithTagging = await articleTagging(formatedNews, 'news');
+    console.log(`#--------------------[formatedDataWithTagging]#\n`, formatedDataWithTagging);
+    await insertNews(id, formatedDataWithTagging); //////////////////////////
   } catch (err) {
     console.log(`#--------------------[err]#\n`, err);
   }
@@ -299,12 +307,13 @@ async function insertNews(id, news) {
   try {
     await conn.query('START TRANSACTION;');
     await conn.query('LOCK TABLES news_data WRITE;');
+
     // insert db, 5 data per time.
     for (let j = 0; j < news.length; j += 5) {
       console.log(`#news inserting#${id}-${j}`);
       const temp = news.slice(j, j + 5);
 
-      await conn.query('INSERT INTO news_data(endpoint_id, latest_date, title, source, auther, des, picture, url) VALUES ?', [temp]);
+      await conn.query('INSERT INTO news_data(endpoint_id, latest_date, title, source, auther, des, picture, url, tag_id_1, tag_id_2, tag_id_3) VALUES ?', [temp]);
     }
     await conn.query('UNLOCK TABLES');
     await conn.query('LOCK TABLES news_endpoint WRITE;');
@@ -323,17 +332,31 @@ async function insertNews(id, news) {
   }
 }
 
-async function articleTagging(formatedData) {
+async function articleTagging(formatedData, type) {
   console.log(`#articleTagging#`);
+
+  let des_index;
+  switch (type) {
+    case 'rss':
+      des_index = RSS_DES_INDEX;
+      break;
+    case 'news':
+      des_index = NEWS_DES_INDEX;
+      break;
+    default:
+      break;
+  }
+
   const formatedDataWithTagging = [];
   for (let i = 0; i < formatedData.length; i += 1) {
-    const des = formatedData[i][DES_INDEX];
-    const cutWords = await jiebaCut(des);
-
+    const des = formatedData[i][des_index];
+    // const cutWords = await jiebaCut(des);
+    const cutWords = await ckip(des);
     const tdR = await td(cutWords);
+    console.log(`#--------------------[tdR]#\n`, tdR);
     const insert_tag_info = await objKeyArray(tdR);
     for (let j = 0; j < insert_tag_info.length; j += 1) {
-      await pool.query('INSERT INTO tag_info (tag_name,appear_times) VALUES (?,1) ON DUPLICATE KEY UPDATE appear_times = appear_times + 1;', [insert_tag_info[j]]);
+      // await pool.query('INSERT INTO tag_info (tag_name,appear_times) VALUES (?,1) ON DUPLICATE KEY UPDATE appear_times = appear_times + 1;', [insert_tag_info[j]]);
     }
 
     const topTags = await td_idf(tdR, 3);
@@ -345,4 +368,73 @@ async function articleTagging(formatedData) {
     formatedDataWithTagging.push(formatedData[i].concat(tagIds));
   }
   return formatedDataWithTagging;
+}
+
+async function ckip(des) {
+  const result = await axios({
+    method: 'POST',
+    url: 'http://13.228.15.71/api/1.0/test',
+    data: { raw_words: des },
+  });
+  const pos = result.data.data.pos;
+  const sPos = pos.split('),');
+  const skip_part = [
+    'P',
+    'A',
+    'Ng',
+    'D',
+    'SHI',
+    'V_2',
+    'DE',
+    'VJ',
+    'Nep',
+    'Cbb',
+    'Dfa',
+    'VH',
+    'Di',
+    'VL',
+    'Neqa',
+    'Nh',
+    'Nf',
+    'Neu',
+    'Nd',
+    'Ncd',
+    'VG',
+    'Caa',
+    'T',
+    'Nes',
+    'Da',
+    'VAC',
+    'VC',
+    'VCL',
+    'VE',
+    'VHC',
+    'Nb',
+    'VK',
+    'Dk',
+    'COMMACATEGORY',
+    'PERIODCATEGORY',
+    'PARENTHESISCATEGORY',
+    'COLONCATEGORY',
+    'WHITESPACE',
+    'SEMICOLONCATEGORY',
+    'ETCCATEGORY',
+    'PAUSECATEGORY',
+    'EXCLAMATIONCATEGORY',
+    'QUESTIONCATEGORY',
+    'DASHCATEGORY',
+    // 'FW', // foreign language
+  ];
+
+  const filterPos = sPos.filter((p) => {
+    [a, b] = p.split('(');
+    if (skip_part.indexOf(b) === -1) {
+      return a;
+    }
+  });
+  console.log(`#filterPos#`, filterPos);
+  const keyPos = filterPos.map((p) => {
+    return p.split('(')[0];
+  });
+  return keyPos;
 }

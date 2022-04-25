@@ -1,7 +1,4 @@
-// 這邊的示範是一個model，包含transaction結構、鎖表結構、鎖列結構。
-// 其中conn可以來自外面呼叫model的獨立線路，也可以來自預設。
-
-const pool = require('../../util/rdb_mysql');
+const { pool } = require('../../util/rdb_mysql');
 
 async function checkDataExist(id, conn) {
   try {

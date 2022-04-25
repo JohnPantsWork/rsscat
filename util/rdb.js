@@ -13,5 +13,3 @@ const pool = mysql.createPool({
 });
 
 module.exports = { pool };
-// module.exports = [pool0, pool1]; //當想要多個資料庫輪流使用，可以輸出陣列。
-// module.exports = [[pool0], [pool1, pool2]]; //更進一步區分讀寫資料庫時。

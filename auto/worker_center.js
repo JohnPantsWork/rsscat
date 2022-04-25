@@ -14,7 +14,7 @@ const missionList = [
   { mission: 'm_checkRssUpdate', level: 3 },
   { mission: 'm_checkRssUpdate', level: 3 },
   { mission: 'm_checkRssUpdate', level: 3 },
-  // { mission: 'm_checkNewsApiUpdate' },
+  { mission: 'm_checkNewsApiUpdate' },
 ];
 
 async function center() {

@@ -1,8 +1,25 @@
 RSS groupby items
----
 level0: 1 item per week
 level1: between 2 to 7 items
 level2: between 8 to 16 items
 level3: more than 17 items
 level4: more than 100 items
 level5: more than 1000 items
+
+Custom Status Code
+0:about server response.
+1:about rss data or news data.
+2:about user data.
+3:about internal route.
+4:about tags system.
+
+---
+
+2000:'Login success.'
+2001:'Oauth login success.'
+2002:'Oauth reject.'
+2003:'Email has been used.'
+2004:'Email or password is incorrect.'
+2005:'reCaptcha is invalid.'
+2006:'Not login yet.'
+2010:'Signup success.'
