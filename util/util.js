@@ -1,6 +1,7 @@
 const errRes = (status, message) => {
-  const error = new Error(message);
+  const error = new Error();
   error.status = status;
+  error.message = message;
   return error;
 };
 
@@ -73,4 +74,46 @@ const arrayObjValue = (array) => {
   return result;
 };
 
-module.exports = { errRes, wrapAsync, todayDate, objKeyArray, objValueArray, asyncLoopObj, topValues, topKeys, arrayObjValue };
+const arrayDiff = (array1, array2) => {
+  const result = array1.filter((e) => {
+    return array2.indexOf(e) === -1;
+  });
+  return result;
+};
+
+const arraySame = (array1, array2) => {
+  const result = array1.filter((e) => {
+    return array2.indexOf(e) !== -1;
+  });
+  return result;
+};
+
+const getNow = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const date = now.getDate();
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  const sec = now.getSeconds();
+  const milliseconds = now.getTime();
+  const day = now.getDay();
+  result = { date: `${year}-${month}-${date}`, time: `${hour}:${min}:${sec}`, milsec: milliseconds, day: day };
+  // result = new Date( new Date().setFullYear(new Date().getFullYear() ));
+  return result;
+};
+
+module.exports = {
+  errRes,
+  wrapAsync,
+  todayDate,
+  objKeyArray,
+  objValueArray,
+  asyncLoopObj,
+  topValues,
+  topKeys,
+  arrayObjValue,
+  arrayDiff,
+  arraySame,
+  getNow,
+};

@@ -5,7 +5,7 @@ async function getLatestRss(page, amount) {
     const start = page * amount;
     const [result] = await pool.query(
       `
-    SELECT rd.id, title, auther, des, picture, url, tag_id_1, tag_id_2, tag_id_3, ti.tag_name AS tag1, ti2.tag_name AS tag2, ti3.tag_name AS tag3
+    SELECT DISTINCT rd.id, title, auther, des, picture, url, tag_id_1, tag_id_2, tag_id_3, ti.tag_name AS tag1, ti2.tag_name AS tag2, ti3.tag_name AS tag3
     FROM rss_data AS rd 
       JOIN tag_info AS ti 
         ON ti.id = rd.tag_id_1 
@@ -16,7 +16,6 @@ async function getLatestRss(page, amount) {
         ORDER BY id DESC LIMIT ? OFFSET ?;`,
       [amount, start]
     );
-    console.log(`#--------------------[result]#\n`, result);
     return result;
   } catch (err) {
     console.error(err);
@@ -24,27 +23,15 @@ async function getLatestRss(page, amount) {
   }
 }
 
-// tags = ['string-tagid','string-tagid']
-async function getTagRss(page, amount, tags) {
+async function seleteFeedRss(page, amount, tags, domain) {
   try {
     const start = page * amount;
-    const [result] = await pool.query('SELECT title,auther,des,picture,url FROM rss_data WHERE tag_id_1 in (SELECT id FROM tag_info WHERE tag_name in (?)) ORDER BY id DESC LIMIT ? OFFSET ?', [
-      tags,
-      amount,
-      start,
-    ]);
-    const [result2] = await pool.query('SELECT title,auther,des,picture,url FROM rss_data WHERE tag_id_2 in (SELECT id FROM tag_info WHERE tag_name in (?)) ORDER BY id DESC LIMIT ? OFFSET ?', [
-      tags,
-      amount,
-      start,
-    ]);
-    const [result3] = await pool.query('SELECT title,auther,des,picture,url FROM rss_data WHERE tag_id_3 in (SELECT id FROM tag_info WHERE tag_name in (?)) ORDER BY id DESC LIMIT ? OFFSET ?', [
-      tags,
-      amount,
-      start,
-    ]);
-    const all = result.concat(result2, result3);
-    const noDuplicatResult = [...new Set(all)];
+    const [result] = await pool.query(
+      `SELECT DISTINCT id,title,auther,des,picture,url FROM (SELECT * FROM rss_data WHERE endpoint_id in (?)) AS rs WHERE tag_id_1 in (?) OR tag_id_2 in (?) OR tag_id_3 in (?) ORDER BY id DESC LIMIT ? OFFSET ?`,
+      [domain, tags, tags, tags, amount, start]
+    );
+
+    const noDuplicatResult = [...new Set(result)];
     return noDuplicatResult;
   } catch (err) {
     console.error(err);
@@ -52,4 +39,27 @@ async function getTagRss(page, amount, tags) {
   }
 }
 
-module.exports = { getLatestRss, getTagRss };
+async function getAllRssUrl() {
+  try {
+    const [result] = await pool.query('SELECT id FROM rss_endpoint');
+    return result;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+async function seleteRssDomainName(domainIds) {
+  try {
+    if (domainIds.length === 0) {
+      return false;
+    }
+    const [result] = await pool.query('SELECT id,title FROM rss_endpoint WHERE id IN (?)', [domainIds]);
+    return result;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+module.exports = { getAllRssUrl, getLatestRss, seleteFeedRss, seleteRssDomainName };
