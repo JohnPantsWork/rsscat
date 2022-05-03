@@ -12,9 +12,18 @@ async function getHotTags(timeRange) {
 }
 
 //
-async function inserRecord(userId, tag_id, data_id, datatype_id, today) {
+async function inserMultiRecord(userId, tag_id_arr, data_id, datatype_id) {
   try {
-    const [result] = await pool.query('INSERT INTO record(user_id, tag_id, data_id, datatype_id, latest_date) VALUES (?,?,?,?,?))', [userId, tag_id, data_id, datatype_id, today]);
+    let insertarr = [];
+    console.log(`#tag_id_arr.length#`, tag_id_arr.length);
+    console.log(`#tag_id_arr[0]#`, tag_id_arr[0]);
+    console.log(`#tag_id_arr[1]#`, tag_id_arr[1]);
+    console.log(`#tag_id_arr[2]#`, tag_id_arr[2]);
+    for (let i = 0; i < tag_id_arr.length; i += 1) {
+      insertarr.push([userId, tag_id_arr[i], data_id, datatype_id]);
+    }
+    console.log(`#insertarr#`, insertarr);
+    const [result] = await pool.query('INSERT INTO record(user_id, tag_id, data_id, datatype_id) VALUES ?', [insertarr]);
     return result;
   } catch (err) {
     console.error(err);
@@ -45,4 +54,17 @@ async function selectTagNames(ids) {
   }
 }
 
-module.exports = { getHotTags, inserRecord, selectTagId, selectTagNames };
+async function selectUserRecord(userId) {
+  try {
+    const [result] = await pool.query(
+      'SELECT r.tag_id,COUNT(*),ti.tag_name FROM record AS r INNER JOIN tag_info AS ti ON ti.id = r.tag_id WHERE user_id = ? GROUP BY tag_id ORDER BY COUNT(*) DESC LIMIT 100',
+      [userId]
+    );
+    return result;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+module.exports = { getHotTags, selectTagId, selectTagNames, inserMultiRecord, selectUserRecord };

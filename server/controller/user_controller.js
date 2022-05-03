@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { GOOGLE_RECAPTCHA_SECRET } = process.env;
 const { errRes, arrayObjValue } = require('../../util/util');
-const { checkEmailExist, insertNewUser, selectHashedPassword } = require('../model/user_model');
+const { checkEmailExist, insertNewUser, selectHashedPassword, selectUserData } = require('../model/user_model');
 const argon2 = require('argon2');
 const axios = require('axios');
 const { getAllRssUrl } = require('../model/rss_model');
@@ -10,10 +10,9 @@ const cache = require('../../util/cache');
 const SESSION_EXPIRE_TIME = 3600000 * 24 * 30;
 
 const sessionCheck = async (req, res, next) => {
-  let { userId = null } = req.session.user;
+  let { userId } = req.session.user || { userId: false };
   if (!userId) {
-    // return next(errRes(404, { status: 2006, msg: 'session error!' }));
-    return res.status(401).redirect('/sign');
+    return next(errRes(404, { status: 2006, msg: 'session error!' }));
   }
   const userData = await cache.get(`user:${userId}`);
   req.body.userData = JSON.parse(userData);
@@ -33,7 +32,6 @@ const reCaptcha = async (req, res, next) => {
       }
       return next();
     } catch (err) {
-      console.error(err);
       return next(errRes(500, 'something wrong about reCaptcha.'));
     }
   }
@@ -71,6 +69,8 @@ const postUserSignUp = async (req, res, next) => {
       domain: defaultDomainList,
       likeTags: [],
       dislikeTags: [],
+      catStyle: 'original',
+      purchased: ['original', 'ghost'],
     });
     cache.set(`user:${insertResult}`, cacheData);
     return res.status(200).json({ data: { status: 2010, msg: 'Signup success.', id: req.sessionID } });
@@ -78,21 +78,26 @@ const postUserSignUp = async (req, res, next) => {
   return next(errRes(500, 'Website is busy, please try again later.'));
 };
 
+const getUser = async (req, res) => {
+  const { userData } = req.body;
+  const selectResult = await selectUserData(userData.userId);
+  return res.status(200).json({ data: selectResult });
+};
+
 const postUserSignIn = async (req, res, next) => {
   const { provider = null } = req.body;
   if (provider === null || provider === '') {
     return res.status(404).json({ data: 'Provide method is missing.' });
   }
-  console.log(`#provider#`, provider);
   switch (provider) {
     case 0:
       await nativeSignIn(req, res, next);
       break;
     case 1:
-      await googleSignIn(req, res);
+      await googleSignIn(req, res, next);
       break;
     case 2:
-      await facebookSignIn(req, res);
+      await facebookSignIn(req, res, next);
       break;
     default:
       return res.status(404).json({ data: 'This provider is not supported' });
@@ -106,8 +111,6 @@ const nativeSignIn = async (req, res, next) => {
   if (!emailExistResult) {
     return next(errRes(404, 'Email or password is not valid.'));
   }
-  console.log(`#email#`, email);
-  console.log(`#password#`, password);
   const hashData = await selectHashedPassword(provider, email);
   const passwordVerify = await argon2.verify(hashData.password, password);
   if (!passwordVerify) {
@@ -123,4 +126,4 @@ const nativeSignIn = async (req, res, next) => {
 const facebookSignIn = async (req) => {};
 const googleSignIn = async (req) => {};
 
-module.exports = { reCaptcha, sessionCheck, postUserSignUp, postUserSignIn };
+module.exports = { reCaptcha, sessionCheck, postUserSignUp, postUserSignIn, getUser };

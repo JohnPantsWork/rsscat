@@ -1,9 +1,7 @@
 require('dotenv').config();
 const { getLatestNews, seleteFeedNews } = require('../model/news_model');
-const cache = require('../../util/cache');
 
 const getExploreNews = async (req, res) => {
-  console.log(`##`);
   const { paging } = req.query;
   const result = await getLatestNews(paging, 10);
   return res.status(200).json({ data: result });

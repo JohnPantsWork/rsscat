@@ -99,8 +99,36 @@ const getNow = () => {
   const milliseconds = now.getTime();
   const day = now.getDay();
   result = { date: `${year}-${month}-${date}`, time: `${hour}:${min}:${sec}`, milsec: milliseconds, day: day };
-  // result = new Date( new Date().setFullYear(new Date().getFullYear() ));
   return result;
+};
+
+// str='2022-03-21 17:20:32'
+const stringDateConverter = (str) => {
+  const dateArr = str.replaceAll('-', ' ').split(' ');
+  const formatedDate = new Date(`${dateArr[0]},${dateArr[1]},${dateArr[2]},${dateArr[3]}`);
+  return formatedDate;
+};
+
+const rssDateFormatter = (rssDate) => {
+  const dateArr = rssDate.replace(',', '').split(' ');
+  const year = dateArr[3];
+  const month = dateArr[2];
+  const date = dateArr[1];
+  const time = dateArr[4];
+  const formatedDate = new Date(`${year},${month},${date},${time}`);
+  return formatedDate;
+};
+
+const shuffle = (array) => {
+  let currentIndex = array.length,
+    randomIndex;
+
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+  return array;
 };
 
 module.exports = {
@@ -116,4 +144,7 @@ module.exports = {
   arrayDiff,
   arraySame,
   getNow,
+  stringDateConverter,
+  rssDateFormatter,
+  shuffle,
 };

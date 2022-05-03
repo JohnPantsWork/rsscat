@@ -8,11 +8,11 @@ setInterval(center, intervalTime);
 center(); // use corntab to invoke the mission
 
 const missionList = [
+  { mission: 'm_checkRssUpdate', level: 0 },
+  { mission: 'm_checkRssUpdate', level: 1 },
+  { mission: 'm_checkRssUpdate', level: 2 },
   { mission: 'm_checkRssUpdate', level: 3 },
-  { mission: 'm_checkRssUpdate', level: 3 },
-  { mission: 'm_checkRssUpdate', level: 3 },
-  { mission: 'm_checkRssUpdate', level: 3 },
-  { mission: 'm_checkRssUpdate', level: 3 },
+  { mission: 'm_checkRssUpdate', level: 2 },
   { mission: 'm_checkRssUpdate', level: 3 },
   { mission: 'm_checkNewsApiUpdate' },
 ];
@@ -29,11 +29,7 @@ async function center() {
   switch (newM.mission) {
     case 'm_checkRssUpdate':
       console.log(`#m_checkRssUpdate#`);
-      for (let level = 0; level <= newM.level; level += 1) {
-        console.log(`##`);
-        await m_checkRssUpdate(rss_checked_array[level], parseInt(MISSION_AMOUNT), level);
-      }
-      console.log(`#m_checkRssUpdate finish#`);
+      await m_checkRssUpdate(rss_checked_array[newM.level], parseInt(MISSION_AMOUNT), newM.level);
       break;
 
     case 'm_checkNewsApiUpdate':
@@ -49,7 +45,7 @@ async function center() {
       break;
   }
   await updateCenterStatus(newMissionId, rss_checked_array);
-  process.exit(); // if manage by corntab.
+  // process.exit(); // if manage by corntab.
 }
 
 // functions

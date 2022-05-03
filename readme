@@ -15,6 +15,8 @@ Custom Status Code
 
 ---
 
+1001:'Url is not safe.'
+
 2000:'Login success.'
 2001:'Oauth login success.'
 2002:'Oauth reject.'

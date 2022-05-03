@@ -80,6 +80,7 @@ async function checkRssUpdate(latest_id, amount, level) {
         continue;
       }
       const formatedDataWithTagging = await articleTagging(formatedData, 'rss');
+
       await insertArticles(id, formatedDataWithTagging); //////////////////////////
     } catch (error) {
       console.error(error);
@@ -251,6 +252,7 @@ async function checkNewsApiUpdate() {
     }
     const formatedDataWithTagging = await articleTagging(formatedNews, 'news');
     console.log(`#--------------------[formatedDataWithTagging]#\n`, formatedDataWithTagging);
+
     await insertNews(id, formatedDataWithTagging); //////////////////////////
   } catch (err) {
     console.log(`#--------------------[err]#\n`, err);
@@ -356,15 +358,22 @@ async function articleTagging(formatedData, type) {
     console.log(`#--------------------[tdR]#\n`, tdR);
     const insert_tag_info = await objKeyArray(tdR);
     for (let j = 0; j < insert_tag_info.length; j += 1) {
-      // await pool.query('INSERT INTO tag_info (tag_name,appear_times) VALUES (?,1) ON DUPLICATE KEY UPDATE appear_times = appear_times + 1;', [insert_tag_info[j]]);
+      await pool.query('INSERT INTO tag_info (tag_name,appear_times) VALUES (?,1) ON DUPLICATE KEY UPDATE appear_times = appear_times + 1;', [insert_tag_info[j]]);
     }
 
     const topTags = await td_idf(tdR, 3);
+
+    // if a article tag is less then 3, the article's description must be very short, ignore this article.
+    if (topTags.length < 3) {
+      continue;
+    }
+
     const tags = topTags.map((e) => {
       return e[0];
     });
     const rawTagIds = await tagNameToId(tags);
     const tagIds = arrayObjValue(rawTagIds);
+
     formatedDataWithTagging.push(formatedData[i].concat(tagIds));
   }
   return formatedDataWithTagging;
@@ -373,11 +382,12 @@ async function articleTagging(formatedData, type) {
 async function ckip(des) {
   const result = await axios({
     method: 'POST',
-    url: 'http://13.228.15.71/api/1.0/test',
+    url: 'https://rsscat.net/api/1.0/test',
     data: { raw_words: des },
   });
   const pos = result.data.data.pos;
   const sPos = pos.split('),');
+  console.log(`#sPos#`, sPos);
   const skip_part = [
     'P',
     'A',
@@ -423,7 +433,8 @@ async function ckip(des) {
     'EXCLAMATIONCATEGORY',
     'QUESTIONCATEGORY',
     'DASHCATEGORY',
-    // 'FW', // foreign language
+    'DOTCATEGORY',
+    'FW', // foreign language
   ];
 
   const filterPos = sPos.filter((p) => {

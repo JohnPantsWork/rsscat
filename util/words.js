@@ -14,15 +14,21 @@ async function jiebaCut(raw_words) {
 }
 
 async function jiebaTag(raw_words) {
-  const cuttedWords = await nodejieba.tag(raw_words);
-  return cuttedWords;
+  const cuttedWordsWithTags = await nodejieba.tag(raw_words);
+  const data = { ner: '', pos: '' };
+  for (let obj of cuttedWordsWithTags) {
+    const tag = obj.tag.toUpperCase();
+    data.pos = data.pos + `${obj.word}(${tag}),`;
+  }
+  return data;
 }
+//(Nh),
 
 async function td(words_tags) {
   const singleData = {};
   const totalLength = words_tags.length;
   for (let i = 0; i < totalLength; i += 1) {
-    if (words_tags[i].length < 2 || skipWords.includes(words_tags[i])) {
+    if (words_tags[i].length > 16 || skipWords.includes(words_tags[i])) {
       continue;
     }
     if (singleData[words_tags[i]]) {

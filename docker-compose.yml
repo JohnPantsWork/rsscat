@@ -23,12 +23,12 @@ services:
     volumes:
       - /home/ec2-user/rsscat_docker_volumes/mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=rsscat_password_super666cool
+      - MYSQL_ROOT_PASSWORD=rsscat12345
   redis:
     image: redis:6.2.6-alpine
     restart: always
-    #ports:
-    #  - '6379:6379'
+    ports:
+      - '6379:6379'
     networks:
       - rsscat
     # volumes:
@@ -70,9 +70,9 @@ services:
       - rsscat
     environment:
       - CKIP_ENDPOINT=http://rsscat_ckiptagger_rsscat_1:5000/cutWords
-      - CACHE_HOST=http://rsscat_redis_1:6379
-      - RDB_HOST=http://rsscat_mysql_1:3306
-      - RDB_PASSWORD=rsscat_password_super666cool
+      - CACHE_HOST=rsscat_redis_1
+      - RDB_HOST=rsscat_mysql_1
+      - RDB_PASSWORD=rsscat12345
     env_file:
       - .env
 networks:

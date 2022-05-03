@@ -56,6 +56,7 @@ app.use(
     require('./server/routes/rss_route'),
     require('./server/routes/news_route'),
     require('./server/routes/tag_route'),
+    require('./server/routes/cat_route'),
     require('./server/routes/test_route'),
   ]
 );

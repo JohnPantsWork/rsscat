@@ -25,6 +25,9 @@ async function getLatestRss(page, amount) {
 
 async function seleteFeedRss(page, amount, tags, domain) {
   try {
+    if (!tags) {
+      return false;
+    }
     const start = page * amount;
     const [result] = await pool.query(
       `SELECT DISTINCT id,title,auther,des,picture,url FROM (SELECT * FROM rss_data WHERE endpoint_id in (?)) AS rs WHERE tag_id_1 in (?) OR tag_id_2 in (?) OR tag_id_3 in (?) ORDER BY id DESC LIMIT ? OFFSET ?`,
@@ -62,4 +65,27 @@ async function seleteRssDomainName(domainIds) {
   }
 }
 
-module.exports = { getAllRssUrl, getLatestRss, seleteFeedRss, seleteRssDomainName };
+async function rssUrlDuplicate(url) {
+  try {
+    const [result] = await pool.query('SELECT url FROM rss_endpoint WHERE url IN (?)', [url]);
+    if (result.length > 0) {
+      return true;
+    }
+    return false;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+async function insertNewRss(title, frequence, url) {
+  try {
+    await pool.query('INSERT INTO rss_endpoint(title, frequence, url) VALUES (?,?,?)', [title, frequence, url]);
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+module.exports = { getAllRssUrl, getLatestRss, seleteFeedRss, seleteRssDomainName, rssUrlDuplicate, insertNewRss };
