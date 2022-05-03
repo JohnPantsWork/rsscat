@@ -16,7 +16,7 @@ app.set('json spaces', 2);
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'http://rsscat.net', 'https://rsscat.net'],
+    origin: ['http://localhost:3000', 'http://rsscat.net', 'https://rsscat.net', 'http://127.0.0.1'],
   })
 );
 app.use(express.static('public'));

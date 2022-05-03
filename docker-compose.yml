@@ -55,8 +55,8 @@ services:
   ckiptagger_rsscat:
     image: ckiptagger_rsscat:latest
     restart: always
-    #ports:
-    #  - '5000:5000'
+    ports:
+      - '5000:5000'
     networks:
       - rsscat
     volumes:
@@ -64,15 +64,10 @@ services:
   rsscat:
     image: rsscat:latest
     restart: always
-    #ports:
-    #  - '3000:3000'
+    ports:
+      - '3000:3000'
     networks:
       - rsscat
-    environment:
-      - CKIP_ENDPOINT=http://rsscat_ckiptagger_rsscat_1:5000/cutWords
-      - CACHE_HOST=rsscat_redis_1
-      - RDB_HOST=rsscat_mysql_1
-      - RDB_PASSWORD=rsscat12345
     env_file:
       - .env
 networks:

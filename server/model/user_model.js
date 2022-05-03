@@ -86,9 +86,9 @@ async function updateCoins(coins, id) {
   const conn = await pool.getConnection();
   try {
     await conn.query('START TRANSACTION;');
-    const [result] = await pool.query('UPDATE user SET coins = coins+? WHERE id = ?', [coins, id]);
+    const [result] = await conn.query('UPDATE user SET coins = coins + ? WHERE id = ?', [coins, id]);
     console.log(`#result#`, result);
-    await pool.query('COMMIT');
+    await conn.query('COMMIT');
     return true;
   } catch (err) {
     console.error(err);
@@ -100,4 +100,88 @@ async function updateCoins(coins, id) {
   }
 }
 
-module.exports = { checkEmailExist, insertNewUser, selectHashedPassword, selectUserData, selectUserLoginDate, selectCoins, updateCoins };
+async function updateCatClicked(cat_clicked, id) {
+  const conn = await pool.getConnection();
+  try {
+    await conn.query('START TRANSACTION;');
+    const [result] = await conn.query('UPDATE user SET cat_clicked = cat_clicked + ? WHERE id = ?', [cat_clicked, id]);
+    console.log(`#result#`, result);
+    await conn.query('COMMIT');
+    return true;
+  } catch (err) {
+    console.error(err);
+    await conn.query('ROLLBACK');
+    return false;
+  } finally {
+    await conn.query('UNLOCK TABLES');
+    await conn.release();
+  }
+}
+
+async function updateLikedCount(liked_counts, id) {
+  const conn = await pool.getConnection();
+  try {
+    await conn.query('START TRANSACTION;');
+    const [result] = await conn.query('UPDATE user SET liked_counts = liked_counts + ? WHERE id = ?', [liked_counts, id]);
+    console.log(`#result#`, result);
+    await conn.query('COMMIT');
+    return true;
+  } catch (err) {
+    console.error(err);
+    await conn.query('ROLLBACK');
+    return false;
+  } finally {
+    await conn.query('UNLOCK TABLES');
+    await conn.release();
+  }
+}
+
+async function updateLinkCounts(link_counts, id) {
+  const conn = await pool.getConnection();
+  try {
+    await conn.query('START TRANSACTION;');
+    const [result] = await conn.query('UPDATE user SET link_counts = link_counts + ? WHERE id = ?', [link_counts, id]);
+    console.log(`#result#`, result);
+    await conn.query('COMMIT');
+    return true;
+  } catch (err) {
+    console.error(err);
+    await conn.query('ROLLBACK');
+    return false;
+  } finally {
+    await conn.query('UNLOCK TABLES');
+    await conn.release();
+  }
+}
+
+async function updateMissionCompleted(mission_completed, id) {
+  const conn = await pool.getConnection();
+  try {
+    await conn.query('START TRANSACTION;');
+    const [result] = await conn.query('UPDATE user SET mission_completed = mission_completed + ? WHERE id = ?', [mission_completed, id]);
+    console.log(`#result#`, result);
+    await conn.query('COMMIT');
+    return true;
+  } catch (err) {
+    console.error(err);
+    await conn.query('ROLLBACK');
+    return false;
+  } finally {
+    await conn.query('UNLOCK TABLES');
+    await conn.release();
+  }
+}
+
+module.exports = {
+  checkEmailExist,
+  insertNewUser,
+  selectHashedPassword,
+  selectUserData,
+  selectUserLoginDate,
+  selectCoins,
+  updateCoins,
+  updateCatClicked,
+  updateLikedCount,
+  updateLinkCounts,
+  updateMissionCompleted,
+};

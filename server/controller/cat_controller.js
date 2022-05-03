@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { stringDateConverter, shuffle } = require('../../util/util');
 const { selectCatStore, selectMission, selectStoreItem } = require('../model/cat_model');
-const { selectCoins, updateCoins, selectUserLoginDate } = require('../model/user_model');
+const { selectCoins, updateCoins, selectUserLoginDate, updateMissionCompleted } = require('../model/user_model');
 const cache = require('../../util/cache');
 
 const MISSION_AMOUNT = 3;
@@ -85,6 +85,8 @@ const patchCatMission = async (req, res) => {
   if (reward > 0) {
     await updateCoins(reward, userData.userId);
   }
+
+  await updateMissionCompleted(1, userData.userId);
 
   return res.status(200).json({ data: { msg: 'Reward finish.' } });
 };

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { GOOGLE_RECAPTCHA_SECRET } = process.env;
 const { errRes, arrayObjValue } = require('../../util/util');
-const { checkEmailExist, insertNewUser, selectHashedPassword, selectUserData } = require('../model/user_model');
+const { checkEmailExist, insertNewUser, selectHashedPassword, selectUserData, updateCatClicked, updateLikedCount, updateLinkCounts, updateMissionCompleted } = require('../model/user_model');
 const argon2 = require('argon2');
 const axios = require('axios');
 const { getAllRssUrl } = require('../model/rss_model');
@@ -80,7 +80,7 @@ const postUserSignUp = async (req, res, next) => {
 
 const getUser = async (req, res) => {
   const { userData } = req.body;
-  const selectResult = await selectUserData(userData.userId);
+  let selectResult = await selectUserData(userData.userId);
   return res.status(200).json({ data: selectResult });
 };
 

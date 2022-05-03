@@ -3,6 +3,7 @@ const {} = process.env;
 const cache = require('../../util/cache');
 const { getNow } = require('../../util/util');
 const { inserMultiRecord, selectTagNames, selectUserRecord } = require('../model/tag_model');
+const { updateLikedCount, updateMissionCompleted } = require('../model/user_model');
 
 const postTags = async (req, res) => {
   const { method, likeTags, /*dislikeTags,*/ userData } = req.body;
@@ -43,7 +44,10 @@ const postTags = async (req, res) => {
   // if (!dislikedTagNamesResult) {
   //   dislikedTagNamesResult = [];
   // }
-
+  console.log(`#updateLikedCount before#`);
+  const result = await updateLikedCount(1, userData.userId);
+  console.log(`#result#`, result);
+  console.log(`#updateLikedCount after#`);
   await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
   return res.status(200).json({ data: { likeTags: likedTagNamesResult /*, dislikeTags: dislikedTagNamesResult*/ } });
 };

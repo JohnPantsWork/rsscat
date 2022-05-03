@@ -1,13 +1,24 @@
 require('dotenv').config();
-const redis = require('ioredis');
+const Redis = require('ioredis');
 const { CACHE_HOST, CACHE_PORT, CACHE_USER, CACHE_PASSWORD } = process.env;
 
-const redisClient = redis.createClient({
-  url: `redis://${CACHE_USER}:${CACHE_PASSWORD}@${CACHE_HOST}:${CACHE_PORT}`,
-  socket: {
-    keepAlive: false,
-  },
+// const redisClient = redis.createClient({
+//   // url: `redis://${CACHE_USER}:${CACHE_PASSWORD}@${CACHE_HOST}:${CACHE_PORT}`,
+//   url: `redis://${CACHE_USER}@${CACHE_HOST}:${CACHE_PORT}`,
+//   socket: {
+//     keepAlive: false,
+//   },
+// });
+
+const redisClient = new Redis({
+  port: CACHE_PORT, // Redis port
+  host: CACHE_HOST, // Redis host
+  username: CACHE_USER, // needs Redis >= 6
+  password: CACHE_PASSWORD,
+  db: 0, // Defaults to 0
 });
+
+// console.log(`#redisClient#`, redisClient);
 
 // use to check if redis is alive or not.
 redisClient.ready = false;
@@ -17,11 +28,10 @@ redisClient.on('ready', () => {
   console.log('Redis is ready');
 });
 
-redisClient.on('error', () => {
+redisClient.on('error', (err) => {
   redisClient.ready = false;
-  if (process.env.NODE_ENV == 'production') {
-    console.log('Error in Redis');
-  }
+  console.log('Error in Redis');
+  console.log(`#err#`, err);
 });
 
 redisClient.on('end', () => {

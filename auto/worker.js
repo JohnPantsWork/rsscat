@@ -8,7 +8,7 @@ const NewsAPI = require('newsapi');
 const { jiebaCut, td, td_idf, tagNameToId } = require('../util/words');
 const { arrayObjValue, objKeyArray } = require('../util/util');
 
-const { MISSION_LIST, NEWS_API_KEY } = process.env;
+const { MISSION_LIST, NEWS_API_KEY, CKIP_ENDPOINT } = process.env;
 const CONNECT_TIMEOUT = parseInt(process.env.CONNECT_TIMEOUT);
 const ARTICLES_LIMIT = parseInt(process.env.ARTICLES_LIMIT);
 const newsapi = new NewsAPI(NEWS_API_KEY);
