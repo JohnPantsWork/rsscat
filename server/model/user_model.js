@@ -2,9 +2,9 @@ const { pool } = require('../../util/rdb');
 
 async function checkEmailExist(provider, email) {
   try {
-    const [result] = await pool.query('SELECT email FROM user WHERE provider = ? AND email = ?', [provider, email]);
+    const [result] = await pool.query('SELECT id FROM user WHERE provider = ? AND email = ?', [provider, email]);
     if (result.length > 0) {
-      return true;
+      return result[0].id;
     }
     return false;
   } catch (err) {

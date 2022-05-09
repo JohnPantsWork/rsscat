@@ -15,6 +15,7 @@ const sessionCheck = async (req, res, next) => {
   let { userId } = req.session.user || { userId: false };
   if (!userId) {
     console.log(`#session error#`);
+    // return res.status(400).redirect('/');
     return next(errRes(404, { status: 2006, msg: 'session error!' }));
   }
   const userData = await cache.get(`user:${userId}`);
@@ -54,7 +55,7 @@ const postUserSignUp = async (req, res, next) => {
 
   // Check if email is already been used. 0 = native
   const emailExistResult = await checkEmailExist(0, email);
-  if (emailExistResult) {
+  if (emailExistResult !== false) {
     return next(errRes(409, 'This email has been used.'));
   }
   const hashedPassword = await argon2.hash(password);
@@ -99,11 +100,19 @@ const postUserSignIn = async (req, res, next) => {
   }
 };
 
+const logoutUser = async (req, res) => {
+  req.session.destroy(() => {
+    return res.status(200).redirect('/');
+  });
+};
+
 const nativeSignIn = async (req, res, next) => {
   const { provider, email, password } = req.body;
 
   const emailExistResult = await checkEmailExist(0, email);
+  console.log(`#emailExistResult#`, emailExistResult);
   if (!emailExistResult) {
+    x;
     return next(errRes(404, 'Email or password is not valid.'));
   }
   const hashData = await selectHashedPassword(provider, email);
@@ -135,9 +144,10 @@ const facebookSignIn = async (req, res, next) => {
   const username = result.data.name;
 
   const checkExist = await checkEmailExist(1, email);
-
+  let insertResult;
   if (!checkExist) {
-    const insertResult = await insertNewOauthUser(1, email, username);
+    console.log(`#new user#`);
+    insertResult = await insertNewOauthUser(1, email, username);
     await newUserCacheSetup(insertResult, email, username);
     req.session.cookie.expires = new Date(Date.now() + SESSION_EXPIRE_TIME);
     req.session.cookie.maxAge = SESSION_EXPIRE_TIME;
@@ -147,7 +157,7 @@ const facebookSignIn = async (req, res, next) => {
 
   req.session.cookie.expires = new Date(Date.now() + SESSION_EXPIRE_TIME);
   req.session.cookie.maxAge = SESSION_EXPIRE_TIME;
-  req.session.user = { userId: insertResult };
+  req.session.user = { userId: checkExist };
 
   return res.status(200).json({ data: { msg: 'Signup success.', id: req.sessionID } });
 };
@@ -169,6 +179,7 @@ const googleSignIn = async (req, res, next) => {
   const checkExist = await checkEmailExist(2, email);
 
   if (!checkExist) {
+    console.log(`#new user#`);
     const insertResult = await insertNewOauthUser(2, email, username);
     await newUserCacheSetup(insertResult, email, username);
     req.session.cookie.expires = new Date(Date.now() + SESSION_EXPIRE_TIME);
@@ -179,7 +190,7 @@ const googleSignIn = async (req, res, next) => {
 
   req.session.cookie.expires = new Date(Date.now() + SESSION_EXPIRE_TIME);
   req.session.cookie.maxAge = SESSION_EXPIRE_TIME;
-  req.session.user = { userId: insertResult };
+  req.session.user = { userId: checkExist };
 
   return res.status(200).json({ data: { msg: 'Signup success.', id: req.sessionID } });
 };

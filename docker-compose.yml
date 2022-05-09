@@ -74,6 +74,26 @@ services:
     depends_on: # start container after depends are opened.
       - redis
       - mysql
+  rsscat_worker:
+    image: rsscat_worker:latest
+    restart: always
+    networks:
+      - rsscat
+    env_file:
+      - .env
+    depends_on: # start container after depends are opened.
+      - redis
+      - mysql
+  rsscat_worker_center:
+    image: rsscat_worker_center:latest
+    restart: always
+    networks:
+      - rsscat
+    env_file:
+      - .env
+    depends_on: # start container after depends are opened.
+      - redis
+      - mysql
 networks:
   rsscat:
     driver: bridge

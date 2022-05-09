@@ -19,8 +19,6 @@ const redisClient = new Redis({
   db: 0, // Defaults to 0
 });
 
-console.log(`#redisClient#`, redisClient);
-
 // use to check if redis is alive or not.
 redisClient.ready = false;
 

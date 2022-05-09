@@ -27,7 +27,7 @@ const postCatStore = async (req, res) => {
   const coinsResult = await selectCoins(userData.userId);
 
   if (coinsResult < storeItemResult.price) {
-    return res.status(200).json({ data: { msg: 'money is not enough.' } });
+    return res.status(400).json({ data: { msg: 'money is not enough.' } });
   }
 
   const result = await updateCoins(-storeItemResult.price, userData.userId);
