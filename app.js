@@ -47,6 +47,12 @@ app.use(
 // });
 // morganBody(app);
 
+app.use((req, res, next) => {
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  console.log(fullUrl);
+  next();
+});
+
 // API routes
 app.use(
   '/api/' + API_VERSION,

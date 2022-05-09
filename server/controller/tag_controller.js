@@ -1,68 +1,57 @@
 require('dotenv').config();
 const {} = process.env;
 const cache = require('../../util/cache');
-const { getNow } = require('../../util/util');
-const { inserMultiRecord, selectTagNames, selectUserRecord } = require('../model/tag_model');
+const { getNow, arrayObjValue } = require('../../util/util');
+const { inserMultiRecord, selectTagNames, selectUserRecord, deleteUserRecord } = require('../model/tag_model');
 const { updateLikedCount, updateMissionCompleted } = require('../model/user_model');
-
-const postTags = async (req, res) => {
-  const { method, likeTags, /*dislikeTags,*/ userData } = req.body;
-  let likedTagNamesResult;
-  console.log(`#likeTags#`, likeTags);
-  // let dislikedTagNamesResult;
-  if (method === 'add') {
-    // add like tag
-    const temp = likeTags.concat(userData.likeTags);
-    const newLikeTags = [...new Set(temp)];
-    userData.likeTags = newLikeTags;
-    likedTagNamesResult = await selectTagNames(userData.likeTags);
-
-    // add dislike tag
-    // const temp2 = dislikeTags.concat(userData.dislikeTags);
-    // const newDislikeTags = [...new Set(temp2)];
-    // userData.dislikeTags = newDislikeTags;
-    // dislikedTagNamesResult = await selectTagNames(userData.dislikeTags);
-  } else if (method === 'remove') {
-    // remove like tag
-    const temp = userData.likeTags.filter((tag) => {
-      return likeTags.indexOf(tag) === -1;
-    });
-    userData.likeTags = temp;
-    likedTagNamesResult = await selectTagNames(temp);
-
-    // remove dislike tag
-    // const temp2 = userData.dislikeTags.filter((tag) => {
-    //   return dislikeTags.indexOf(tag) === -1;
-    // });
-    // userData.dislikeTags = temp2;
-    // dislikedTagNamesResult = await selectTagNames(temp2);
-  }
-
-  if (!likedTagNamesResult) {
-    likedTagNamesResult = [];
-  }
-  // if (!dislikedTagNamesResult) {
-  //   dislikedTagNamesResult = [];
-  // }
-  console.log(`#updateLikedCount before#`);
-  const result = await updateLikedCount(1, userData.userId);
-  console.log(`#result#`, result);
-  console.log(`#updateLikedCount after#`);
-  await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
-  return res.status(200).json({ data: { likeTags: likedTagNamesResult /*, dislikeTags: dislikedTagNamesResult*/ } });
-};
 
 const getTags = async (req, res) => {
   const { userData } = req.body;
+  let likedTagNames = await selectTagNames(userData.likeTags);
+
+  const selectResult = await selectUserRecord(userData.userId);
+  const values = arrayObjValue(selectResult);
+
+  let dislikeTags = values.filter((tag) => {
+    return userData.likeTags.indexOf(tag) === -1;
+  });
+  let dislikeTagNames = await selectTagNames(dislikeTags);
+
+  return res.status(200).json({ data: { likeTags: likedTagNames, dislikeTags: dislikeTagNames } });
+};
+
+const patchTags = async (req, res) => {
+  const { likedTags, userData } = req.body;
+  const temp = likedTags.concat(userData.likeTags);
+  userData.likeTags = [...new Set(temp)];
+
+  await updateLikedCount(1, userData.userId);
+  await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
+
   let likedTagNamesResult = await selectTagNames(userData.likeTags);
-  let dislikedTagNamesResult = await selectTagNames(userData.dislikeTags);
-  if (!likedTagNamesResult) {
-    likedTagNamesResult = [];
+  return res.status(200).json({ data: { likeTags: likedTagNamesResult } });
+};
+
+const deleteTags = async (req, res) => {
+  const { dislikedTags = [], userData } = req.body;
+  const { associate = null } = req.query;
+
+  if (associate !== null) {
+    const selectResult = await selectUserRecord(userData.userId);
+    const values = arrayObjValue(selectResult);
+    userData.likeTags = userData.likeTags.filter((tag) => {
+      return values.indexOf(tag) !== -1;
+    });
+  } else {
+    userData.likeTags = userData.likeTags.filter((tag) => {
+      return dislikedTags.indexOf(tag) === -1;
+    });
   }
-  if (!dislikedTagNamesResult) {
-    dislikedTagNamesResult = [];
-  }
-  return res.status(200).json({ data: { likeTags: likedTagNamesResult, dislikeTags: dislikedTagNamesResult } });
+
+  await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
+
+  let likedTagNamesResult = await selectTagNames(userData.likeTags);
+  return res.status(200).json({ data: { likeTags: likedTagNamesResult } });
 };
 
 // beware, tag_id_arr
@@ -79,4 +68,13 @@ const getRecord = async (req, res) => {
   return res.status(200).json({ data: selectResult });
 };
 
-module.exports = { postTags, getTags, postRecord, getRecord };
+const deleteRecord = async (req, res) => {
+  const { userData, dataId, datatypeId } = req.body;
+  const result = await deleteUserRecord(userData.userId, dataId, datatypeId);
+  if (!result) {
+    return res.status(400).json({ error: 'dislike failure.' });
+  }
+  return res.status(200).json({ data: 'dislike success.' });
+};
+
+module.exports = { patchTags, getTags, deleteTags, postRecord, getRecord, deleteRecord };

@@ -27,6 +27,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
+    "google-auth-library": "^8.0.2",
     "ioredis": "^5.0.4",
     "morgan-body": "^2.6.6",
     "mysql2": "^2.3.3",
