@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { GOOGLE_SAFE_BROWSING_END, GOOGLE_SAFE_BROWSING_KEY } = process.env;
 const { arrayObjValue, arrayDiff, rssDateFormatter } = require('../../util/util');
-const { getLatestRss, seleteFeedRss, getAllRssUrl, seleteRssDomainName, rssUrlDuplicate, insertNewRss } = require('../model/rss_model');
+const { getLatestRss, seleteFeedRss, getAllRssUrl, seleteRssDomainName, rssUrlDuplicate, insertNewRss, selectLikedRss, selectRssByTitle } = require('../model/rss_model');
 const cache = require('../../util/cache');
 const axios = require('axios');
 const { rssParser } = require('../../util/rssParser');
@@ -11,47 +11,93 @@ const MAX_RSS_LEVEL_CHECK = 4;
 
 const getExploreRss = async (req, res) => {
   const { paging } = req.query;
-  const result = await getLatestRss(paging, 10);
-  return res.status(200).json({ data: result });
+  const { userData } = req.body;
+  const rssResult = await getLatestRss(paging, 10);
+  const rssIds = rssResult.map((r) => r.id);
+  const likedResult = await selectLikedRss(userData.userId, rssIds);
+  const likedIds = arrayObjValue(likedResult);
+  const sendData = rssResult.map((rss) => {
+    if (likedIds.includes(rss.id)) {
+      rss['liked'] = true;
+    } else {
+      rss['liked'] = false;
+    }
+    return rss;
+  });
+  return res.status(200).json({ data: sendData });
 };
 
 const getFeedRss = async (req, res) => {
   const { paging } = req.query;
   const { userData } = req.body;
-  const result = await seleteFeedRss(paging, 10, userData.likeTags, userData.domain);
-  return res.status(200).json({ data: result });
+  const rssResult = await seleteFeedRss(paging, 10, userData.likeTags, userData.domain);
+  if (rssResult === false) {
+    return res.status(200).json({ data: 'no data' });
+  }
+  const rssIds = rssResult.map((r) => r.id);
+  const likedResult = await selectLikedRss(userData.userId, rssIds);
+  const likedIds = arrayObjValue(likedResult);
+
+  const sendData = rssResult.map((rss) => {
+    if (likedIds.includes(rss.id)) {
+      rss.liked = true;
+    } else {
+      rss.liked = false;
+    }
+    return rss;
+  });
+  return res.status(200).json({ data: sendData });
 };
 
-const getRssDomainName = async (req, res) => {
-  // get liked domains
-  const userData = req.body.userData;
-  // get other domains
+const getAllRssDomain = async (req, res) => {
   const allDomainObjs = await getAllRssUrl();
   const allDomain = arrayObjValue(allDomainObjs);
-  const dislikedDomain = arrayDiff(allDomain, userData.domain);
-  let likedDomainNames = await seleteRssDomainName(userData.domain);
-  let dislikedDomainNames = await seleteRssDomainName(dislikedDomain);
-  if (!likedDomainNames) {
-    likedDomainNames = [];
-  }
-  if (!dislikedDomainNames) {
-    dislikedDomainNames = [];
-  }
-  return res.status(200).json({ data: { likedDomains: likedDomainNames, dislikedDomains: dislikedDomainNames } });
+  let allDomainNames = await seleteRssDomainName(allDomain);
+  return res.status(200).json({ data: allDomainNames });
 };
 
-const postLikedRssDomain = async (req, res) => {
-  const { newLikedDomains } = req.body;
-  const userData = req.body.userData;
-  userData.domain = newLikedDomains;
-  const adjustedData = JSON.stringify(userData);
-  cache.set(`user:${userData.userId}`, adjustedData);
-  return res.status(200).json({ data: { msg: 'Change ok.' } });
+const getLikedRssDomain = async (req, res) => {
+  const { userData } = req.body;
+  return res.status(200).json({ data: userData.domain });
+};
+
+const patchLikedRssDomain = async (req, res) => {
+  const { likedDomainId = null, userData, sumbitAll = null } = req.body;
+  let domains = userData.domain;
+
+  if (sumbitAll !== null) {
+    if (sumbitAll === true) {
+      const allDomainObjs = await getAllRssUrl();
+      const allDomain = arrayObjValue(allDomainObjs);
+      domains = domains.concat(allDomain);
+    } else if (sumbitAll === false) {
+      domains = [];
+    }
+  } else {
+    likedDomainId ? domains.push(likedDomainId) : domains.push();
+  }
+
+  userData.domain = [...new Set(domains)];
+  cache.set(`user:${userData.userId}`, JSON.stringify(userData));
+
+  return res.status(200).json({ data: userData.domain });
+};
+
+const deleteLikedRssDomain = async (req, res) => {
+  const { dislikedDomainId, userData } = req.body;
+
+  userData.domain = userData.domain.filter((d) => {
+    if (d !== dislikedDomainId) {
+      return d;
+    }
+  });
+  cache.set(`user:${userData.userId}`, JSON.stringify(userData));
+
+  return res.status(200).json({ data: userData.domain });
 };
 
 const postNewRss = async (req, res) => {
   const { url } = req.body;
-  console.log(`#url#`, url);
 
   const checkDuplicate = await rssUrlDuplicate(url);
   if (checkDuplicate) {
@@ -79,6 +125,8 @@ const postNewRss = async (req, res) => {
 
   return res.status(200).json({ data: { msg: `This url is valid , rss source name is "${rssData.title}", ${rssData.items.length} items detected.` } });
 };
+
+// functions
 
 const rssUrlCheckSafe = async (url) => {
   const checkSafeBrowsingResult = await axios({
@@ -122,8 +170,7 @@ const rssFrequenceLevel = (items) => {
     }
     level += 1;
   }
-  console.log(`level#`, level);
   return level;
 };
 
-module.exports = { getRssDomainName, getExploreRss, getFeedRss, postLikedRssDomain, postNewRss };
+module.exports = { getExploreRss, getFeedRss, getLikedRssDomain, patchLikedRssDomain, deleteLikedRssDomain, getAllRssDomain, postNewRss };

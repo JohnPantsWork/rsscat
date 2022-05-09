@@ -5,16 +5,44 @@ async function getLatestRss(page, amount) {
     const start = page * amount;
     const [result] = await pool.query(
       `
-    SELECT DISTINCT rd.id, title, auther, des, picture, url, tag_id_1, tag_id_2, tag_id_3, ti.tag_name AS tag1, ti2.tag_name AS tag2, ti3.tag_name AS tag3
-    FROM rss_data AS rd 
-      JOIN tag_info AS ti 
-        ON ti.id = rd.tag_id_1 
-      JOIN tag_info AS ti2
-        ON ti2.id = rd.tag_id_2
-      JOIN tag_info AS ti3
-        ON ti3.id = rd.tag_id_3
-        ORDER BY id DESC LIMIT ? OFFSET ?;`,
+      SELECT DISTINCT rd.id,re.title AS source, rd.title, auther, des, picture, rd.url, tag_id_1, tag_id_2, tag_id_3, ti.tag_name AS tag1, ti2.tag_name AS tag2, ti3.tag_name AS tag3
+      FROM rss_data AS rd 
+        JOIN tag_info AS ti 
+          ON ti.id = rd.tag_id_1 
+        JOIN tag_info AS ti2
+          ON ti2.id = rd.tag_id_2
+        JOIN tag_info AS ti3
+          ON ti3.id = rd.tag_id_3
+        JOIN rss_endpoint AS re
+          ON re.id = rd.endpoint_id
+      ORDER BY id DESC LIMIT ? OFFSET ?;`,
       [amount, start]
+    );
+    return result;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+async function selectRssByTitle(page, amount, title) {
+  try {
+    const start = page * amount;
+    const [result] = await pool.query(
+      `
+      SELECT DISTINCT rd.id,re.title AS source, rd.title, auther, des, picture, rd.url, tag_id_1, tag_id_2, tag_id_3, ti.tag_name AS tag1, ti2.tag_name AS tag2, ti3.tag_name AS tag3
+      FROM rss_data AS rd 
+        JOIN tag_info AS ti 
+          ON ti.id = rd.tag_id_1 
+        JOIN tag_info AS ti2
+          ON ti2.id = rd.tag_id_2
+        JOIN tag_info AS ti3
+          ON ti3.id = rd.tag_id_3
+        JOIN rss_endpoint AS re
+          ON re.id = rd.endpoint_id
+      WHERE title like (%?%)
+      ORDER BY id DESC LIMIT ? OFFSET ?;`,
+      [amount, start, title]
     );
     return result;
   } catch (err) {
@@ -30,7 +58,20 @@ async function seleteFeedRss(page, amount, tags, domain) {
     }
     const start = page * amount;
     const [result] = await pool.query(
-      `SELECT DISTINCT id,title,auther,des,picture,url FROM (SELECT * FROM rss_data WHERE endpoint_id in (?)) AS rs WHERE tag_id_1 in (?) OR tag_id_2 in (?) OR tag_id_3 in (?) ORDER BY id DESC LIMIT ? OFFSET ?`,
+      `
+      SELECT DISTINCT rs.id,re.title AS source, rs.title, auther, des, picture, rs.url, tag_id_1, tag_id_2, tag_id_3, ti.tag_name AS tag1, ti2.tag_name AS tag2, ti3.tag_name AS tag3
+      FROM (SELECT * FROM rss_data WHERE endpoint_id in (?)) AS rs 
+        JOIN tag_info AS ti 
+          ON ti.id = rs.tag_id_1 
+        JOIN tag_info AS ti2
+          ON ti2.id = rs.tag_id_2
+        JOIN tag_info AS ti3
+          ON ti3.id = rs.tag_id_3
+        JOIN rss_endpoint AS re
+          ON re.id = rs.endpoint_id
+      WHERE tag_id_1 in (?) OR tag_id_2 in (?) OR tag_id_3 in (?) 
+      ORDER BY id DESC 
+      LIMIT ? OFFSET ?`,
       [domain, tags, tags, tags, amount, start]
     );
 
@@ -88,4 +129,14 @@ async function insertNewRss(title, frequence, url) {
   }
 }
 
-module.exports = { getAllRssUrl, getLatestRss, seleteFeedRss, seleteRssDomainName, rssUrlDuplicate, insertNewRss };
+async function selectLikedRss(userId, rssIds, datatypeId = 1) {
+  try {
+    const [result] = await pool.query('SELECT data_id FROM record WHERE user_id = ? AND datatype_id = ? AND data_id in (?) GROUP BY data_id', [userId, datatypeId, rssIds]);
+    return result;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+module.exports = { getAllRssUrl, getLatestRss, seleteFeedRss, seleteRssDomainName, rssUrlDuplicate, insertNewRss, selectLikedRss, selectRssByTitle };

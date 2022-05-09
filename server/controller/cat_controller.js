@@ -49,8 +49,10 @@ const getCatMission = async (req, res) => {
 
   let cacheMissions = await cache.get(`mission:${userData.userId}`);
   let missionList;
+  let renew = false;
 
   if (cacheMissions === null) {
+    renew = true;
     const storeResult = await selectMission();
     missionList = shuffle(storeResult).slice(0, MISSION_AMOUNT);
     missionList = missionList.map((m) => {
@@ -61,12 +63,14 @@ const getCatMission = async (req, res) => {
   } else {
     missionList = JSON.parse(cacheMissions);
   }
+  const ttl = await cache.pttl(`mission:${userData.userId}`);
 
-  return res.status(200).json({ data: { missions: missionList } });
+  return res.status(200).json({ data: { missionList, ttl, renew } });
 };
 
 const patchCatMission = async (req, res) => {
   const { userData, completed } = req.body;
+
   let cacheMissions = await cache.get(`mission:${userData.userId}`);
   if (cacheMissions === null) {
     return res.status(200).json({ data: { msg: 'missions are expired.' } });
