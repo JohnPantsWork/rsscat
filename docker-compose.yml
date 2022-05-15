@@ -83,7 +83,7 @@ services:
             - .env
         depends_on: # start container after depends are opened.
             - redis
-            - mysql
+    #        - mysql
     rsscat_worker_center:
         image: rsscat_worker_center:latest
         restart: always
@@ -93,7 +93,7 @@ services:
             - .env
         depends_on: # start container after depends are opened.
             - redis
-            - mysql
+    #        - mysql
 networks:
     rsscat:
         driver: bridge
