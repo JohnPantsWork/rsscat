@@ -14,22 +14,23 @@ const app = express();
 app.set('trust proxy', true);
 app.set('json spaces', 2);
 app.use(
-  cors({
-    credentials: true,
-    origin: ['http://localhost:3000', 'http://rsscat.net', 'https://rsscat.net', 'http://127.0.0.1'],
-  })
+    cors({
+        credentials: true,
+        origin: ['http://localhost:3000', 'http://rsscat.net', 'https://rsscat.net', 'http://127.0.0.1'],
+    })
 );
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(COOKIE_SECRET));
 app.use(
-  session({
-    store: new redisStore({ client: cache }),
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
+    session({
+        store: new redisStore({ client: cache }),
+        secret: SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        name: 'usid',
+    })
 );
 
 // app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(document));
@@ -48,40 +49,40 @@ app.use(
 // morganBody(app);
 
 app.use((req, res, next) => {
-  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-  console.log(fullUrl);
-  next();
+    const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.log(fullUrl);
+    next();
 });
 
 // API routes
 app.use(
-  '/api/' + API_VERSION,
-  /*rateLimiterRoute,*/ [
-    require('./server/routes/word_route'),
-    require('./server/routes/user_route'),
-    require('./server/routes/rss_route'),
-    require('./server/routes/news_route'),
-    require('./server/routes/tag_route'),
-    require('./server/routes/cat_route'),
-    require('./server/routes/test_route'),
-  ]
+    '/api/' + API_VERSION,
+    /*rateLimiterRoute,*/ [
+        require('./server/routes/word_route'),
+        require('./server/routes/user_route'),
+        require('./server/routes/rss_route'),
+        require('./server/routes/news_route'),
+        require('./server/routes/tag_route'),
+        require('./server/routes/cat_route'),
+        require('./server/routes/test_route'),
+    ]
 );
 
 // 404
 app.get('*', (req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // 500
 app.use((err, req, res, next) => {
-  console.error(err);
-  console.log(`#err.message#`, err);
-  res.status(err.status || 500);
-  res.json({ error: err.message });
+    // console.error(err);
+    console.log(`#err.message#`, err);
+    res.status(err.status || 500);
+    res.json({ error: err.message });
 });
 
 app.listen(APP_PORT, async () => {
-  console.log(`Listening on port: ${APP_PORT}`);
+    console.log(`Listening on port: ${APP_PORT}`);
 });
