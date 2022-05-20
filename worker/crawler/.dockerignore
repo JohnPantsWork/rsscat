@@ -6,6 +6,3 @@ log/
 
 # Ignoring git and cache folders
 .git
-
-# Ignore worker folder
-worker/*

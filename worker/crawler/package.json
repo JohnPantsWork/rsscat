@@ -1,0 +1,25 @@
+{
+    "name": "worker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "worker.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "axios": "^0.27.2",
+        "cheerio": "^1.0.0-rc.10",
+        "dotenv": "^16.0.1",
+        "mysql2": "^2.3.3",
+        "newsapi": "^2.4.1",
+        "rss-parser": "^3.12.0"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "cheerio": "^1.0.0-rc.10",
+        "dotenv": "^16.0.1",
+        "mysql2": "^2.3.3",
+        "newsapi": "^2.4.1",
+        "rss-parser": "^3.12.0"
+    }
+}

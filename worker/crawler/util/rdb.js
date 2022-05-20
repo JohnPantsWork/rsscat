@@ -1,8 +1,5 @@
-// env
 require('dotenv').config();
 const { RDB_HOST, RDB_USER, RDB_PASSWORD, RDB_DATABASE, RDB_PORT } = process.env;
-
-// npm
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
