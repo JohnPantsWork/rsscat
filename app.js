@@ -5,11 +5,11 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const connectRedis = require('connect-redis')(session);
-// const MorganBody = require('morgan-body');
+const MorganBody = require('morgan-body');
 const cache = require('./util/cache');
 const errorHandler = require('./util/errorHandler');
 const { rateLimiterRoute } = require('./util/rateLimiter');
-// const Logger = require('./util/logger');
+const Logger = require('./util/logger');
 
 const app = express();
 app.set('trust proxy', true);
@@ -18,10 +18,12 @@ app.use(
     cors({
         credentials: true,
         origin: [
-            'http://rsscat.net',
-            'https://rsscat.net',
-            'http://localhost:3000',
             'http://127.0.0.1',
+            'http://localhost:3000',
+            'http://www.rsscat.net',
+            'https://www.rsscat.net',
+            'http://api.rsscat.net',
+            'https://api.rsscat.net',
         ],
     })
 );
@@ -40,15 +42,15 @@ app.use(
 );
 
 // send morgan message to aws cloudwatch
-// MorganBody(app, {
-//     stream: {
-//         write: (message) => {
-//             if (message !== '') {
-//                 Logger.info(message);
-//             }
-//         },
-//     },
-// });
+MorganBody(app, {
+    stream: {
+        write: (message) => {
+            if (message !== '') {
+                Logger.info(message);
+            }
+        },
+    },
+});
 
 // rate limiter
 app.use(rateLimiterRoute);
