@@ -18,8 +18,10 @@ app.use(
     cors({
         credentials: true,
         origin: [
-            'http://rsscat.net',
-            'https://rsscat.net',
+            'http://www.rsscat.net',
+            'https://www.rsscat.net',
+            'http://api.rsscat.net',
+            'https://api.rsscat.net',
             'http://localhost:3000',
             'http://127.0.0.1',
         ],
