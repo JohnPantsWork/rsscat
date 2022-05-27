@@ -1,40 +1,26 @@
-// services
-const { getNewsLiked } = require('../service/news_service');
+const newsService = require('../service/news_service');
 
-// models
-const { getLatestNews, seleteFeedNews } = require('../model/news_model');
-
-const getExploreNews = async (req, res) => {
+// TODO: 獲得最新新聞，如果有登入，根據設定的來源篩選。
+const getNews = async (req, res) => {
     const { paging } = req.query;
     const { userData } = req.body;
-
-    // get latest news
-    const newsResult = await getLatestNews(paging, 10);
-
-    // if not signin, send normal explore news.
+    const newsResult = await newsService.getLatestNews(paging);
     if (userData === undefined) {
         return res.status(200).json({ data: newsResult });
     }
-
-    // news marked with liked.
-    const newsWithLiked = await getNewsLiked(userData.userId, newsResult);
-
+    const newsWithLiked = await newsService.markLikedNewsDomains(userData.userId, newsResult);
     return res.status(200).json({ data: newsWithLiked });
 };
 
-const getFeedNews = async (req, res) => {
+// TODO: 根據使用者習慣回傳相關的新聞
+const getUserNews = async (req, res) => {
     const { paging } = req.query;
     const { userData } = req.body;
-
-    // get latest feed news
-    const newsResult = await seleteFeedNews(paging, 10, userData.likeTags);
-
-    // news marked with liked.
-    const newsWithLiked = await getNewsLiked(userData.userId, newsResult);
-
+    const newsResult = await newsService.seleteFeedNews(paging, userData.likeTags);
+    const newsWithLiked = await newsService.markLikedNewsDomains(userData.userId, newsResult);
     return res.status(200).json({ data: newsWithLiked });
 };
 
 // service functions
 
-module.exports = { getExploreNews, getFeedNews };
+module.exports = { getNews, getUserNews };

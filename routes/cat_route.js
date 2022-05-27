@@ -1,25 +1,25 @@
 const router = require('express').Router();
 
 // internal functions
-const { wrapAsync } = require('../../util/util');
+const { wrapAsync } = require('../util/utils');
 
 // controllers
 const {
-    getCatState,
-    patchCatState,
-    postCatStore,
+    getCat,
+    patchCat,
     getCatStore,
+    postCatStore,
     getCatMission,
     patchCatMission,
 } = require('../controller/cat_controller');
-const { sessionCheck } = require('../controller/user_controller');
+const { checkSession } = require('../controller/user_controller');
 
 // routers
-router.route('/cat').get(sessionCheck, wrapAsync(getCatState));
-router.route('/cat').patch(sessionCheck, wrapAsync(patchCatState));
-router.route('/cat/store').post(sessionCheck, wrapAsync(postCatStore));
-router.route('/cat/store').get(sessionCheck, wrapAsync(getCatStore));
-router.route('/cat/mission').get(sessionCheck, wrapAsync(getCatMission));
-router.route('/cat/mission').patch(sessionCheck, wrapAsync(patchCatMission));
+router.route('/cat').get(checkSession, wrapAsync(getCat));
+router.route('/cat').patch(checkSession, wrapAsync(patchCat));
+router.route('/cat/store').get(checkSession, wrapAsync(getCatStore));
+router.route('/cat/store').post(checkSession, wrapAsync(postCatStore));
+router.route('/cat/mission').get(checkSession, wrapAsync(getCatMission));
+router.route('/cat/mission').patch(checkSession, wrapAsync(patchCatMission));
 
 module.exports = router;

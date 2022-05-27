@@ -1,108 +1,67 @@
-// internal functions
-const { arrayObjValue, getNow } = require('../../util/util');
-const cache = require('../../util/cache');
+const internalMessages = require('../data/internalMessages');
+const tagService = require('../service/tag_service');
 
-// services
-// const {} = require('../service/tag_service');
-
-// models
-const {
-    inserMultiRecord,
-    selectTagNames,
-    selectUserRecord,
-    deleteUserRecord,
-    deleteAllUserRecord,
-} = require('../model/tag_model');
-
-const getTags = async (req, res) => {
+// TODO: 完全刪除使用者喜歡文章的所有紀錄
+const deleteRecord = async (req, res) => {
     const { userData } = req.body;
-    let likedTagIds = userData.likeTags;
-    let likedTagNames = await selectTagNames(likedTagIds);
+    await tagService.deleteAllUserRecord(userData);
+    return res.status(200).json({ data: internalMessages[2603] });
+};
 
-    const selectResult = await selectUserRecord(userData.userId);
-    const values = arrayObjValue(selectResult);
-    let dislikeTags = values.filter((tag) => {
-        return userData.likeTags.indexOf(tag) === -1;
-    });
-    let dislikeTagNames = await selectTagNames(dislikeTags);
-
+// TODO: 回傳使用者的標籤狀態
+const getUserTag = async (req, res) => {
+    const { userData } = req.body;
+    const likedTagNames = await tagService.getTagNames(userData.likeTags);
+    const dislikeTagNames = await tagService.getDislikedTagNames(userData);
     return res
         .status(200)
         .json({ data: { likeTags: likedTagNames, dislikeTags: dislikeTagNames } });
 };
 
-const patchTags = async (req, res) => {
-    const { likedTags, userData } = req.body;
-    const temp = likedTags.concat(userData.likeTags);
-    userData.likeTags = [...new Set(temp)];
-
-    // await updateLikedCount(1, userData.userId);
-    await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
-
-    let likedTagNamesResult = await selectTagNames(userData.likeTags);
-    return res.status(200).json({ data: { likeTags: likedTagNamesResult } });
-};
-
-const deleteTags = async (req, res) => {
-    const { dislikedTags = [], userData } = req.body;
-    const { associate = null } = req.query;
-
-    if (associate !== null) {
-        const selectResult = await selectUserRecord(userData.userId);
-        const values = arrayObjValue(selectResult);
-        userData.likeTags = userData.likeTags.filter((tag) => {
-            return values.indexOf(tag) !== -1;
-        });
-    } else {
-        userData.likeTags = userData.likeTags.filter((tag) => {
-            return dislikedTags.indexOf(tag) === -1;
-        });
-    }
-
-    await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
-
-    let likedTagNamesResult = await selectTagNames(userData.likeTags);
-    return res.status(200).json({ data: { likeTags: likedTagNamesResult } });
-};
-
-const postRecord = async (req, res) => {
-    const { tag_id_arr, data_id, datatype_id, userData } = req.body || null;
-    await inserMultiRecord(userData.userId, tag_id_arr, data_id, datatype_id, getNow().date);
-    return res.status(200).json({ data: { msg: 'Record success' } });
-};
-
+// TODO: 獲得使用者喜歡的紀錄
 const getRecord = async (req, res) => {
     const { userData } = req.body;
-    const selectResult = await selectUserRecord(userData.userId);
+    const selectResult = await tagService.selectUserRecord(userData.userId);
     return res.status(200).json({ data: selectResult });
 };
 
-const patchRecord = async (req, res) => {
-    const { userData, dataId, datatypeId } = req.body;
-    const result = await deleteUserRecord(userData.userId, dataId, datatypeId);
-    if (!result) {
-        return res.status(400).json({ error: 'dislike failure.' });
+// TODO: 更新使用者的標籤
+const patchUserTag = async (req, res) => {
+    const { likedTags, dislikedTags, associateLevel = null, userData } = req.body;
+
+    let likeTags;
+    if (likedTags) {
+        likeTags = await tagService.patchAddTags(likedTags, userData);
     }
-    return res.status(200).json({ data: 'dislike success.' });
+    if (dislikedTags) {
+        likeTags = await tagService.patchDeleteTags(dislikedTags, userData);
+    }
+    if (associateLevel !== null) {
+        likeTags = await tagService.patchDeleteAllTags(userData);
+    }
+
+    return res.status(200).json({ data: { likeTags: likeTags } });
 };
 
-const deleteAllRecord = async (req, res) => {
-    const { userData } = req.body;
-    const result = await deleteAllUserRecord(userData.userId);
-    if (!result) {
-        return res.status(400).json({ error: 'Remove failure.' });
-    }
-    userData.likeTags = [];
-    await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
-    return res.status(200).json({ data: 'Remove success.' });
+// TODO: 刪除使用者喜歡文章的紀錄
+const patchRecord = async (req, res) => {
+    const { userData, dataId, datatypeId } = req.body;
+    await tagService.deleteUserRecord(userData.userId, dataId, datatypeId);
+    return res.status(200).json({ data: { message: internalMessages[2602] } });
+};
+
+// TODO: 新增使用者喜歡文章的紀錄
+const postRecord = async (req, res) => {
+    const { tag_id_arr, data_id, datatype_id, userData } = req.body || null;
+    await tagService.insertMultiRecoeds(userData.userId, tag_id_arr, data_id, datatype_id);
+    return res.status(200).json({ data: { message: internalMessages[2601] } });
 };
 
 module.exports = {
-    patchTags,
-    getTags,
-    deleteTags,
-    postRecord,
+    getUserTag,
+    patchUserTag,
     getRecord,
+    postRecord,
     patchRecord,
-    deleteAllRecord,
+    deleteRecord,
 };

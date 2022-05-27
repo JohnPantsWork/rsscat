@@ -1,33 +1,26 @@
-// env
 require('dotenv').config();
 const { APP_PORT, API_VERSION, SESSION_SECRET, COOKIE_SECRET } = process.env;
-
-// npm
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const redisStore = require('connect-redis')(session);
-const MorganBody = require('morgan-body');
-
-// internal functions
+const connectRedis = require('connect-redis')(session);
+// const MorganBody = require('morgan-body');
 const cache = require('./util/cache');
-const { newErrRes } = require('./util/util');
+const errorHandler = require('./util/errorHandler');
 const { rateLimiterRoute } = require('./util/rateLimiter');
-const Logger = require('./util/logger');
+// const Logger = require('./util/logger');
 
-// const
 const app = express();
-
 app.set('trust proxy', true);
 app.set('json spaces', 2);
 app.use(
     cors({
         credentials: true,
         origin: [
-            'http://localhost:3000',
             'http://rsscat.net',
             'https://rsscat.net',
+            'http://localhost:3000',
             'http://127.0.0.1',
         ],
     })
@@ -38,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(COOKIE_SECRET));
 app.use(
     session({
-        store: new redisStore({ client: cache }),
+        store: new connectRedis({ client: cache }),
         secret: SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
@@ -47,15 +40,15 @@ app.use(
 );
 
 // send morgan message to aws cloudwatch
-MorganBody(app, {
-    stream: {
-        write: (message) => {
-            if (message !== '') {
-                Logger.info(message);
-            }
-        },
-    },
-});
+// MorganBody(app, {
+//     stream: {
+//         write: (message) => {
+//             if (message !== '') {
+//                 Logger.info(message);
+//             }
+//         },
+//     },
+// });
 
 // rate limiter
 app.use(rateLimiterRoute);
@@ -70,29 +63,20 @@ app.use('/api/' + API_VERSION, [
 ]);
 
 // API not found
-app.get('/api/1.0/*', (req, res, next) => {
-    return next(newErrRes(404, { statusCode: 40402, msg: "API doesn't exist." }));
+app.get(`/api/${API_VERSION}/*`, (req, res, next) => {
+    return next(errorHandler(404, 4002));
 });
 
-// 404
+// Page not found.
 app.get('*', (req, res, next) => {
-    return next(newErrRes(404, { statusCode: 40401, msg: 'Page not found.' }));
+    return next(errorHandler(404, 4001));
 });
 
-// 500
+// Server error
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
-    if (err.status === 500) {
-        console.error(err);
-        return res.status(500).json({
-            error: {
-                statusCode: 50000,
-                msg: 'Server error, please contact the backend engineer.',
-            },
-        });
-    }
-    console.error(err.message);
-    return res.status(err.status).json({ error: err.message });
+    console.error(err);
+    return res.status(err.httpStatusCode).json({ error: err.message });
 });
 
 app.listen(APP_PORT, async () => {

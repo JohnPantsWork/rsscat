@@ -1,14 +1,14 @@
 const router = require('express').Router();
 
 // internal functions
-const { wrapAsync } = require('../../util/util');
+const { wrapAsync } = require('../util/utils');
 
 // controllers
-const { getExploreNews, getFeedNews } = require('../controller/news_controller');
-const { sessionCheck, sessionSoftCheck } = require('../controller/user_controller');
+const { getNews, getUserNews } = require('../controller/news_controller');
+const { checkSession, checkSessionNotStrict } = require('../controller/user_controller');
 
 // routers
-router.route('/news').get(sessionSoftCheck, wrapAsync(getExploreNews));
-router.route('/news/user').get(sessionCheck, wrapAsync(getFeedNews));
+router.route('/news').get(checkSessionNotStrict, wrapAsync(getNews));
+router.route('/user/news').get(checkSession, wrapAsync(getUserNews));
 
 module.exports = router;

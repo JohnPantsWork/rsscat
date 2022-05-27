@@ -1,24 +1,20 @@
 const router = require('express').Router();
-
-// internal functions
-const { wrapAsync } = require('../../util/util');
-
-// controllers
+const { wrapAsync } = require('../util/utils');
 const {
-    reCaptcha,
+    checkSession,
+    checkReCaptcha,
+    getUser,
+    postUserSignOut,
+    getUserCheck,
     postUserSignUp,
     postUserSignIn,
-    getUser,
-    logoutUser,
-    checkUser,
 } = require('../controller/user_controller');
-const { sessionCheck } = require('../controller/user_controller');
 
 // routers
-router.route('/user').get(sessionCheck, wrapAsync(getUser));
-router.route('/user/signUp').post(wrapAsync(reCaptcha), wrapAsync(postUserSignUp));
-router.route('/user/signIn').post(wrapAsync(reCaptcha), wrapAsync(postUserSignIn));
-router.route('/user/signOut').post(sessionCheck, wrapAsync(logoutUser));
-router.route('/user/check').get(sessionCheck, wrapAsync(checkUser)); // fast route only for session check
+router.route('/user').get(checkSession, wrapAsync(getUser));
+router.route('/user/check').get(checkSession, wrapAsync(getUserCheck));
+router.route('/user/signout').post(checkSession, wrapAsync(postUserSignOut));
+router.route('/user/signup').post(checkReCaptcha, wrapAsync(postUserSignUp));
+router.route('/user/signin').post(checkReCaptcha, wrapAsync(postUserSignIn));
 
 module.exports = router;

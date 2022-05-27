@@ -1,15 +1,6 @@
-class ErrorMsgAndCode extends Error {
-    constructor(status, errCode, message) {
-        super(message);
-        this.status = status;
-        this.errCode = errCode;
-    }
-}
-
 const wrapAsync = (fn) => {
     return function (req, res, next) {
         fn(req, res, next).catch((err) => {
-            console.error(err);
             next(err);
         });
     };
@@ -42,6 +33,17 @@ const arrayObjValue = (array) => {
 const todayDate = () => {
     const now = new Date();
     return `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
+};
+
+const topValues = (obj, amount, page = 0) => {
+    const start = page * amount;
+    const end = start + amount;
+    const result = Object.entries(obj)
+        .sort((a, b) => {
+            return b[1] - a[1];
+        })
+        .slice(start, end);
+    return result;
 };
 
 const getNow = () => {
@@ -102,5 +104,5 @@ module.exports = {
     strToJsDateCvt,
     rssToJsDateCvt,
     arrayShuffle,
-    ErrorMsgAndCode,
+    topValues,
 };

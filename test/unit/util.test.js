@@ -1,6 +1,5 @@
 require('chai').should();
-const sinon = require('sinon');
-const util = require('../../util/util');
+const util = require('../../util/utils');
 
 describe('Test util/util.js', () => {
     describe('#objKeyArray', () => {
@@ -32,7 +31,7 @@ describe('Test util/util.js', () => {
     });
 
     describe('#arrayObjValue', () => {
-        it('input array of objs, convert all objs value into array', () => {
+        it('input [{ a: 10 }, { b: 20 }, { c: 30 }, { d: 40 }], should be [10, 20, 30, 40]', () => {
             // data
             const obj = [{ a: 10 }, { b: 20 }, { c: 30 }, { d: 40 }];
             // run fn
@@ -48,7 +47,7 @@ describe('Test util/util.js', () => {
     });
 
     describe('#todayDate', () => {
-        it("get today's date , only year, month and day", () => {
+        it("execute fn, the return data form should be like '2000-1-5' ", () => {
             // data
             const year = new Date().getFullYear();
             const month = new Date().getMonth();
@@ -107,7 +106,6 @@ describe('Test util/util.js', () => {
             // run fn
             const todayDate = util.getNow()['day'];
             // verify
-            console.log(`#todayDate#`, todayDate);
             todayDate.should.be.a('number');
             todayDate.should.equal(day);
         });

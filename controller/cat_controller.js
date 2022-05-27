@@ -1,144 +1,82 @@
-// internal functions
-const { ErrorMsgAndCode } = require('../../util/util');
-const { selectCatStore, selectStoreItem } = require('../model/cat_model');
-const cache = require('../../util/cache');
+const internalMessages = require('../data/internalMessages');
+const catService = require('../service/cat_service');
+const userService = require('../service/user_service');
 
-// service
-const { checkValidReword, randomNewMissions } = require('../service/cat_service');
-
-// models
-const {
-    selectCoins,
-    updateCoins,
-    selectUserLoginDate,
-    updateMissionCompleted,
-} = require('../model/user_model');
-
-// const
-const MISSION_AMOUNT = 3;
-const MISSION_LENGTH = 3600 * 24;
-
-const getCatState = async (req, res) => {
+// TODO: 獲取使用者的最後登入時間與貓咪設定
+const getCat = async (req, res) => {
     const { userData } = req.body;
-
-    // get user's cat last state and last signin date.
-    const loginDateResult = await selectUserLoginDate(userData.userId);
-
+    const lastLoginDate = await userService.selectUserLoginDate(userData.userId);
     return res.status(200).json({
         data: {
-            latest_login: JSON.stringify(loginDateResult),
+            latest_login: JSON.stringify(lastLoginDate),
             latest_style: userData.catStyle,
         },
     });
 };
 
-const patchCatState = async (req, res, next) => {
-    const { userData, catStyle } = req.body;
-
-    // check if this catStyle is purchased.
-    if (userData['purchased'].includes(catStyle) === false) {
-        return next(new ErrorMsgAndCode(400, 40006, 'This cat style is not purchased yet.'));
-    }
-
-    // change user's cat style setting.
-    userData['catStyle'] = catStyle;
-    cache.set(`user:${userData.userId}`, JSON.stringify(userData));
-
-    return res.status(200).json({ data: { msg: 'Cat style changed success.' } });
-};
-
-const postCatStore = async (req, res) => {
-    const { userData, purchased } = req.body;
-
-    // get item price and the user owns money.
-    const storeItemResult = await selectStoreItem(purchased);
-    const coinsResult = await selectCoins(userData.userId);
-
-    // check money is enough.
-    if (coinsResult < storeItemResult.price) {
-        return ErrorMsgAndCode(400, 40005, 'Money is not enough.');
-    }
-
-    // update user purchased data.
-    await updateCoins(-storeItemResult.price, userData.userId);
-    userData['purchased'].push(storeItemResult.title);
-    cache.set(`user:${userData.userId}`, JSON.stringify(userData));
-
-    return res.status(200).json({ data: { msg: 'purchased success.' } });
-};
-
+// TODO: 獲取貓咪商店狀態與使用者擁有的金額
 const getCatStore = async (req, res) => {
     const { userData } = req.body;
-
-    // get cat store info.
-    const storeResult = await selectCatStore();
-
-    // get user coins data.
-    const coinResult = await selectCoins(userData.userId);
-
-    return res
-        .status(200)
-        .json({ data: { store: storeResult, purchased: userData.purchased, coins: coinResult } });
+    const storeResult = await catService.getCatStore();
+    const coinResult = await userService.checkCoins(userData.userId);
+    return res.status(200).json({
+        data: {
+            store: storeResult,
+            purchased: userData.purchased,
+            coins: coinResult,
+            message: internalMessages[2403],
+        },
+    });
 };
 
+// TODO: 獲取貓咪任務，如果沒有任務或者任務過期，賦予新任務。
 const getCatMission = async (req, res) => {
     const { userData } = req.body;
-
-    // check mission from cache
-    let cacheMissions = await cache.get(`mission:${userData.userId}`);
-
-    // if no mission , create new missions.
-    let missionList;
+    let missionList = await catService.getCurrentMission(userData.userId);
     let missionNeedRenew = false;
-    if (cacheMissions === null) {
-        // tell frontend to update mission.
+    if (missionList === null) {
+        missionList = await catService.createNewMission(userData.userId);
         missionNeedRenew = true;
-        // create new missions
-        missionList = randomNewMissions(MISSION_AMOUNT);
-        await cache.setex(
-            `mission:${userData.userId}`,
-            MISSION_LENGTH,
-            JSON.stringify(missionList)
-        );
-    } else {
-        missionList = JSON.parse(cacheMissions);
     }
-
-    //get ttl from mission
-    const ttl = await cache.pttl(`mission:${userData.userId}`);
-
-    return res.status(200).json({ data: { missionList, ttl, missionNeedRenew } });
+    const ttl = await catService.getMissionCacheTTL(userData.userId);
+    return res
+        .status(200)
+        .json({ data: { missionList, ttl, missionNeedRenew, message: internalMessages[2404] } });
 };
 
+// TODO: 使用者變更貓咪皮膚
+const patchCat = async (req, res) => {
+    const { userData, catStyle } = req.body;
+    await catService.checkHasThisStyle(userData['purchased'], catStyle);
+    await catService.patchStyle(userData, catStyle);
+    return res.status(200).json({ data: { message: internalMessages[2401] } });
+};
+
+// TODO: 更新任務完成狀態，檢查並發送獎勵
 const patchCatMission = async (req, res) => {
     const { userData, completedMissionId } = req.body;
-
-    // check if mission is expired.
-    let cacheMissions = JSON.parse(await cache.get(`mission:${userData.userId}`));
-    if (cacheMissions === null) {
-        return res.status(200).json({ data: { msg: 'missions are expired.' } });
+    let cacheMissions = await catService.checkCurrentMission(userData.userId);
+    let result = await catService.checkValidReword(cacheMissions, completedMissionId);
+    if (result.reward > 0) {
+        await catService.updateMissionState(userData.userId, result.missions);
+        await userService.updateUserCoins(result.reward, userData.userId);
     }
+    return res.status(200).json({ data: { message: internalMessages[2405] } });
+};
 
-    // check if mission is not complete.
-    let result = await checkValidReword(cacheMissions, completedMissionId);
-
-    // if reword is valid.
-    if (result.reword > 0) {
-        // update mission
-        await cache.set(`mission:${userData.userId}`, JSON.stringify(result.missions), 'KEEPTTL');
-        await updateCoins(result.reword, userData.userId);
-    }
-
-    await updateMissionCompleted(1, userData.userId);
-
-    return res.status(200).json({ data: { msg: 'Reward finish.' } });
+// TODO: 使用者購買貓咪新造型
+const postCatStore = async (req, res) => {
+    const { userData, purchased } = req.body;
+    const storeItemResult = await userService.checkAffordThisPurchase(userData.userId, purchased);
+    await userService.purchaseItems(userData, storeItemResult);
+    return res.status(200).json({ data: { message: internalMessages[2402] } });
 };
 
 module.exports = {
-    getCatState,
-    patchCatState,
-    postCatStore,
+    getCat,
     getCatStore,
     getCatMission,
+    patchCat,
     patchCatMission,
+    postCatStore,
 };

@@ -1,6 +1,6 @@
 // npm
 const Joi = require('joi');
-const { newErrRes } = require('./util');
+const errorHandler = require('./errorHandler');
 
 // internal functions
 
@@ -22,15 +22,15 @@ async function userValidater(username, email, password) {
     } catch (err) {
         const errMessage = err.details[0].message;
         if (errMessage.includes('email')) {
-            throw newErrRes(400, { statusCode: 40002, msg: errMessage });
+            throw new errorHandler(400, 4102);
         }
         if (errMessage.includes('password')) {
-            throw newErrRes(400, { statusCode: 40003, msg: errMessage });
+            throw new errorHandler(400, 4103);
         }
         if (errMessage.includes('username')) {
-            throw newErrRes(400, { statusCode: 40004, msg: errMessage });
+            throw new errorHandler(400, 4104);
         }
     }
 }
 
-module.exports = { userValidater };
+module.exports = userValidater;

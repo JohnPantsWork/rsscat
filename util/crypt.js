@@ -10,4 +10,4 @@ const crypt = {
     },
 };
 
-module.exports = { crypt };
+module.exports = crypt;

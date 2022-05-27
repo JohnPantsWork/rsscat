@@ -1,27 +1,27 @@
 const router = require('express').Router();
 
 // internal functions
-const { wrapAsync } = require('../../util/util');
+const { wrapAsync } = require('../util/utils');
 
 // controllers
 const {
-    getExploreRss,
-    getFeedRss,
-    getAllRssDomain,
-    postNewRss,
-    getLikedRssDomain,
-    patchLikedRssDomain,
-    deleteLikedRssDomain,
+    getRss,
+    getUserRss,
+    getRssDomain,
+    postRssDomain,
+    getUserDomain,
+    putUserDomain,
+    patchUserDomain,
 } = require('../controller/rss_controller');
-const { sessionCheck, sessionSoftCheck } = require('../controller/user_controller');
+const { checkSession, checkSessionNotStrict } = require('../controller/user_controller');
 
 // routers
-router.route('/rss').get(sessionSoftCheck, wrapAsync(getExploreRss));
-router.route('/rss/user').get(sessionCheck, wrapAsync(getFeedRss));
-router.route('/rss/domain').get(wrapAsync(getAllRssDomain));
-router.route('/rss/domain').post(sessionCheck, wrapAsync(postNewRss));
-router.route('/user/domain').get(sessionCheck, wrapAsync(getLikedRssDomain));
-router.route('/user/domain').patch(sessionCheck, wrapAsync(patchLikedRssDomain));
-router.route('/user/domain').delete(sessionCheck, wrapAsync(deleteLikedRssDomain));
+router.route('/rss').get(checkSessionNotStrict, wrapAsync(getRss));
+router.route('/user/rss').get(checkSession, wrapAsync(getUserRss));
+router.route('/rss/domain').get(checkSessionNotStrict, wrapAsync(getRssDomain));
+router.route('/rss/domain').post(checkSession, wrapAsync(postRssDomain));
+router.route('/user/domain').get(checkSession, wrapAsync(getUserDomain));
+router.route('/user/domain').put(checkSession, wrapAsync(putUserDomain));
+router.route('/user/domain').patch(checkSession, wrapAsync(patchUserDomain));
 
 module.exports = router;
