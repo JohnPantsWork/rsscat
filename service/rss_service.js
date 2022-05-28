@@ -7,14 +7,14 @@ const { arrayObjValue, rssToJsDateCvt } = require('../util/utils');
 const { rssParser } = require('../util/rssParser');
 const { wrapModel } = require('../util/modelWrappers');
 const {
-    getLatestRssModel,
-    seleteFeedRssModel,
+    filterRssByDomainModel,
+    filterRssByTagAndDomainModel,
+    filterRssDomainModel,
+    insertRssModel,
+    selectRssDomainModel,
+    selectRssModel,
+    selectRssUrlModel,
     selectLikedRssModel,
-    getLatestRssWithDomainModel,
-    getAllRssUrlModel,
-    seleteRssDomainNameModel,
-    rssUrlDuplicateModel,
-    insertNewRssModel,
 } = require('../model/rss_model');
 const SAFE_BROWSING_THREAT_TYPES = [
     'THREAT_TYPE_UNSPECIFIED',
@@ -45,7 +45,7 @@ const RSS_AMOUNT_PER_PAGE = 10;
 
 const rssService = {
     checkRssUrlExist: async function (url) {
-        const checkDuplicate = await wrapModel(rssUrlDuplicateModel, [url]);
+        const checkDuplicate = await wrapModel(selectRssUrlModel, [url]);
         if (checkDuplicate) {
             throw new errorHandler(400, 4501);
         }
@@ -79,7 +79,7 @@ const rssService = {
         }
     },
     getLatestRss: async function (paging) {
-        return await wrapModel(getLatestRssModel, [paging, RSS_AMOUNT_PER_PAGE]);
+        return await wrapModel(selectRssModel, [paging, RSS_AMOUNT_PER_PAGE]);
     },
     markLikedRssDomains: async function (userId, rssArray) {
         const rssIds = rssArray.map((r) => r.id);
@@ -97,7 +97,7 @@ const rssService = {
         return newsWithLiked;
     },
     getLatestRssWithDomain: async function (paging, domains) {
-        const result = await wrapModel(getLatestRssWithDomainModel, [
+        const result = await wrapModel(filterRssByDomainModel, [
             paging,
             RSS_AMOUNT_PER_PAGE,
             domains,
@@ -108,17 +108,17 @@ const rssService = {
         return result;
     },
     getAllRssUrl: async function () {
-        const result = await wrapModel(getAllRssUrlModel);
+        const result = await wrapModel(selectRssDomainModel);
         return arrayObjValue(result);
     },
     getRssDomainName: async function (domains) {
-        return await wrapModel(seleteRssDomainNameModel, [domains]);
+        return await wrapModel(filterRssDomainModel, [domains]);
     },
     getFeedRss: async function (paging, likeTags, domains) {
         if (likeTags.length === 0) {
             throw new errorHandler(400, 4504);
         }
-        const result = await wrapModel(seleteFeedRssModel, [
+        const result = await wrapModel(filterRssByTagAndDomainModel, [
             paging,
             RSS_AMOUNT_PER_PAGE,
             likeTags,
@@ -130,8 +130,7 @@ const rssService = {
         return result;
     },
     getAllDomains: async function () {
-        const allDomainObjs = await this.getAllRssUrl();
-        return arrayObjValue(allDomainObjs);
+        return await this.getAllRssUrl();
     },
     putDomains: async function (userData) {
         await cache.set(`user:${userData.userId}`, JSON.stringify(userData));
@@ -150,7 +149,7 @@ const rssService = {
     },
 
     postNewRss: async function (title, frequence, url) {
-        await wrapModel(insertNewRssModel, [title, frequence, url]);
+        await wrapModel(insertRssModel, [title, frequence, url]);
     },
 
     getRssFrequenceLevel: function (items) {

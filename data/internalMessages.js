@@ -5,6 +5,7 @@ const internalMessages = {
     // general 0
     4001: 'Page not found.',
     4002: 'API not found.',
+    4003: 'Over rate limit.',
     5000: 'Server error, please contact the backend engineer.', // Replace every message send to frontend.
 
     // signup - 1

@@ -16,7 +16,7 @@ const getNews = async (req, res) => {
 const getUserNews = async (req, res) => {
     const { paging } = req.query;
     const { userData } = req.body;
-    const newsResult = await newsService.seleteFeedNews(paging, userData.likeTags);
+    const newsResult = await newsService.getFeedNews(paging, userData.likeTags);
     const newsWithLiked = await newsService.markLikedNewsDomains(userData.userId, newsResult);
     return res.status(200).json({ data: newsWithLiked });
 };

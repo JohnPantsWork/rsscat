@@ -21,7 +21,7 @@ const getUserTag = async (req, res) => {
 // TODO: 獲得使用者喜歡的紀錄
 const getRecord = async (req, res) => {
     const { userData } = req.body;
-    const selectResult = await tagService.selectUserRecord(userData.userId);
+    const selectResult = await tagService.getUserRecord(userData.userId);
     return res.status(200).json({ data: selectResult });
 };
 
@@ -31,13 +31,13 @@ const patchUserTag = async (req, res) => {
 
     let likeTags;
     if (likedTags) {
-        likeTags = await tagService.patchAddTags(likedTags, userData);
+        likeTags = await tagService.patchTags(likedTags, userData);
     }
     if (dislikedTags) {
-        likeTags = await tagService.patchDeleteTags(dislikedTags, userData);
+        likeTags = await tagService.deleteTags(dislikedTags, userData);
     }
     if (associateLevel !== null) {
-        likeTags = await tagService.patchDeleteAllTags(userData);
+        likeTags = await tagService.deleteAllTags(userData);
     }
 
     return res.status(200).json({ data: { likeTags: likeTags } });
@@ -53,7 +53,7 @@ const patchRecord = async (req, res) => {
 // TODO: 新增使用者喜歡文章的紀錄
 const postRecord = async (req, res) => {
     const { tag_id_arr, data_id, datatype_id, userData } = req.body || null;
-    await tagService.insertMultiRecoeds(userData.userId, tag_id_arr, data_id, datatype_id);
+    await tagService.postMultiRecoeds(userData.userId, tag_id_arr, data_id, datatype_id);
     return res.status(200).json({ data: { message: internalMessages[2601] } });
 };
 

@@ -8,7 +8,6 @@ setInterval(checkMission, 3000);
 
 async function checkMission() {
     const nextMission = await queue.get();
-    console.log(`#nextMission#`, nextMission);
     if (nextMission === undefined || nextMission === null) {
         return null;
     }

@@ -109,12 +109,12 @@ async function selectLikedRssModel(userId, rssIds, datatypeId = 1) {
 }
 
 module.exports = {
-    getAllRssUrlModel: selectRssDomainModel,
-    getLatestRssModel: selectRssModel,
-    getLatestRssWithDomainModel: filterRssByDomainModel,
-    seleteFeedRssModel: filterRssByTagAndDomainModel,
-    seleteRssDomainNameModel: filterRssDomainModel,
-    rssUrlDuplicateModel: selectRssUrlModel,
-    insertNewRssModel: insertRssModel,
+    filterRssByDomainModel,
+    filterRssByTagAndDomainModel,
+    filterRssDomainModel,
+    insertRssModel,
+    selectRssDomainModel,
+    selectRssModel,
+    selectRssUrlModel,
     selectLikedRssModel,
 };

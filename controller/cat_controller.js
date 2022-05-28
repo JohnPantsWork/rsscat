@@ -5,7 +5,7 @@ const userService = require('../service/user_service');
 // TODO: 獲取使用者的最後登入時間與貓咪設定
 const getCat = async (req, res) => {
     const { userData } = req.body;
-    const lastLoginDate = await userService.selectUserLoginDate(userData.userId);
+    const lastLoginDate = await userService.getUserLoginDate(userData.userId);
     return res.status(200).json({
         data: {
             latest_login: JSON.stringify(lastLoginDate),
@@ -35,7 +35,7 @@ const getCatMission = async (req, res) => {
     let missionList = await catService.getCurrentMission(userData.userId);
     let missionNeedRenew = false;
     if (missionList === null) {
-        missionList = await catService.createNewMission(userData.userId);
+        missionList = await catService.postNewMission(userData.userId);
         missionNeedRenew = true;
     }
     const ttl = await catService.getMissionCacheTTL(userData.userId);
@@ -58,7 +58,7 @@ const patchCatMission = async (req, res) => {
     let cacheMissions = await catService.checkCurrentMission(userData.userId);
     let result = await catService.checkValidReword(cacheMissions, completedMissionId);
     if (result.reward > 0) {
-        await catService.updateMissionState(userData.userId, result.missions);
+        await catService.patchMissionState(userData.userId, result.missions);
         await userService.updateUserCoins(result.reward, userData.userId);
     }
     return res.status(200).json({ data: { message: internalMessages[2405] } });

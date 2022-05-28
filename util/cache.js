@@ -1,8 +1,5 @@
-// env
 require('dotenv').config();
 const { CACHE_HOST, CACHE_PORT, CACHE_USER, CACHE_PASSWORD } = process.env;
-
-// npm
 const Ioredis = require('ioredis');
 
 const redisCli = new Ioredis({
@@ -18,6 +15,7 @@ redisCli.ready = false;
 
 redisCli.on('ready', () => {
     redisCli.ready = true;
+    console.info('Redis is ready.');
 });
 
 redisCli.on('error', (err) => {

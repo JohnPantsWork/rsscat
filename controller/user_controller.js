@@ -21,7 +21,7 @@ const checkSessionNotStrict = async (req, res, next) => {
 const checkReCaptcha = async (req, res, next) => {
     const { reCaptcha, provider } = req.body;
     try {
-        await userService.reCaptchaVerify(reCaptcha, provider);
+        await userService.postReCaptchaVerify(reCaptcha, provider);
     } catch (err) {
         return next(err);
     }
@@ -53,7 +53,7 @@ const postUserSignUp = async (req, res) => {
     await userService.checkUserEmailExist(email);
     const insertResult = await userService.postNewUser(email, password, username);
     await userService.sessionSetup(req, insertResult);
-    await userService.newUserCacheSetup(insertResult, email, username);
+    await userService.putNewUserCache(insertResult, email, username);
     return res.status(200).json({ data: { message: internalMessages[2101], id: req.sessionID } });
 };
 
