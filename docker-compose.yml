@@ -9,7 +9,7 @@ services:
             - '80:80'
             - '443:443'
         networks:
-            - rsscat
+            - rsscat-server-network
         volumes:
             - /home/ec2-user/rsscat_docker_volumes/nginx:/etc/nginx
             #- /home/ec2-user/rsscat_docker_volumes/build:/usr/share/nginx/html # static website served by nginx
@@ -20,15 +20,15 @@ services:
         image: redis:6.2.6
         restart: always
         networks:
-            - rsscat
+            - rsscat-server-network
         volumes:
             - /home/ec2-user/rsscat_docker_volumes/redis/data:/data
     rsscat:
-        container_name: rsscat
+        container_name: rsscat-server
         image: rsscat:latest
         restart: always
         networks:
-            - rsscat
+            - rsscat-server-network
         env_file:
             - .env
         depends_on:
@@ -36,5 +36,5 @@ services:
 
 networks:
     rsscat:
-        name: rsscat_server_network
+        name: rsscat-server-network
         driver: bridge
