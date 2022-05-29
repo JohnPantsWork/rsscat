@@ -52,7 +52,7 @@ const postUserSignUp = async (req, res) => {
     await userService.postSignUpValidater(username, email, password);
     await userService.checkUserEmailExist(email);
     const insertResult = await userService.postNewUser(email, password, username);
-    await userService.sessionSetup(req, insertResult);
+    req.session = await userService.sessionSetup(req.session, insertResult);
     await userService.putNewUserCache(insertResult, email, username);
     return res.status(200).json({ data: { message: internalMessages[2101], id: req.sessionID } });
 };
