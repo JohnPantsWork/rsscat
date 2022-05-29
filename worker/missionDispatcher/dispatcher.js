@@ -1,9 +1,14 @@
 require('dotenv').config();
 const { MISSION_DELAY } = process.env;
 const cache = require('./util/cache');
-const { selectRssFrequenceCounts } = require('./model/dispatcher_model');
+const {
+    selectRssFrequenceCounts,
+    selectCenterStatus,
+    updateCenterStatus,
+} = require('./model/dispatcher_model');
 const missionDelay = MISSION_DELAY * 1000;
 const MISSION_LIST = 'missions';
+const MISSION_PER_DISPATCH = 15; // about 35sec per article
 
 setTimeout(() => {
     dispatcher();
@@ -12,19 +17,12 @@ setTimeout(() => {
 async function dispatcher() {
     updateNewsMission();
 
-    const endpoints = await selectAndFormatRssEndpoints();
-
+    const endpoints = await getNextbundleOfRss();
+    console.log(`#endpoints#`, endpoints);
     for (let i = 0; i < endpoints.length; i += 1) {
         updateRssMission(endpoints[i].id, endpoints[i].url);
     }
-}
-
-async function selectAndFormatRssEndpoints() {
-    const result = await selectRssFrequenceCounts();
-    const missionList = result.map((rss) => {
-        return { id: rss.id, url: rss.url };
-    });
-    return missionList;
+    console.log(`#mission dispatched#`);
 }
 
 async function updateRssMission(id, url) {
@@ -41,4 +39,24 @@ async function updateNewsMission() {
         mission: 'checkNewsApiUpdate',
     };
     await cache.lpush(MISSION_LIST, JSON.stringify(data));
+}
+
+async function getFormatRssEndpoints(lastId) {
+    const result = await selectRssFrequenceCounts(lastId, MISSION_PER_DISPATCH);
+    const missionList = result.map((rss) => {
+        return { id: rss.id, url: rss.url };
+    });
+    return missionList;
+}
+
+async function getNextbundleOfRss() {
+    const lastRssId = await selectCenterStatus();
+    const arrayRssObjs = await getFormatRssEndpoints(lastRssId[0].latest_mission);
+    console.log(`##`, arrayRssObjs);
+
+    const latestId =
+        arrayRssObjs.length < MISSION_PER_DISPATCH ? 0 : arrayRssObjs[arrayRssObjs.length - 1].id;
+    await updateCenterStatus(latestId);
+
+    return arrayRssObjs;
 }

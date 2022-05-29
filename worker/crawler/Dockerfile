@@ -1,6 +1,6 @@
 
 # Base image
-FROM node:alpine
+FROM node:latest
 
 RUN apt update
 #RUN apt install build-essential
@@ -17,4 +17,4 @@ RUN npm install
 COPY . /usr/src/app
 
 # for worker
-CMD ["node","worker.js"]
+CMD ["node","crawler.js"]

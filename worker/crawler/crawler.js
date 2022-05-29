@@ -1,10 +1,14 @@
 require('dotenv').config();
-setInterval(checkMission, 30000);
-
 const queue = require('./util/queue');
 const crawlerController = require('./controller/crawler_controller');
 
-setInterval(checkMission, 3000);
+let intervalGate = true;
+setInterval(() => {
+    if (intervalGate) {
+        intervalGate = false;
+        checkMission();
+    }
+}, 1000);
 
 async function checkMission() {
     const nextMission = await queue.get();
@@ -12,7 +16,6 @@ async function checkMission() {
         return null;
     }
     const newMission = await JSON.parse(nextMission[1]);
-
     switch (newMission.mission) {
         case 'checkRssUpdate':
             await crawlerController.checkRssUpdate(newMission);
@@ -23,4 +26,6 @@ async function checkMission() {
         default:
             break;
     }
+    console.log(`#mission finish#`);
+    intervalGate = true;
 }

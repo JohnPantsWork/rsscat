@@ -1,6 +1,6 @@
 
 # Base image
-FROM node:alpine
+FROM node:latest
 
 RUN apt update
 #RUN apt install build-essential

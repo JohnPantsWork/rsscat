@@ -2,6 +2,7 @@ require('dotenv').config();
 const { NEWS_API_KEY, CKIP_URL } = process.env;
 const CONNECT_TIMEOUT = parseInt(process.env.CONNECT_TIMEOUT);
 const ARTICLES_LIMIT = parseInt(process.env.ARTICLES_LIMIT);
+const ARTICLES_NEWS_LIMIT = parseInt(process.env.ARTICLES_NEWS_LIMIT);
 const ajax = require('../util/ajax');
 const cheerio = require('cheerio');
 const NewsAPI = require('newsapi');
@@ -15,17 +16,15 @@ const {
     insertNews,
     insertTagInfo,
     selectRssUrls,
-    selectCenterStatus,
+    selectLatestRssArticle,
     selectLatestNewsArticle,
     selectIdFromTagName,
     selectTagAppearTime,
-    updateWorkerCenterRssChecked,
+    selectAllArticlesAmount,
 } = require('../model/crawler_model');
 
-const RSS_DES_INDEX = 4;
-const NEWS_DES_INDEX = 5;
 const MAX_WORDS_LIMIT = 2000;
-const TAGS_PER_ARTICLES = 2000;
+const TAGS_PER_ARTICLES = 3;
 const NEWS_API_ID = 1;
 
 const crawlerService = {
@@ -40,7 +39,13 @@ const crawlerService = {
         return rssEndpoints;
     },
 
-    checkNewArticle: async function (id, url, latest_article) {
+    selectLatestRssArticle: async function (id) {
+        const result = await selectLatestRssArticle(id);
+        return result[0].latest_article;
+    },
+
+    checkNewArticle: async function (id, url) {
+        const latest_article = this.selectLatestRssArticle(id);
         const rawDatas = await rssParser(url);
         if (!rawDatas) {
             return false;
@@ -97,7 +102,46 @@ const crawlerService = {
             return;
         }
         // insert model
-        await insertArticles(id, newArticles);
+        const articlesArray = newArticles.map((article) => {
+            return [
+                article.id,
+                article.date,
+                article.title,
+                article.creator,
+                article.content,
+                article.picture,
+                article.link,
+                article.tags[0],
+                article.tags[1],
+                article.tags[2],
+            ];
+        });
+
+        await insertArticles(id, articlesArray, newArticles[0].link);
+    },
+
+    insertNews: async function (newArticles) {
+        if (newArticles.length === 0) {
+            return;
+        }
+
+        const articlesArray = newArticles.map((article) => {
+            return [
+                article.id,
+                article.date,
+                article.title,
+                article.source,
+                article.creator,
+                article.content,
+                article.picture,
+                article.link,
+                article.tags[0],
+                article.tags[1],
+                article.tags[2],
+            ];
+        });
+        const latestArticle = newArticles[0].link;
+        await insertNews(NEWS_API_ID, articlesArray, latestArticle);
     },
 
     // if xml doesn't have img, crawler from url instead.
@@ -113,6 +157,7 @@ const crawlerService = {
                 }
             }
         }
+
         // if articles doesn't have any image in it, crawl from website.
         try {
             const result = await ajax.params({
@@ -132,15 +177,6 @@ const crawlerService = {
         } catch (err) {
             return '';
         }
-    },
-
-    updateCenterCheckedArray: async function (level, id) {
-        const status = await selectCenterStatus();
-
-        const rss_checked_array = JSON.parse(status[0].latest_rss_checked_array);
-        rss_checked_array[level] = id;
-        const arrString = JSON.stringify(rss_checked_array);
-        await updateWorkerCenterRssChecked(arrString);
     },
 
     checkNewNews: async function () {
@@ -165,57 +201,39 @@ const crawlerService = {
 
     formatNews: async function (rawNews) {
         let formatedNews = [];
-        for (let i = 0; i < rawNews.length && i < ARTICLES_LIMIT; i += 1) {
-            const n = rawNews[i];
-            const newsDate = n.publishedAt.slice(0, 10);
-            const newsSource = n['source']['name'];
-            const temp = [
-                NEWS_API_ID,
-                newsDate,
-                n.title,
-                newsSource,
-                n.author,
-                n.description,
-                n.urlToImage,
-                n.url,
-            ];
-            formatedNews.push(temp);
+        for (let i = 0; i < rawNews.length && i < ARTICLES_NEWS_LIMIT; i += 1) {
+            const news = rawNews[i];
+            const newsDate = news.publishedAt.slice(0, 10);
+            const newsSource = news['source']['name'];
+            const newsObj = {
+                id: NEWS_API_ID,
+                date: newsDate,
+                title: news.title,
+                source: newsSource,
+                creator: news.author,
+                content: news.description,
+                picture: news.urlToImage,
+                link: news.url,
+            };
+            formatedNews.push(newsObj);
         }
         return formatedNews;
     },
 
-    insertNews: async function (news) {
-        if (news.length === 0) {
-            return;
-        }
-        await insertNews(news);
-    },
-
-    articleTagging: async function (formatedData, type) {
-        let des_index;
-        switch (type) {
-            case 'rss':
-                des_index = RSS_DES_INDEX;
-                break;
-            case 'news':
-                des_index = NEWS_DES_INDEX;
-                break;
-            default:
-                break;
-        }
-
+    articleTagging: async function (formatedData) {
         const formatedDataWithTagging = [];
         for (let i = 0; i < formatedData.length; i += 1) {
-            const des = formatedData[i][des_index];
-            const cutWords = await this.ckip(des);
+            const cutWords = await this.ckip(formatedData[i].content);
             const tfResult = await this.tf(cutWords);
+
+            // save tags into the tag_info tag to count the tag appear_times
             const insert_tag_info = await objKeyArray(tfResult);
             for (let j = 0; j < insert_tag_info.length; j += 1) {
                 await insertTagInfo(insert_tag_info[j]);
             }
 
+            // select top tags by idf, if tag's amount lower than TAGS_PER_ARTICLES, skip this tagging sequence.
             const topTags = await this.tf_idf(tfResult, TAGS_PER_ARTICLES);
-
             if (topTags.length < TAGS_PER_ARTICLES) {
                 continue;
             }
@@ -223,10 +241,10 @@ const crawlerService = {
             const tags = topTags.map((e) => {
                 return e[0];
             });
-            const rawTagIds = await this.tagNameToId(tags);
-            const tagIds = arrayObjValue(rawTagIds);
 
-            formatedDataWithTagging.push(formatedData[i].concat(tagIds));
+            const rawTagIds = await this.tagNameToId(tags);
+            formatedData[i]['tags'] = arrayObjValue(rawTagIds);
+            formatedDataWithTagging.push(formatedData[i]);
         }
         return formatedDataWithTagging;
     },
@@ -237,7 +255,7 @@ const crawlerService = {
             url: `${CKIP_URL}`,
             data: { raw_words: articleDescription },
         });
-        const wordsWithPos = result.data.data.pos;
+        const wordsWithPos = result.data.pos;
         const splitedPos = wordsWithPos.split('),');
         const filteredPos = splitedPos.filter((pos) => {
             const [a, b] = pos.split('(');
@@ -283,14 +301,16 @@ const crawlerService = {
 
     tf_idf: async function (dataObj, amount) {
         const keysArray = await Object.keys(dataObj);
-
         const idfs = await selectTagAppearTime(keysArray);
+        const allArticlesAmount = await selectAllArticlesAmount();
         let idfDict = {};
         idfs.map((obj) => {
             if (!dataObj[obj.tag_name] || !dataObj[obj.tag_name].highlights) {
                 return;
             }
-            const percent = 10000 * (1 / obj.appear_times) * dataObj[obj.tag_name].highlights;
+            const percent = Math.log10(
+                (allArticlesAmount / obj.appear_times) * dataObj[obj.tag_name].highlights
+            );
             idfDict[obj.tag_name] = percent;
         });
         return topValues(idfDict, amount);

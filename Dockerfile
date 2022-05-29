@@ -18,9 +18,3 @@ COPY . /usr/src/app
 
 # for server
 CMD ["node","app.js"]
-
-# for worker
-# CMD ["node","auto/worker.js"]
-
-# for worker_center
-#CMD ["node","auto/worker_center.js"]
