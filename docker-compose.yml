@@ -24,7 +24,7 @@ services:
         volumes:
             - /home/ec2-user/rsscat_docker_volumes/redis/data:/data
     rsscat:
-        container_name: rsscat-server
+        container_name: rsscat
         image: rsscat:latest
         restart: always
         networks:
