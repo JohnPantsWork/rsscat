@@ -26,6 +26,6 @@ async function checkMission() {
         default:
             break;
     }
-    console.log(`#mission finish#`);
+    console.info(`#mission finish#`);
     intervalGate = true;
 }

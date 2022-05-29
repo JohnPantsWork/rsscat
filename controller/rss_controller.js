@@ -30,10 +30,10 @@ const getRssDomain = async (req, res) => {
 const postRssDomain = async (req, res) => {
     const { url } = req.body;
     await rssService.checkRssUrlExist(url);
-    await rssService.rssUrlCheckSafe(url);
+    await rssService.checkRssUrlSafety(url);
     const rssData = await rssService.checkRssUrlValid(url);
-    const rssFrequence = rssService.calculateRssFrequenceLevel(rssData.items);
-    await rssService.insertNewRss(rssData.title, rssFrequence, url);
+    const rssFrequence = rssService.getRssFrequenceLevel(rssData.items);
+    await rssService.postNewRss(rssData.title, rssFrequence, url);
     return res.status(200).json({
         data: {
             message: internalMessages[2501],

@@ -18,11 +18,11 @@ async function dispatcher() {
     updateNewsMission();
 
     const endpoints = await getNextbundleOfRss();
-    console.log(`#endpoints#`, endpoints);
+    console.info(`#endpoints#`, endpoints);
     for (let i = 0; i < endpoints.length; i += 1) {
         updateRssMission(endpoints[i].id, endpoints[i].url);
     }
-    console.log(`#mission dispatched#`);
+    console.info(`#mission dispatched#`);
 }
 
 async function updateRssMission(id, url) {
@@ -52,7 +52,6 @@ async function getFormatRssEndpoints(lastId) {
 async function getNextbundleOfRss() {
     const lastRssId = await selectCenterStatus();
     const arrayRssObjs = await getFormatRssEndpoints(lastRssId[0].latest_mission);
-    console.log(`##`, arrayRssObjs);
 
     const latestId =
         arrayRssObjs.length < MISSION_PER_DISPATCH ? 0 : arrayRssObjs[arrayRssObjs.length - 1].id;

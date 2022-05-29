@@ -9,11 +9,10 @@ const crawlerController = {
         console.info(`#rss checking...#`);
 
         const rawArticles = await crawlerService.checkNewArticle(id, url);
-        if (!rawArticles) {
+        if (rawArticles.length === 0) {
             console.info('no new articles.');
             return;
         }
-        console.info('get new articles, formating...');
 
         const formatedData = await crawlerService.formatArticles(id, rawArticles);
         if (formatedData === undefined) {

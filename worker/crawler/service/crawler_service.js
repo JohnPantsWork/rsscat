@@ -45,7 +45,7 @@ const crawlerService = {
     },
 
     checkNewArticle: async function (id, url) {
-        const latest_article = this.selectLatestRssArticle(id);
+        const latest_article = await this.selectLatestRssArticle(id);
         const rawDatas = await rssParser(url);
         if (!rawDatas) {
             return false;
