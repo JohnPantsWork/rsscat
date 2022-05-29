@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { MISSION_DELAY } = process.env;
+const MISSION_PER_DISPATCH = parseInt(process.env.MISSION_PER_DISPATCH);
 const cache = require('./util/cache');
 const {
     selectRssFrequenceCounts,
@@ -8,7 +9,6 @@ const {
 } = require('./model/dispatcher_model');
 const missionDelay = MISSION_DELAY * 1000;
 const MISSION_LIST = 'missions';
-const MISSION_PER_DISPATCH = 15; // about 35sec per article
 
 setTimeout(() => {
     dispatcher();
