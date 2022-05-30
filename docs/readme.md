@@ -15,15 +15,6 @@ User can manage their tags and sources, to filter the articles.
 | account -1 | test01@mail.com | test01   |
 | account -2 | test02@mail.com | test02   |
 
-# <img src="./icon.svg" width="30"> Table of contents
-
--   [Features](#Features)
--   [TechStack](#TechStack)
--   [Architecture](#Architecture)
--   [Demo](#Demo)
--   [TF-IDF](#TF-IDF)
--   [License](#License)
-
 # <img src="./icon.svg" width="30"> Features
 
 ### Article auto-tagging
