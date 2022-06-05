@@ -77,8 +77,8 @@ app.get('*', (req, res, next) => {
 // Server error
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
-    console.error(err);
-    return res.status(err.httpStatusCode).json({ error: err.message });
+    // console.error(err);
+    return res.status(err.httpStatusCode).json({ error: err });
 });
 
 app.listen(APP_PORT, async () => {
