@@ -69,7 +69,7 @@ User can manage their tags and sources, to filter the articles.
 
 -   Worker system
 
-    The task dispatcher and workers are also impacted inside the containers, so the RSS article crawler system can be set up easier.
+    The task dispatcher and workers are also pacted inside the containers, so the RSS article crawler system can be set up easier.
 
     <img src="./worker_flow.png" width="500">
 
