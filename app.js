@@ -9,7 +9,7 @@ const MorganBody = require('morgan-body');
 const cache = require('./util/cache');
 const errorHandler = require('./util/errorHandler');
 const { rateLimiterRoute } = require('./util/rateLimiter');
-const Logger = require('./util/logger');
+//const Logger = require('./util/logger');
 
 const app = express();
 app.set('trust proxy', true);
@@ -40,8 +40,8 @@ app.use(
         name: 'usid',
     })
 );
-
 // send morgan message to aws cloudwatch
+/*
 MorganBody(app, {
     stream: {
         write: (message) => {
@@ -51,6 +51,7 @@ MorganBody(app, {
         },
     },
 });
+*/
 
 // rate limiter
 app.use(rateLimiterRoute);
@@ -66,12 +67,12 @@ app.use('/api/' + API_VERSION, [
 
 // API not found
 app.get(`/api/${API_VERSION}/*`, (req, res, next) => {
-    return next(errorHandler(404, 4002));
+    return next(new errorHandler(404, 4002));
 });
 
 // Page not found.
 app.get('*', (req, res, next) => {
-    return next(errorHandler(404, 4001));
+    return next(new errorHandler(404, 4001));
 });
 
 // Server error
