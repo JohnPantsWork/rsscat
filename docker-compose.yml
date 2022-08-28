@@ -24,9 +24,12 @@ services:
         volumes:
             - /home/ec2-user/rsscat_docker_volumes/redis/data:/data
     rsscat:
+        build: .
         container_name: rsscat
         image: rsscat:latest
         restart: always
+        ports:
+            - '3000:3000'
         networks:
             - rsscat
         env_file:

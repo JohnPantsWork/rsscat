@@ -87,5 +87,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(APP_PORT, async () => {
-    console.info(`Listening on port: ${APP_PORT}`);
+    console.log(`Listening on port: ${APP_PORT}`);
 });
