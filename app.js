@@ -56,6 +56,10 @@ MorganBody(app, {
 // rate limiter
 app.use(rateLimiterRoute);
 
+app.get('/health', (req, res) => {
+    return res.status(200).send('health check success.');
+});
+
 // API routes
 app.use('/api/' + API_VERSION, [
     require('./routes/user_route'),
